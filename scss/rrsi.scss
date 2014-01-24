@@ -1,7 +1,5 @@
 //grab the settings file for mixins and variables
-@import "settings";
 @import "bourbon";
-@import "forms";
 
 // @import "neat"
 
@@ -12,15 +10,8 @@
    General Layout
 ========================================================================== */
 
-body {
-    font: $main-font;
 
-}
 
-.wrapper {
-    width: 90%;
-    margin: 0 5%;
-}
 
 
 /* 
