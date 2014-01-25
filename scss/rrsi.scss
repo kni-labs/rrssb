@@ -52,6 +52,7 @@ $pinterest: #b81621;
 			letter-spacing: 1px;
 			padding: 12px 10px;
 			position: relative;
+			text-align: center;
 			text-decoration: none;
 			text-transform: uppercase;
 			width: 100%;
@@ -60,7 +61,6 @@ $pinterest: #b81621;
 			.icon {
 				display: block;
 				height: 100%;
-				//overflow: hidden;
 				left: 10px;
 				position: absolute;
 				top: 9px;
@@ -78,7 +78,6 @@ $pinterest: #b81621;
 
 			.text {
 				color: $button-contents;
-				padding-left: 30px;
 			}
 		}
 

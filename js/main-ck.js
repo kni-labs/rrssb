@@ -1,0 +1,1 @@
+var viewportHeight,viewportWidth,rrsiLayout=function(){$(".rrsi-buttons li .text").each(function(){var e=$(this).width();$(this).attr("data-size",e+"px")})};$(document).ready(function(){rrsiLayout()});
