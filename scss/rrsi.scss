@@ -50,7 +50,7 @@ $pinterest: #b81621;
 			font-size: 10px;
 			height: 100%;
 			letter-spacing: 1px;
-			padding: 12px 10px;
+			padding: 12px 10px 12px 27px;
 			position: relative;
 			text-align: center;
 			text-decoration: none;
@@ -86,7 +86,7 @@ $pinterest: #b81621;
 				background-color: $email;
 
 				&:hover {
-					background-color: shade($email, 15%);
+					background-color: shade($email, 25%);
 				}
 			}
 		}
@@ -96,7 +96,7 @@ $pinterest: #b81621;
 				background-color: $facebook;
 
 				&:hover {
-					background-color: shade($facebook, 15%);
+					background-color: shade($facebook, 25%);
 				}
 			}
 		}
@@ -106,7 +106,7 @@ $pinterest: #b81621;
 				background-color: $linkedin;
 
 				&:hover {
-					background-color: shade($linkedin, 15%);
+					background-color: shade($linkedin, 25%);
 				}
 			}
 		}
@@ -116,7 +116,7 @@ $pinterest: #b81621;
 				background-color: $twitter;
 
 				&:hover {
-					background-color: shade($twitter, 15%);
+					background-color: shade($twitter, 25%);
 				}
 			}
 		}
@@ -126,7 +126,7 @@ $pinterest: #b81621;
 				background-color: $googleplus;
 
 				&:hover {
-					background-color: shade($googleplus, 15%);
+					background-color: shade($googleplus, 25%);
 				}
 			}
 
@@ -147,7 +147,7 @@ $pinterest: #b81621;
 				background-color: $youtube;
 
 				&:hover {
-					background-color: shade($youtube, 15%);
+					background-color: shade($youtube, 25%);
 				}
 			}
 		}
@@ -157,7 +157,7 @@ $pinterest: #b81621;
 				background-color: $pinterest;
 
 				&:hover {
-					background-color: shade($pinterest, 15%);
+					background-color: shade($pinterest, 25%);
 				}
 			}
 		}
