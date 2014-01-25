@@ -50,7 +50,7 @@ $pinterest: #b81621;
 			font-size: 10px;
 			height: 100%;
 			letter-spacing: 1px;
-			padding: 12px 10px 12px 27px;
+			padding: 12px 7px 12px 27px;
 			position: relative;
 			text-align: center;
 			text-decoration: none;
@@ -79,6 +79,10 @@ $pinterest: #b81621;
 			.text {
 				color: $button-contents;
 			}
+
+			&:active {
+				box-shadow:inset 1px 3px 15px 0 rgba(022,0,0,.25);
+			}
 		}
 
 		&.email {
@@ -87,6 +91,10 @@ $pinterest: #b81621;
 
 				&:hover {
 					background-color: shade($email, 25%);
+				}
+
+				&:active {
+					background-color: shade($email, 40%);
 				}
 			}
 		}
