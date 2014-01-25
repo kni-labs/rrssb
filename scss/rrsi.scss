@@ -1,5 +1,15 @@
 @import "bourbon";
 
+//settings
+$button-contents: #fff;
+$email: #0a88ff;
+$facebook: #306199;
+$linkedin: #007bb6;
+$twitter: #26c4f1;
+$googleplus: #e93f2e;
+$youtube: #df1c31;
+$pinterest: #b81621;
+
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -17,27 +27,31 @@
 .rrsi-buttons {
 	box-sizing: border-box;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	height: auto;
 	margin: 0;
 	padding: 0;
+	width: 100%;
 
 	li {
 		box-sizing: border-box;
 		display: block;
 		float: left;
+		height: 100%;
 		list-style: none;
 		margin: 0;
 		padding: 0 5px 0 0;
+		width: 14.28571428571429%;
 
 		a {
 			box-sizing: border-box;
 			background-color: #ccc;
 			border-radius: 3px;
-			color: #fff;
 			display: block;
 			font-size: 10px;
 			height: 100%;
 			letter-spacing: 1px;
-			padding: 5px 10px;
+			padding: 10px 10px;
+			position: relative;
 			text-decoration: none;
 			text-transform: uppercase;
 			width: 100%;
@@ -47,12 +61,81 @@
 				opacity: 0.8;
 			}
 
-			svg {
-				width: 20%;
+			.icon {
+				display: block;
+				height: 100%;
+				//overflow: hidden;
+				left: 10px;
+				position: absolute;
+				top: 6px;
+				width: 10%;
 
-				path {
-					fill: #fff;
+				svg {
+					height: 20px;
+					width: 100%;
+
+					path, polygon {
+						fill: $button-contents;
+					}
 				}
+			}
+
+			.text {
+				color: $button-contents;
+				padding-left: 30px;
+			}
+		}
+
+		&.email {
+			a {
+				background-color: $email;
+			}
+		}
+
+		&.facebook {
+			a {
+				background-color: $facebook;
+			}
+		}
+
+		&.linkedin {
+			a {
+				background-color: $linkedin;
+			}
+		}
+
+		&.twitter {
+			a {
+				background-color: $twitter;
+			}
+		}
+
+		&.googleplus {
+			a {
+				background-color: $googleplus;
+			}
+
+			//custom path colors
+			.style1 {
+				//fill: #fff;
+			}
+			.style2 {
+				fill: $googleplus;
+			}
+			.style3 {
+				fill: $googleplus;
+			}
+		}
+
+		&.youtube {
+			a {
+				background-color: $youtube;
+			}
+		}
+
+		&.pinterest {
+			a {
+				background-color: $pinterest;
 			}
 		}
 	}
