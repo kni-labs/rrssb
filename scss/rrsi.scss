@@ -1,23 +1,62 @@
-//grab the settings file for mixins and variables
 @import "bourbon";
 
-// @import "neat"
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
 
+.clearfix:after {
+    clear: both;
+}
 
+.clearfix {
+    *zoom: 1;
+}
 
-/* 
-==========================================================================
-   General Layout
-========================================================================== */
+.rrsi-buttons {
+	box-sizing: border-box;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
 
+	li {
+		box-sizing: border-box;
+		display: block;
+		float: left;
+		list-style: none;
+		margin: 0;
+		padding: 0 5px 0 0;
 
+		a {
+			box-sizing: border-box;
+			background-color: #ccc;
+			border-radius: 3px;
+			color: #fff;
+			display: block;
+			font-size: 10px;
+			height: 100%;
+			letter-spacing: 1px;
+			padding: 5px 10px;
+			text-decoration: none;
+			text-transform: uppercase;
+			width: 100%;
+			@include transition (all 0.2s ease-in-out);
 
+			&:hover {
+				opacity: 0.8;
+			}
 
+			svg {
+				width: 20%;
 
-/* 
-==========================================================================
-   Author's custom styles
-========================================================================== */
+				path {
+					fill: #fff;
+				}
+			}
+		}
+	}
+}
 
 
 
