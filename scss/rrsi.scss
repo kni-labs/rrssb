@@ -1,7 +1,7 @@
 @import "bourbon";
 
 
-//settings
+// config settings
 $button-contents: #fff;
 $email: #0a88ff;
 $facebook: #306199;
@@ -11,6 +11,8 @@ $googleplus: #e93f2e;
 $youtube: #df1c31;
 $pinterest: #b81621;
 
+
+// some generic classes
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -25,6 +27,8 @@ $pinterest: #b81621;
     *zoom: 1;
 }
 
+
+// the meat and potatoes
 .rrsi-buttons {
 	box-sizing: border-box;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
