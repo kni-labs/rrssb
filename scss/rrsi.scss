@@ -43,9 +43,9 @@ $pinterest: #b81621;
 		float: left;
 		height: 100%;
 		list-style: none;
+		height: 36px;
 		margin: 0;
 		padding: 0 5px 0 0;
-		width: 14.28571428571429%;
 
 		a {
 			box-sizing: border-box;
@@ -175,10 +175,33 @@ $pinterest: #b81621;
 				}
 			}
 		}
+
+		&.small {
+			width: 36px !important;
+
+			a {
+				padding: 0;
+
+				.icon {
+					position: relative;
+					margin: 0 auto;
+					top: auto;
+					left: auto;
+					overflow: hidden;
+					height: 100%;
+					width: 100%;
+				}
+				.text {
+					visibility: hidden;
+				}
+			}
+		}
 	}
 
 	&.large-format {
 		li {
+			height: 47px;
+
 			a {
 				font-size: 13px;
 				padding: 16px 7px 16px 27px;
