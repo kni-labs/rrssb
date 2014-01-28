@@ -89,9 +89,11 @@ var waitForFinalEvent = (function () {
 
 // resize function
 $(window).resize(function () {
-    waitForFinalEvent(function(){
-      rrsiMagicLayout();
-    }, 500, "button watcher");
+	rrsiMagicLayout();
+
+    // waitForFinalEvent(function(){
+    //   rrsiMagicLayout();
+    // }, 500, "button watcher");
 });
 
 // init load
