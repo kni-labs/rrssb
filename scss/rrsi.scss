@@ -11,9 +11,9 @@ $googleplus: #e93f2e;
 $youtube: #df1c31;
 $pinterest: #b81621;
 
-$main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-$item-count: 6;
 $border-radius: 2px;
+
+$main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 // some generic classes
 .clearfix:before,
@@ -29,7 +29,6 @@ $border-radius: 2px;
 .clearfix {
     *zoom: 1;
 }
-
 
 // the meat and potatoes
 .rrsi-buttons {
@@ -51,9 +50,6 @@ $border-radius: 2px;
 		height: 36px;
 		margin: 0;
 		padding: 0 5px 0 0;
-		
-		// Is there even any need to do this or does JS take care of it?
-		width: calc(100/$item-count);
 
 		a {
 			box-sizing: border-box;
