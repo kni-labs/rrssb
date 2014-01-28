@@ -12,8 +12,8 @@ $youtube: #df1c31;
 $pinterest: #b81621;
 
 $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-
 $item-count: 6;
+$border-radius: 2px;
 
 // some generic classes
 .clearfix:before,
@@ -59,7 +59,7 @@ $item-count: 6;
 			box-sizing: border-box;
 			-moz-box-sizing:border-box;
 			background-color: #ccc;
-			border-radius: 3px;
+			border-radius: $border-radius;
 			display: block;
 			font-size: 11px;
 			font-weight: bold;
