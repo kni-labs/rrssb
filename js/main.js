@@ -47,16 +47,21 @@ var rrsiMagicLayout = function() {
 
 	// make sure there are small buttons
 	if (smallBtnCount > 0) {
-		console.log('number of small buttons: ' +smallBtnCount);
 
 		pixelsOff = smallBtnCount * 36;
-		console.log('subtract small pixels: '+pixelsOff);
+		//console.log('subtract small pixels: '+pixelsOff);
 
 		regButtonCount = $('.rrsi-buttons li').not('.small').length;
 		regPercent = 100 / regButtonCount;
 		smallBtnFraction = pixelsOff / regButtonCount;
 
-		magicWidth = '-webkit-calc('+regPercent+'% - '+smallBtnFraction+'px)';
+		if (navigator.userAgent.indexOf('Chrome') >= 0 || navigator.userAgent.indexOf('Safari') >= 0) {
+			magicWidth = '-webkit-calc('+regPercent+'% - '+smallBtnFraction+'px)';
+		} else if (navigator.userAgent.indexOf('Firefox') >= 0) {
+			magicWidth = '-moz-calc('+regPercent+'% - '+smallBtnFraction+'px)';
+		} else {
+			magicWidth = 'calc('+regPercent+'% - '+smallBtnFraction+'px)';
+		}
 
 		console.log(magicWidth);
 

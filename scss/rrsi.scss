@@ -31,6 +31,7 @@ $pinterest: #b81621;
 // the meat and potatoes
 .rrsi-buttons {
 	box-sizing: border-box;
+	-moz-box-sizing:border-box;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	height: auto;
 	margin: 0;
@@ -39,6 +40,7 @@ $pinterest: #b81621;
 
 	li {
 		box-sizing: border-box;
+		-moz-box-sizing:border-box;
 		display: block;
 		float: left;
 		height: 100%;
@@ -49,6 +51,7 @@ $pinterest: #b81621;
 
 		a {
 			box-sizing: border-box;
+			-moz-box-sizing:border-box;
 			background-color: #ccc;
 			border-radius: 3px;
 			display: block;
