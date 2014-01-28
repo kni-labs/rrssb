@@ -1,7 +1,7 @@
 @import "bourbon";
 
 
-//settings
+// config settings
 $button-contents: #fff;
 $email: #0a88ff;
 $facebook: #306199;
@@ -11,6 +11,8 @@ $googleplus: #e93f2e;
 $youtube: #df1c31;
 $pinterest: #b81621;
 
+
+// some generic classes
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -25,8 +27,11 @@ $pinterest: #b81621;
     *zoom: 1;
 }
 
+
+// the meat and potatoes
 .rrsi-buttons {
 	box-sizing: border-box;
+	-moz-box-sizing:border-box;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	height: auto;
 	margin: 0;
@@ -35,16 +40,22 @@ $pinterest: #b81621;
 
 	li {
 		box-sizing: border-box;
+		-moz-box-sizing:border-box;
 		display: block;
 		float: left;
 		height: 100%;
 		list-style: none;
+		height: 36px;
 		margin: 0;
 		padding: 0 5px 0 0;
+<<<<<<< HEAD
 		width: 16.666666666666666666666666666666666666666666666666666666666666666%;
+=======
+>>>>>>> cb1d7c0dc96b020585ea941c8414893dcbd667b7
 
 		a {
 			box-sizing: border-box;
+			-moz-box-sizing:border-box;
 			background-color: #ccc;
 			border-radius: 3px;
 			display: block;
@@ -63,8 +74,9 @@ $pinterest: #b81621;
 				display: block;
 				height: 100%;
 				left: 10px;
+				padding-top: 9px;
 				position: absolute;
-				top: 9px;
+				top: 0;
 				width: 10%;
 
 				svg {
@@ -167,6 +179,49 @@ $pinterest: #b81621;
 
 				&:hover {
 					background-color: shade($pinterest, 25%);
+				}
+			}
+		}
+
+		&.small {
+			width: 36px !important;
+
+			a {
+				padding: 0;
+
+				.icon {
+					position: relative;
+					margin: 0 auto;
+					top: auto;
+					left: auto;
+					overflow: hidden;
+					height: 100%;
+					width: 100%;
+				}
+				.text {
+					visibility: hidden;
+				}
+			}
+		}
+	}
+
+	&.large-format {
+		li {
+			height: 47px;
+
+			a {
+				font-size: 13px;
+				padding: 16px 7px 16px 27px;
+
+				.icon {
+					left: 15px;
+					padding-top: 0;
+					width: 12%;
+
+					svg {
+						height: 100%;
+						width: 100%;
+					}
 				}
 			}
 		}
