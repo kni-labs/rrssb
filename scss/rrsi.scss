@@ -67,8 +67,9 @@ $pinterest: #b81621;
 				display: block;
 				height: 100%;
 				left: 10px;
+				padding-top: 9px;
 				position: absolute;
-				top: 9px;
+				top: 0;
 				width: 10%;
 
 				svg {
@@ -171,6 +172,26 @@ $pinterest: #b81621;
 
 				&:hover {
 					background-color: shade($pinterest, 25%);
+				}
+			}
+		}
+	}
+
+	&.large-format {
+		li {
+			a {
+				font-size: 13px;
+				padding: 16px 7px 16px 27px;
+
+				.icon {
+					left: 15px;
+					padding-top: 0;
+					width: 12%;
+
+					svg {
+						height: 100%;
+						width: 100%;
+					}
 				}
 			}
 		}
