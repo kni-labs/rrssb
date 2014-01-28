@@ -33,7 +33,7 @@ var rrsiMagicLayout = function() {
 		var textsize = parseFloat($(this).attr('data-size'));
 
 		if ( textsize >= buttonsize ) {
-			$(this).addClass('small').css('width', '36px');
+			$(this).addClass('small').css('width', '42px');
 		} else {
 			console.log('should be removing small');
 			$(this).removeClass('small').css('width', $(this).attr('data-initwidth') + '%');
@@ -48,7 +48,7 @@ var rrsiMagicLayout = function() {
 	// make sure there are small buttons
 	if (smallBtnCount > 0) {
 
-		pixelsOff = smallBtnCount * 36;
+		pixelsOff = smallBtnCount * 42;
 		//console.log('subtract small pixels: '+pixelsOff);
 
 		regButtonCount = $('.rrsi-buttons li').not('.small').length;

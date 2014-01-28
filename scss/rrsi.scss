@@ -11,6 +11,8 @@ $googleplus: #e93f2e;
 $youtube: #df1c31;
 $pinterest: #b81621;
 
+$main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+
 
 // some generic classes
 .clearfix:before,
@@ -32,7 +34,7 @@ $pinterest: #b81621;
 .rrsi-buttons {
 	box-sizing: border-box;
 	-moz-box-sizing:border-box;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: $main-font;
 	height: auto;
 	margin: 0;
 	padding: 0;
@@ -48,10 +50,7 @@ $pinterest: #b81621;
 		height: 36px;
 		margin: 0;
 		padding: 0 5px 0 0;
-<<<<<<< HEAD
 		width: 16.666666666666666666666666666666666666666666666666666666666666666%;
-=======
->>>>>>> cb1d7c0dc96b020585ea941c8414893dcbd667b7
 
 		a {
 			box-sizing: border-box;
@@ -59,14 +58,15 @@ $pinterest: #b81621;
 			background-color: #ccc;
 			border-radius: 3px;
 			display: block;
-			font-size: 10px;
+			font-size: 11px;
+			font-weight: bold;
 			height: 100%;
-			letter-spacing: 1px;
-			padding: 12px 7px 12px 27px;
+			padding: 11px 7px 12px 27px;
 			position: relative;
 			text-align: center;
 			text-decoration: none;
 			text-transform: uppercase;
+			-webkit-font-smoothing: antialiased;
 			width: 100%;
 			@include transition (all 0.2s ease-in-out);
 
@@ -184,7 +184,7 @@ $pinterest: #b81621;
 		}
 
 		&.small {
-			width: 36px !important;
+			width: 42px !important;
 
 			a {
 				padding: 0;
@@ -207,11 +207,11 @@ $pinterest: #b81621;
 
 	&.large-format {
 		li {
-			height: 47px;
+			height: 43px;
 
 			a {
 				font-size: 13px;
-				padding: 16px 7px 16px 27px;
+				padding: 13px 7px 16px 27px;
 
 				.icon {
 					left: 15px;
