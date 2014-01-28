@@ -19,9 +19,9 @@ var rrsiMagicLayout = function() {
 	//get button width
 	buttonWidth = $('.rrsi-buttons li').not('.small').first().width();
 
-	if (buttonWidth > 160) {
+	if (buttonWidth > 170) {
 		$('.rrsi-buttons').addClass('large-format');
-	} else if (buttonWidth <= 160) {
+	} else if (buttonWidth <= 170) {
 		$('.rrsi-buttons').removeClass('large-format');
 	}
 

@@ -13,6 +13,7 @@ $pinterest: #b81621;
 
 $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 
+$item-count: 6;
 
 // some generic classes
 .clearfix:before,
@@ -50,7 +51,9 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 		height: 36px;
 		margin: 0;
 		padding: 0 5px 0 0;
-		width: 16.666666666666666666666666666666666666666666666666666666666666666%;
+		
+		// Is there even any need to do this or does JS take care of it?
+		width: calc(100/$item-count);
 
 		a {
 			box-sizing: border-box;
@@ -207,11 +210,12 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 	&.large-format {
 		li {
-			height: 43px;
+			height: auto;
 
 			a {
 				font-size: 13px;
-				padding: 13px 7px 16px 27px;
+				font-size: 2.2vmin; // ZOMG!!
+				padding: 7% 0% 7% 12%;
 
 				.icon {
 					left: 15px;
