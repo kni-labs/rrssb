@@ -2,24 +2,7 @@ var buttonWidth;
 var containerWidth;
 var totalTxt = 0;
 
-var rrsiInit = function() {
 
-	var numOfButtons = $('.rrsi-buttons li').length;
-	var initBtnWidth = 100 / numOfButtons;
-	containerWidth = $('.rrsi-buttons').width();
-
-	$('.rrsi-buttons').attr('data-width', containerWidth);
-
-	$('.rrsi-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
-
-	$('.rrsi-buttons li .text').each(function() {
-		var txtWdth = parseFloat($(this).width());
-		$(this).closest('li').attr('data-size', txtWdth);
-		totalTxt = totalTxt + (txtWdth + 55);
-	});
-
-	rrsiMagicLayout(sizeSmallBtns);
-};
 
 var setPercentBtns = function() {
 	var numOfButtons = $('.rrsi-buttons li').length;
@@ -37,7 +20,7 @@ var sizeSmallBtns = function() {
 	if (smallBtnCount > 0) {
 
 		pixelsOff = smallBtnCount * 42;
-		//console.log('subtract small pixels: '+pixelsOff);
+		console.log('subtract small pixels: '+pixelsOff);
 
 		regButtonCount = $('.rrsi-buttons li').not('.small').length;
 		regPercent = 100 / regButtonCount;
@@ -56,7 +39,31 @@ var sizeSmallBtns = function() {
 		$('.rrsi-buttons li').not('.small').css('width', magicWidth);
 
 		//console.log('small button fraction: '+smallBtnFraction);
+	} else {
+		var numOfButtons = $('.rrsi-buttons li').length;
+		var initBtnWidth = 100 / numOfButtons;
+
+		$('.rrsi-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
 	}
+};
+
+var rrsiInit = function() {
+
+	var numOfButtons = $('.rrsi-buttons li').length;
+	var initBtnWidth = 100 / numOfButtons;
+	containerWidth = $('.rrsi-buttons').width();
+
+	$('.rrsi-buttons').attr('data-width', containerWidth);
+
+	$('.rrsi-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
+
+	$('.rrsi-buttons li .text').each(function() {
+		var txtWdth = parseFloat($(this).width());
+		$(this).closest('li').attr('data-size', txtWdth);
+		totalTxt = totalTxt + (txtWdth + 55);
+	});
+
+	rrsiMagicLayout(sizeSmallBtns);
 };
 
 var rrsiMagicLayout = function(callback) {
@@ -81,9 +88,7 @@ var rrsiMagicLayout = function(callback) {
 	if (totalTxt >= containerWidth) {
 		$('.rrsi-buttons li:last-child').not('.small').addClass('small').css('width', '42px');
 	} else {
-		//$('.rrsi-buttons li:last-child').removeClass('small').css('width', $(this).attr('initBtnWidth'));
-		//$('.rrsi-buttons li:last-child').removeClass('small').css('border', '1px solid red');
-		$('.rrsi-buttons li:last-child').removeClass('small').css('width', $(this).attr('data-initwidth'));
+		$('.rrsi-buttons li:last-child').removeClass('small').css('width', $('.rrsi-buttons li:last-child').attr('data-initwidth') + '%');
 	}
 
 	callback();
