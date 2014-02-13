@@ -14,6 +14,48 @@ $border-radius: 2px;
 
 $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
+
+//page stuff will move later
+body {
+	overflow-x: hidden;
+}
+a {
+	text-decoration: none;
+	font-weight: 500;
+	color: $email;
+
+	&:hover {
+		color: shade($email, 55%);	
+	}
+}
+.main-container {
+	padding: 20px 50px;
+
+	h1 {
+		letter-spacing: -.03em;
+		color: #444;
+	}
+
+	p {
+		font-size: 16px;
+
+		@media screen and (min-width: 1024px)  {
+        font-size: 20px;
+    	}
+	}
+	small {
+		display: block;
+		margin-top: 50px;
+		font-size: 12px;
+		color: #999;
+	}
+
+	@media screen and (max-width: 768px)  {
+		padding: 0px 10px;
+	}	
+}
+
+
 // some generic classes
 .clearfix:before,
 .clearfix:after {
