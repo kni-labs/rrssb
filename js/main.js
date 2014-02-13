@@ -1,6 +1,6 @@
 var buttonWidth;
 var containerWidth;
-var totalTxt = 0;
+var smallBtnCount;
 
 
 
@@ -9,8 +9,20 @@ var setPercentBtns = function() {
 	var initBtnWidth = 100 / numOfButtons;
 };
 
+var makeLargeBtns = function() {
+	//get button width
+	buttonWidth = $('.rrsi-buttons li').not('.small').first().width();
+
+	// enlarge buttons if they get wide enough
+	if (buttonWidth > 170) {
+		$('.rrsi-buttons').addClass('large-format');
+	} else if (buttonWidth <= 170) {
+		$('.rrsi-buttons').removeClass('large-format');
+	}
+};
+
 var sizeSmallBtns = function() {
-	var regButtonCount, newButtonWidth, pixelsOff, smallBtnCount, smallBtnFraction;
+	var regButtonCount, pixelsOff, smallBtnFraction;
 
 	// readjust buttons for small display
 	smallBtnCount = $('.rrsi-buttons li.small').length;
@@ -20,7 +32,7 @@ var sizeSmallBtns = function() {
 	if (smallBtnCount > 0) {
 
 		pixelsOff = smallBtnCount * 42;
-		console.log('subtract small pixels: '+pixelsOff);
+		//console.log('subtract small pixels: '+pixelsOff);
 
 		regButtonCount = $('.rrsi-buttons li').not('.small').length;
 		regPercent = 100 / regButtonCount;
@@ -34,62 +46,92 @@ var sizeSmallBtns = function() {
 			magicWidth = 'calc('+regPercent+'% - '+smallBtnFraction+'px)';
 		}
 
-		//console.log(magicWidth);
-
 		$('.rrsi-buttons li').not('.small').css('width', magicWidth);
 
-		//console.log('small button fraction: '+smallBtnFraction);
 	} else {
 		var numOfButtons = $('.rrsi-buttons li').length;
 		var initBtnWidth = 100 / numOfButtons;
 
 		$('.rrsi-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
 	}
+
+	makeLargeBtns();
 };
 
 var rrsiInit = function() {
 
 	var numOfButtons = $('.rrsi-buttons li').length;
 	var initBtnWidth = 100 / numOfButtons;
-	containerWidth = $('.rrsi-buttons').width();
 
-	$('.rrsi-buttons').attr('data-width', containerWidth);
-
+	// set initial width of buttons
 	$('.rrsi-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
 
-	$('.rrsi-buttons li .text').each(function() {
+	// grab initial text width of each button and add as data attr
+	$('.rrsi-buttons li .text').each(function(index) {
+
 		var txtWdth = parseFloat($(this).width());
 		$(this).closest('li').attr('data-size', txtWdth);
-		totalTxt = totalTxt + (txtWdth + 55);
+
 	});
 
 	rrsiMagicLayout(sizeSmallBtns);
 };
 
 var rrsiMagicLayout = function(callback) {
-	console.log('me first');
-	containerWidth = $('.rrsi-buttons').width();
-	$('.containersize span').html(containerWidth);
-	$('.buttonspace span').html(totalTxt);
+	var totalTxt = 0;
+
+	smallBtnCount = $('.rrsi-buttons li.small').length;
+
+	// if (smallBtnCount > 0) {
+	// 	containerWidth = parseFloat($('.rrsi-buttons').width()) - (smallBtnCount * 42);
+	// } else {
+	// 	containerWidth = $('.rrsi-buttons').width();
+	// }
 
 	$('.rrsi-buttons').attr('data-width', containerWidth);
 
-	//get button width
-	buttonWidth = $('.rrsi-buttons li').not('.small').first().width();
+	$('.rrsi-buttons li:not(.small)').each(function(index) {
+
+		var txtWdth = parseFloat($(this).attr('data-size')) + 40;
+		var btnWdth = parseFloat($(this).width());
+
+		if (txtWdth > btnWdth) {
+			console.log('one touching!');
+			$('.rrsi-buttons li').not('.small').last().addClass('small').css('width', '42px');
+
+			return false;
+		}
+
+	});
 
 
-	if (buttonWidth > 170) {
-		$('.rrsi-buttons').addClass('large-format');
-	} else if (buttonWidth <= 170) {
-		$('.rrsi-buttons').removeClass('large-format');
-	}
+	$('.rrsi-buttons li.small').each(function(index) {
 
-	// look check for small button necessity
-	if (totalTxt >= containerWidth) {
-		$('.rrsi-buttons li:last-child').not('.small').addClass('small').css('width', '42px');
-	} else {
-		$('.rrsi-buttons li:last-child').removeClass('small').css('width', $('.rrsi-buttons li:last-child').attr('data-initwidth') + '%');
-	}
+
+		var txtWdth = parseFloat($(this).attr('data-size')) + 40;
+		var btnWdth = parseFloat($(this).width());
+
+		console.log('text width: '+txtWdth+' and button width: '+btnWdth);
+
+		if (txtWdth < btnWdth) {
+			console.log('one growing!');
+			$('.rrsi-buttons li.small').first().removeClass('small').css('width', $('.rrsi-buttons li:last-child').attr('data-initwidth') + '%');
+			return false;
+		} else {
+			console.log('never growing');
+		}
+
+	});
+
+	// if (totalTxt >= containerWidth) {
+	// 	$('.rrsi-buttons li').not('.small').last().addClass('small').css('width', '42px');
+	// } else {
+	// 	$('.rrsi-buttons li.small').first().removeClass('small').css('width', $('.rrsi-buttons li:last-child').attr('data-initwidth') + '%');
+	// }
+
+	// test stuff
+	$('.containersize span').html(containerWidth);
+	$('.buttonspace span').html(totalTxt);
 
 	callback();
 };
