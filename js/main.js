@@ -83,7 +83,7 @@ var rrsiMagicLayout = function(callback) {
 
 	$('.rrsi-buttons li:not(.small)').each(function(index) {
 
-		var txtWdth = parseFloat($(this).attr('data-size')) + 40;
+		var txtWdth = parseFloat($(this).attr('data-size')) + 45;
 		var btnWdth = parseFloat($(this).width());
 
 		if (txtWdth > btnWdth) {
