@@ -25,7 +25,7 @@ a {
 	color: $email;
 
 	&:hover {
-		color: shade($email, 55%);	
+		color: shade($email, 55%);
 	}
 }
 .main-container {
@@ -52,7 +52,7 @@ a {
 
 	@media screen and (max-width: 768px)  {
 		padding: 0px 10px;
-	}	
+	}
 }
 
 
@@ -72,7 +72,7 @@ a {
 }
 
 // the meat and potatoes
-.rrsi-buttons {
+.rrssb-buttons {
 	box-sizing: border-box;
 	-moz-box-sizing:border-box;
 	font-family: $main-font;
