@@ -63,6 +63,7 @@ var rrsiMagicLayout = function(callback) {
 	console.log('me first');
 	containerWidth = $('.rrsi-buttons').width();
 	$('.containersize span').html(containerWidth);
+	$('.buttonspace span').html(totalTxt);
 
 	$('.rrsi-buttons').attr('data-width', containerWidth);
 
