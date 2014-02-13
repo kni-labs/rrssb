@@ -7,6 +7,9 @@ var smallBtnCount;
 var setPercentBtns = function() {
 	var numOfButtons = $('.rrsi-buttons li').length;
 	var initBtnWidth = 100 / numOfButtons;
+
+	// set initial width of buttons
+	$('.rrsi-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
 };
 
 var makeLargeBtns = function() {
@@ -32,7 +35,6 @@ var sizeSmallBtns = function() {
 	if (smallBtnCount > 0) {
 
 		pixelsOff = smallBtnCount * 42;
-		//console.log('subtract small pixels: '+pixelsOff);
 
 		regButtonCount = $('.rrsi-buttons li').not('.small').length;
 		regPercent = 100 / regButtonCount;
@@ -49,10 +51,8 @@ var sizeSmallBtns = function() {
 		$('.rrsi-buttons li').not('.small').css('width', magicWidth);
 
 	} else {
-		var numOfButtons = $('.rrsi-buttons li').length;
-		var initBtnWidth = 100 / numOfButtons;
-
-		$('.rrsi-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
+		// poop
+		setPercentBtns();
 	}
 
 	makeLargeBtns();
@@ -60,11 +60,7 @@ var sizeSmallBtns = function() {
 
 var rrsiInit = function() {
 
-	var numOfButtons = $('.rrsi-buttons li').length;
-	var initBtnWidth = 100 / numOfButtons;
-
-	// set initial width of buttons
-	$('.rrsi-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
+	setPercentBtns();
 
 	// grab initial text width of each button and add as data attr
 	$('.rrsi-buttons li .text').each(function(index) {
