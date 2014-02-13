@@ -1,5 +1,4 @@
 var buttonWidth;
-var containerWidth;
 var smallBtnCount;
 
 
@@ -74,17 +73,13 @@ var rrsiInit = function() {
 };
 
 var rrsiMagicLayout = function(callback) {
-	var totalTxt = 0;
+	var totalTxt = 0, containerWidth;
 
 	smallBtnCount = $('.rrsi-buttons li.small').length;
 
-	// if (smallBtnCount > 0) {
-	// 	containerWidth = parseFloat($('.rrsi-buttons').width()) - (smallBtnCount * 42);
-	// } else {
-	// 	containerWidth = $('.rrsi-buttons').width();
-	// }
+	// record width of container
+	containerWidth = $('.rrsi-buttons').width();
 
-	$('.rrsi-buttons').attr('data-width', containerWidth);
 
 	$('.rrsi-buttons li:not(.small)').each(function(index) {
 
@@ -93,41 +88,22 @@ var rrsiMagicLayout = function(callback) {
 
 		if (txtWdth > btnWdth) {
 			console.log('one touching!');
-			$('.rrsi-buttons li').not('.small').last().addClass('small').css('width', '42px');
+			$('.rrsi-buttons li').not('.small').last().addClass('small').css('width', '42px').attr('data-break', containerWidth);
+			$('.rrsi-buttons ').attr('data-break', containerWidth);
 
 			return false;
 		}
 
 	});
 
-
-	$('.rrsi-buttons li.small').each(function(index) {
-
-
-		var txtWdth = parseFloat($(this).attr('data-size')) + 40;
-		var btnWdth = parseFloat($(this).width());
-
-		console.log('text width: '+txtWdth+' and button width: '+btnWdth);
-
-		if (txtWdth < btnWdth) {
-			console.log('one growing!');
+	if (smallBtnCount > 0) {
+		if (containerWidth > parseFloat($('.rrsi-buttons').attr('data-break'))) {
 			$('.rrsi-buttons li.small').first().removeClass('small').css('width', $('.rrsi-buttons li:last-child').attr('data-initwidth') + '%');
-			return false;
-		} else {
-			console.log('never growing');
+
+			var nextBreak = $('.rrsi-buttons li.small').attr('data-break');
+			$('.rrsi-buttons').attr('data-break', nextBreak);
 		}
-
-	});
-
-	// if (totalTxt >= containerWidth) {
-	// 	$('.rrsi-buttons li').not('.small').last().addClass('small').css('width', '42px');
-	// } else {
-	// 	$('.rrsi-buttons li.small').first().removeClass('small').css('width', $('.rrsi-buttons li:last-child').attr('data-initwidth') + '%');
-	// }
-
-	// test stuff
-	$('.containersize span').html(containerWidth);
-	$('.buttonspace span').html(totalTxt);
+	}
 
 	callback();
 };
