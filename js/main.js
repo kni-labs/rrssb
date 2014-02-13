@@ -1,5 +1,6 @@
 var buttonWidth;
 var containerWidth;
+var totalTxt = 0;
 
 var rrsiInit = function() {
 
@@ -12,50 +13,25 @@ var rrsiInit = function() {
 	$('.rrsi-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
 
 	$('.rrsi-buttons li .text').each(function() {
-		var txtWdth = $(this).width();
+		var txtWdth = parseFloat($(this).width());
 		$(this).closest('li').attr('data-size', txtWdth);
+		totalTxt = totalTxt + (txtWdth + 55);
 	});
 
-	rrsiMagicLayout();
+	rrsiMagicLayout(sizeSmallBtns);
 };
 
-var rrsiMagicLayout = function() {
+var setPercentBtns = function() {
+	var numOfButtons = $('.rrsi-buttons li').length;
+	var initBtnWidth = 100 / numOfButtons;
+};
+
+var sizeSmallBtns = function() {
 	var regButtonCount, newButtonWidth, pixelsOff, smallBtnCount, smallBtnFraction;
-
-	containerWidth = $('.rrsi-buttons').width();
-
-	$('.rrsi-buttons').attr('data-width', containerWidth);
-
-	//get button width
-	buttonWidth = $('.rrsi-buttons li').not('.small').first().width();
-
-	$('.demozone').val(buttonWidth);
-
-	if (buttonWidth > 170) {
-		$('.rrsi-buttons').addClass('large-format');
-	} else if (buttonWidth <= 170) {
-		$('.rrsi-buttons').removeClass('large-format');
-	}
-
-	// test against text width for small conversion
-
-	// $('.rrsi-buttons li').each(function(index, value) {
-
-	// 	var buttonsize = parseFloat($(this).width()) - 40;
-	// 	var textsize = parseFloat($(this).attr('data-size'));
-
-	// 	if ( textsize >= buttonsize ) {
-	// 		$(this).addClass('small').css('width', '42px');
-	// 	} else {
-	// 		console.log('should be removing small');
-	// 		$(this).removeClass('small').css('width', $(this).attr('data-initwidth') + '%');
-	// 	}
-	// });
-
-
 
 	// readjust buttons for small display
 	smallBtnCount = $('.rrsi-buttons li.small').length;
+	$('.smallbtnsdude span').html(smallBtnCount);
 
 	// make sure there are small buttons
 	if (smallBtnCount > 0) {
@@ -75,13 +51,41 @@ var rrsiMagicLayout = function() {
 			magicWidth = 'calc('+regPercent+'% - '+smallBtnFraction+'px)';
 		}
 
-		console.log(magicWidth);
+		//console.log(magicWidth);
 
 		$('.rrsi-buttons li').not('.small').css('width', magicWidth);
 
-		console.log('small button fraction: '+smallBtnFraction);
+		//console.log('small button fraction: '+smallBtnFraction);
+	}
+};
+
+var rrsiMagicLayout = function(callback) {
+	console.log('me first');
+	containerWidth = $('.rrsi-buttons').width();
+	$('.containersize span').html(containerWidth);
+
+	$('.rrsi-buttons').attr('data-width', containerWidth);
+
+	//get button width
+	buttonWidth = $('.rrsi-buttons li').not('.small').first().width();
+
+
+	if (buttonWidth > 170) {
+		$('.rrsi-buttons').addClass('large-format');
+	} else if (buttonWidth <= 170) {
+		$('.rrsi-buttons').removeClass('large-format');
 	}
 
+	// look check for small button necessity
+	if (totalTxt >= containerWidth) {
+		$('.rrsi-buttons li:last-child').not('.small').addClass('small').css('width', '42px');
+	} else {
+		//$('.rrsi-buttons li:last-child').removeClass('small').css('width', $(this).attr('initBtnWidth'));
+		//$('.rrsi-buttons li:last-child').removeClass('small').css('border', '1px solid red');
+		$('.rrsi-buttons li:last-child').removeClass('small').css('width', $(this).attr('data-initwidth'));
+	}
+
+	callback();
 };
 
 
@@ -101,7 +105,7 @@ var waitForFinalEvent = (function () {
 
 // resize function
 $(window).resize(function () {
-	rrsiMagicLayout();
+	rrsiMagicLayout(sizeSmallBtns);
 });
 
 // init load
