@@ -16,7 +16,7 @@ var makeLargeBtns = function() {
 	buttonWidth = $('.rrsi-buttons li').not('.small').first().width();
 
 	// enlarge buttons if they get wide enough
-	if (buttonWidth > 170) {
+	if (buttonWidth > 170 && smallBtnCount < 1) {
 		$('.rrsi-buttons').addClass('large-format');
 	} else if (buttonWidth <= 170) {
 		$('.rrsi-buttons').removeClass('large-format');
