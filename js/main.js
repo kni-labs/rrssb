@@ -1,23 +1,35 @@
 var buttonWidth;
+var containerWidth;
 
 var rrsiInit = function() {
 
 	var numOfButtons = $('.rrsi-buttons li').length;
 	var initBtnWidth = 100 / numOfButtons;
-	$('.rrsi-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
+	containerWidth = $('.rrsi-buttons').width();
 
+	$('.rrsi-buttons').attr('data-width', containerWidth);
+
+	$('.rrsi-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
 
 	$('.rrsi-buttons li .text').each(function() {
 		var txtWdth = $(this).width();
 		$(this).closest('li').attr('data-size', txtWdth);
 	});
+
+	rrsiMagicLayout();
 };
 
 var rrsiMagicLayout = function() {
 	var regButtonCount, newButtonWidth, pixelsOff, smallBtnCount, smallBtnFraction;
 
+	containerWidth = $('.rrsi-buttons').width();
+
+	$('.rrsi-buttons').attr('data-width', containerWidth);
+
 	//get button width
 	buttonWidth = $('.rrsi-buttons li').not('.small').first().width();
+
+	$('.demozone').val(buttonWidth);
 
 	if (buttonWidth > 170) {
 		$('.rrsi-buttons').addClass('large-format');
@@ -27,18 +39,18 @@ var rrsiMagicLayout = function() {
 
 	// test against text width for small conversion
 
-	$('.rrsi-buttons li').each(function(index, value) {
+	// $('.rrsi-buttons li').each(function(index, value) {
 
-		var buttonsize = parseFloat($(this).width()) - 40;
-		var textsize = parseFloat($(this).attr('data-size'));
+	// 	var buttonsize = parseFloat($(this).width()) - 40;
+	// 	var textsize = parseFloat($(this).attr('data-size'));
 
-		if ( textsize >= buttonsize ) {
-			$(this).addClass('small').css('width', '42px');
-		} else {
-			console.log('should be removing small');
-			$(this).removeClass('small').css('width', $(this).attr('data-initwidth') + '%');
-		}
-	});
+	// 	if ( textsize >= buttonsize ) {
+	// 		$(this).addClass('small').css('width', '42px');
+	// 	} else {
+	// 		console.log('should be removing small');
+	// 		$(this).removeClass('small').css('width', $(this).attr('data-initwidth') + '%');
+	// 	}
+	// });
 
 
 
@@ -90,16 +102,11 @@ var waitForFinalEvent = (function () {
 // resize function
 $(window).resize(function () {
 	rrsiMagicLayout();
-
-    // waitForFinalEvent(function(){
-    //   rrsiMagicLayout();
-    // }, 500, "button watcher");
 });
 
 // init load
 $(document).ready(function(){
 	rrsiInit();
-	rrsiMagicLayout();
 });
 
 
