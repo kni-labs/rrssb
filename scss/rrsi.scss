@@ -90,10 +90,15 @@ a {
 		list-style: none;
 		height: 36px;
 		margin: 0;
-		padding: 0 5px 0 0;
+		padding: 0 2.5px;
+
+		&:first-child {
+			padding: 0 2.5px 0 0;
+		}
 
 		&:last-child {
-			padding: 0;
+			padding: 0 0 0 2.5px;
+
 		}
 
 		a {
