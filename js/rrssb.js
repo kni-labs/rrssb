@@ -31,7 +31,6 @@ var checkSize = function() {
 		var btnWdth = parseFloat($(this).width());
 
 		if (txtWdth > btnWdth) {
-			console.log('one touching!');
 			$('.rrssb-buttons li').not('.small').last().addClass('small').css('width', '42px').attr('data-break', containerWidth);
 			$('.rrssb-buttons ').attr('data-break', containerWidth);
 
@@ -88,8 +87,10 @@ var rrssbInit = function() {
 
 	});
 
-	checkSize();
-	rrssbMagicLayout(sizeSmallBtns);
+	$('.rrssb-buttons li:not(.small)').each(function(index) {
+		checkSize();
+		rrssbMagicLayout(sizeSmallBtns);
+	});
 };
 
 var rrssbMagicLayout = function(callback) {
