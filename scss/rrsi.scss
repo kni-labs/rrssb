@@ -112,7 +112,7 @@ a {
 			text-transform: uppercase;
 			-webkit-font-smoothing: antialiased;
 			width: 100%;
-			@include transition (all 0.2s ease-in-out);
+			@include transition (background-color 0.2s ease-in-out);
 
 			.icon {
 				display: block;

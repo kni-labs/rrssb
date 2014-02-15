@@ -23,6 +23,26 @@ var makeLargeBtns = function() {
 	}
 };
 
+var checkSize = function(firstrun) {
+	$('.rrssb-buttons li:not(.small)').each(function(index) {
+		// record width of container
+		containerWidth = $('.rrssb-buttons').width();
+		var txtWdth = parseFloat($(this).attr('data-size')) + 45;
+		var btnWdth = parseFloat($(this).width());
+
+		if (txtWdth > btnWdth) {
+			console.log('one touching!');
+			$('.rrssb-buttons li').not('.small').last().addClass('small').css('width', '42px').attr('data-break', containerWidth);
+			$('.rrssb-buttons ').attr('data-break', containerWidth);
+
+			if (firstrun === false) {
+				return false;
+			}
+		}
+
+	});
+};
+
 var sizeSmallBtns = function() {
 	var regButtonCount, pixelsOff, smallBtnFraction;
 
@@ -69,6 +89,7 @@ var rrssbInit = function() {
 
 	});
 
+	checkSize(true);
 	rrssbMagicLayout(sizeSmallBtns);
 };
 
@@ -80,21 +101,7 @@ var rrssbMagicLayout = function(callback) {
 	// record width of container
 	containerWidth = $('.rrssb-buttons').width();
 
-
-	$('.rrssb-buttons li:not(.small)').each(function(index) {
-
-		var txtWdth = parseFloat($(this).attr('data-size')) + 45;
-		var btnWdth = parseFloat($(this).width());
-
-		if (txtWdth > btnWdth) {
-			console.log('one touching!');
-			$('.rrssb-buttons li').not('.small').last().addClass('small').css('width', '42px').attr('data-break', containerWidth);
-			$('.rrssb-buttons ').attr('data-break', containerWidth);
-
-			return false;
-		}
-
-	});
+	checkSize(false);
 
 	if (smallBtnCount > 0) {
 		if (containerWidth > parseFloat($('.rrssb-buttons').attr('data-break'))) {
