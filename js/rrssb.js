@@ -24,9 +24,12 @@ var makeExtremityBtns = function() {
 		$('.rrssb-buttons').addClass('large-format');
 	} else if (buttonWidth <= 170) {
 		$('.rrssb-buttons').removeClass('large-format');
-	} else if (containerWidth < 400) {
+	}
+
+	if (containerWidth < 280) {
 		$('.rrssb-buttons').addClass('tiny-format');
-	} else if (containerWidth >= 401) {
+	} else if (containerWidth > 279) {
+		console.log('go back up');
 		$('.rrssb-buttons').removeClass('tiny-format');
 	}
 };

@@ -277,17 +277,133 @@ a {
 		}
 	}
 	&.tiny-format {
+		position: relative;
+		top: 8px;
+
 		li {
-			height: auto;
-			width: 15px !important;
+			height: 20px;
+			margin-right: 4px;
+			width: 20px !important;
 
 			a {
+				background-color: transparent;
 				padding: 0;
 
 				.icon {
+					position: relative;
+					top: -5px;
+					svg {
+						height: 15px;
+						width: 15px;
+					}
+				}
 
+				&:hover {
+					background-color: transparent;
+					.icon {
+						svg {
+							path, polygon {
+								fill: #000 !important;
+							}
+						}
+					}
 				}
 			}
+
+			&.email {
+					a {
+						.icon {
+							svg {
+								path, polygon {
+									fill: $email;
+								}
+							}
+						}
+					}
+				}
+
+				&.facebook {
+					a {
+						.icon {
+							svg {
+								path, polygon {
+									fill: $facebook;
+								}
+							}
+						}
+					}
+				}
+
+				&.linkedin {
+					a {
+						.icon {
+							svg {
+								path, polygon {
+									fill: $linkedin;
+								}
+							}
+						}
+					}
+				}
+
+				&.twitter {
+					a {
+						.icon {
+							svg {
+								path, polygon {
+									fill: $twitter;
+								}
+							}
+						}
+					}
+				}
+
+				&.googleplus {
+					a {
+						.icon {
+							svg {
+								path, polygon {
+									fill: $googleplus;
+								}
+							}
+						}
+					}
+
+					//custom path colors
+					.style1 {
+						//fill: #fff;
+					}
+					.style2 {
+						fill: $googleplus;
+					}
+					.style3 {
+						fill: $googleplus;
+					}
+				}
+
+				&.youtube {
+					a {
+						.icon {
+							svg {
+								path, polygon {
+									fill: $youtube;
+								}
+							}
+						}
+					}
+				}
+
+				&.pinterest {
+					a {
+						.icon {
+							svg {
+								path, polygon {
+									fill: $pinterest;
+								}
+							}
+						}
+					}
+				}
 		}
 	}
 }
