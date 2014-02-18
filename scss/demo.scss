@@ -16,11 +16,11 @@ a {
 
 .main-container {
 	padding: 1% 6%;
-	@include transition-all(0.2);
 
 	h1 {
 		letter-spacing: -.03em;
 		color: #444;
+		@include transition-all(0.2);
 
 		@media screen and (max-width: 767px)  {
         font-size: 20px;
@@ -29,7 +29,6 @@ a {
 
 	p {
 		font-size: 16px;
-		@include transition-all(0.2);
 
 		@media screen and (min-width: 1024px)  {
         font-size: 20px;
