@@ -15,7 +15,7 @@ a {
 }
 
 .main-container {
-	padding: 20px 50px;
+	padding: 1% 6%;
 	@include transition-all(0.2);
 
 	h1 {
@@ -42,9 +42,7 @@ a {
 		color: #999;
 	}
 
-	@media screen and (max-width: 768px)  {
-		padding: 0px 20px;
-	}
+
 }
 
 
