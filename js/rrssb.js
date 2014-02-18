@@ -58,7 +58,10 @@ var sizeSmallBtns = function() {
 	$('.smallbtnsdude span').html(smallBtnCount);
 
 	// make sure there are small buttons
-	if (smallBtnCount > 0) {
+	if (smallBtnCount > 0 && smallBtnCount !== $('.rrssb-buttons li').length) {
+
+		//make sure small buttons are square when not all small
+		$('.rrssb-buttons li.small').css('width','42px');
 
 		pixelsOff = smallBtnCount * 42;
 
@@ -76,6 +79,9 @@ var sizeSmallBtns = function() {
 
 		$('.rrssb-buttons li').not('.small').css('width', magicWidth);
 
+	} else if (smallBtnCount === $('.rrssb-buttons li').length) {
+		// if all buttons are small, change back to percentage
+		setPercentBtns();
 	} else {
 
 		setPercentBtns();
