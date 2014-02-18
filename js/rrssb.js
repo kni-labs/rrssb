@@ -17,8 +17,6 @@ var makeExtremityBtns = function() {
 	containerWidth = parseFloat($('.rrssb-buttons').width());
 	buttonWidth = $('.rrssb-buttons li').not('.small').first().width();
 
-	console.log(containerWidth);
-
 	// enlarge buttons if they get wide enough
 	if (buttonWidth > 170 && smallBtnCount < 1) {
 		$('.rrssb-buttons').addClass('large-format');
@@ -29,7 +27,6 @@ var makeExtremityBtns = function() {
 	if (containerWidth < 280) {
 		$('.rrssb-buttons').addClass('tiny-format');
 	} else if (containerWidth > 279) {
-		console.log('go back up');
 		$('.rrssb-buttons').removeClass('tiny-format');
 	}
 };
