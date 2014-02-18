@@ -1,7 +1,10 @@
 
 # Ridiculously Responsive Social Sharing Buttons
-<p>Love them or hate them (or even call them <a href="http://solomon.io/why-im-done-with-social-media-buttons/">unnecessary</a>), social sharing buttons appear to be with us for a while. It seemed like <a href="http://www.kurtnoble.com">we</a> were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.</p>
+<p>Love them or hate them social sharing buttons appear to be with us for a while. It seemed like <a href="http://www.kurtnoble.com">we</a> were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.</p>
 
-<p>While these particular buttons original intent was for long form post sharing, they can work for any use. RRSSB is build with SASS, and svgs, so its retina ready out of the box. Add or remove icons as you see fit, the rest will fill in the space.</p>
+<p>RRSSB is built with <a href="http://sass-lang.com/">SASS</a>, so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit &mdash; the rest will fill in automagically in the container.</p>
+      
+# Demo      
+<p>View the demo here</a></p>
 
-<p>View the project on the KNI <a href="http://devsitelocation.com/projects/rrssb/social-buttons.html">website</a>.</p>
+<p>RRSSB is a <a href="http://devsitelocation.com/projects/rrssb/social-buttons.html">KNI Labs freebie</a> crafted by <a href="http://www.twitter.com/dbox/">@dbox</a> and <a href="http://www.twitter.com/seagoat">@seagoat</a>.</p>
