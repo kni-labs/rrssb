@@ -9,6 +9,7 @@ $twitter: #26c4f1;
 $googleplus: #e93f2e;
 $youtube: #df1c31;
 $pinterest: #b81621;
+$github: #444;
 
 $border-radius: 2px;
 
@@ -198,6 +199,16 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 			}
 		}
 
+		&.github {
+			a {
+				background-color: $github;
+
+				&:hover {
+					background-color: shade($github, 25%);
+				}
+			}
+		}
+
 		&.small {
 			width: 42px !important;
 
@@ -370,6 +381,20 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 						}
 					}
 				}
+
+				&.github {
+					a {
+						.icon {
+							svg {
+								path, polygon {
+									fill: $github;
+								}
+							}
+						}
+					}
+				}
+
+
 		}
 	}
 }
