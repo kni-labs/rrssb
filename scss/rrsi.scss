@@ -276,6 +276,20 @@ a {
 			}
 		}
 	}
+	&.tiny-format {
+		li {
+			height: auto;
+			width: 15px !important;
+
+			a {
+				padding: 0;
+
+				.icon {
+
+				}
+			}
+		}
+	}
 }
 
 

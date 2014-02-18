@@ -11,17 +11,26 @@ var setPercentBtns = function() {
 	$('.rrssb-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
 };
 
-var makeLargeBtns = function() {
+var makeExtremityBtns = function() {
 	//get button width
+	var containerWidth;
+	containerWidth = parseFloat($('.rrssb-buttons').width());
 	buttonWidth = $('.rrssb-buttons li').not('.small').first().width();
+
+	console.log(containerWidth);
 
 	// enlarge buttons if they get wide enough
 	if (buttonWidth > 170 && smallBtnCount < 1) {
 		$('.rrssb-buttons').addClass('large-format');
 	} else if (buttonWidth <= 170) {
 		$('.rrssb-buttons').removeClass('large-format');
+	} else if (containerWidth < 400) {
+		$('.rrssb-buttons').addClass('tiny-format');
+	} else if (containerWidth >= 401) {
+		$('.rrssb-buttons').removeClass('tiny-format');
 	}
 };
+
 
 var checkSize = function() {
 	$('.rrssb-buttons li:not(.small)').each(function(index) {
@@ -72,7 +81,7 @@ var sizeSmallBtns = function() {
 		setPercentBtns();
 	}
 
-	makeLargeBtns();
+	makeExtremityBtns();
 };
 
 var rrssbInit = function() {
