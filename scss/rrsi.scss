@@ -1,4 +1,3 @@
-@import "bourbon";
 
 // config settings
 $button-contents: #fff;
@@ -16,11 +15,11 @@ $border-radius: 2px;
 $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 
-@mixin transition-all($time) {
-    -webkit-transition: all $time+s ease;
-    -moz-transition: all $time+s ease;
-    -o-transition: all $time+s ease;
-    transition: all  $time+s ease;
+@mixin transition($expression) {
+    -webkit-transition: $expression;
+    -moz-transition: $expression;
+    -o-transition: $expression;
+    transition: $expression;
 }
 
 // some generic classes
@@ -84,7 +83,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 			text-transform: uppercase;
 			-webkit-font-smoothing: antialiased;
 			width: 100%;
-			@include transition (background-color 0.2s ease-in-out);
+			@include transition(background-color 0.2s ease-in-out);
 
 			.icon {
 				display: block;
@@ -119,11 +118,11 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				background-color: $email;
 
 				&:hover {
-					background-color: shade($email, 25%);
+					background-color: darken($email, 10%);
 				}
 
 				&:active {
-					background-color: shade($email, 40%);
+					background-color: darken($email, 10%);
 				}
 			}
 		}
@@ -133,7 +132,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				background-color: $facebook;
 
 				&:hover {
-					background-color: shade($facebook, 25%);
+					background-color: darken($facebook, 10%);
 				}
 			}
 		}
@@ -143,7 +142,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				background-color: $linkedin;
 
 				&:hover {
-					background-color: shade($linkedin, 25%);
+					background-color: darken($linkedin, 10%);
 				}
 			}
 		}
@@ -153,7 +152,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				background-color: $twitter;
 
 				&:hover {
-					background-color: shade($twitter, 25%);
+					background-color: darken($twitter, 10%);
 				}
 			}
 		}
@@ -163,7 +162,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				background-color: $googleplus;
 
 				&:hover {
-					background-color: shade($googleplus, 25%);
+					background-color: darken($googleplus, 10%);
 				}
 			}
 
@@ -184,7 +183,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				background-color: $youtube;
 
 				&:hover {
-					background-color: shade($youtube, 25%);
+					background-color: darken($youtube, 10%);
 				}
 			}
 		}
@@ -194,7 +193,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				background-color: $pinterest;
 
 				&:hover {
-					background-color: shade($pinterest, 25%);
+					background-color: darken($pinterest, 10%);
 				}
 			}
 		}
@@ -204,7 +203,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				background-color: $github;
 
 				&:hover {
-					background-color: shade($github, 25%);
+					background-color: darken($github, 10%);
 				}
 			}
 		}
@@ -289,113 +288,111 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 			}
 
 			&.email {
-					a {
-						.icon {
-							svg {
-								path, polygon {
-									fill: $email;
-								}
+				a {
+					.icon {
+						svg {
+							path, polygon {
+								fill: $email;
+							}
+						}
+					}
+				}
+			}
+
+			&.facebook {
+				a {
+					.icon {
+						svg {
+							path, polygon {
+								fill: $facebook;
+							}
+						}
+					}
+				}
+			}
+
+			&.linkedin {
+				a {
+					.icon {
+						svg {
+							path, polygon {
+								fill: $linkedin;
+							}
+						}
+					}
+				}
+			}
+
+			&.twitter {
+				a {
+					.icon {
+						svg {
+							path, polygon {
+								fill: $twitter;
+							}
+						}
+					}
+				}
+			}
+
+			&.googleplus {
+				a {
+					.icon {
+						svg {
+							path, polygon {
+								fill: $googleplus;
 							}
 						}
 					}
 				}
 
-				&.facebook {
-					a {
-						.icon {
-							svg {
-								path, polygon {
-									fill: $facebook;
-								}
+				//custom path colors
+				.style1 {
+					//fill: #fff;
+				}
+				.style2 {
+					fill: $googleplus;
+				}
+				.style3 {
+					fill: $googleplus;
+				}
+			}
+
+			&.youtube {
+				a {
+					.icon {
+						svg {
+							path, polygon {
+								fill: $youtube;
 							}
 						}
 					}
 				}
+			}
 
-				&.linkedin {
-					a {
-						.icon {
-							svg {
-								path, polygon {
-									fill: $linkedin;
-								}
+			&.pinterest {
+				a {
+					.icon {
+						svg {
+							path, polygon {
+								fill: $pinterest;
 							}
 						}
 					}
 				}
+			}
 
-				&.twitter {
-					a {
-						.icon {
-							svg {
-								path, polygon {
-									fill: $twitter;
-								}
+			&.github {
+				a {
+					.icon {
+						svg {
+							path, polygon {
+								fill: $github;
 							}
 						}
 					}
 				}
-
-				&.googleplus {
-					a {
-						.icon {
-							svg {
-								path, polygon {
-									fill: $googleplus;
-								}
-							}
-						}
-					}
-
-					//custom path colors
-					.style1 {
-						//fill: #fff;
-					}
-					.style2 {
-						fill: $googleplus;
-					}
-					.style3 {
-						fill: $googleplus;
-					}
-				}
-
-				&.youtube {
-					a {
-						.icon {
-							svg {
-								path, polygon {
-									fill: $youtube;
-								}
-							}
-						}
-					}
-				}
-
-				&.pinterest {
-					a {
-						.icon {
-							svg {
-								path, polygon {
-									fill: $pinterest;
-								}
-							}
-						}
-					}
-				}
-
-				&.github {
-					a {
-						.icon {
-							svg {
-								path, polygon {
-									fill: $github;
-								}
-							}
-						}
-					}
-				}
-
-
+			}
 		}
 	}
 }
