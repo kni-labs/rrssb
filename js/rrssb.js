@@ -36,7 +36,7 @@ var checkSize = function() {
 	$('.rrssb-buttons li:not(.small)').each(function(index) {
 		// record width of container
 		containerWidth = $('.rrssb-buttons').width();
-		var txtWdth = parseFloat($(this).attr('data-size')) + 45;
+		var txtWdth = parseFloat($(this).attr('data-size')) + 50;
 		var btnWdth = parseFloat($(this).width());
 
 		if (txtWdth > btnWdth) {
@@ -44,9 +44,7 @@ var checkSize = function() {
 			$('.rrssb-buttons ').attr('data-break', containerWidth);
 
 			return false;
-
 		}
-
 	});
 };
 
