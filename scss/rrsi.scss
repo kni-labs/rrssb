@@ -276,23 +276,18 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	&.tiny-format {
 		height: 22px;
 		position: relative;
-		top: 8px;
 
 		li {
-			height: 20px;
-			margin-right: 4px;
-			width: 20px !important;
+			padding-right: 6px;
 
 			a {
 				background-color: transparent;
 				padding: 0;
 
 				.icon {
-					position: relative;
-					top: -5px;
 					svg {
-						height: 15px;
-						width: 15px;
+						height: 100%;
+						width: 100%;
 					}
 				}
 
