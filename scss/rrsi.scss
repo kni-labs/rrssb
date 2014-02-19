@@ -284,27 +284,13 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 					}
 				}
 
-				// &:hover {
-				// 	background-color: transparent;
-				// 	.icon {
-				// 		svg {
-				// 			path, polygon {
-				// 				fill: #000 !important;
-				// 			}
-				// 		}
-				// 	}
-				// }
+				&:hover {
+					background-color: transparent;
+				}
 
-				// &:active {
-				// 	background-color: transparent;
-				// 	.icon {
-				// 		svg {
-				// 			path, polygon {
-				// 				fill: #000 !important;
-				// 			}
-				// 		}
-				// 	}
-				// }
+				&:active {
+					background-color: transparent;
+				}
 			}
 
 			&.email {
@@ -313,6 +299,16 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 						svg {
 							path, polygon {
 								fill: $email;
+							}
+						}
+					}
+
+					&:hover {
+						.icon {
+							svg {
+								path, polygon {
+									fill: darken($email, 20%);
+								}
 							}
 						}
 					}
@@ -328,6 +324,16 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 							}
 						}
 					}
+
+					&:hover {
+						.icon {
+							svg {
+								path, polygon {
+									fill: darken($facebook, 20%);
+								}
+							}
+						}
+					}
 				}
 			}
 
@@ -337,6 +343,16 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 						svg {
 							path, polygon {
 								fill: $linkedin;
+							}
+						}
+					}
+
+					&:hover {
+						.icon {
+							svg {
+								path, polygon {
+									fill: darken($linkedin, 20%);
+								}
 							}
 						}
 					}
@@ -352,6 +368,16 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 							}
 						}
 					}
+
+					&:hover {
+						.icon {
+							svg {
+								path, polygon {
+									fill: darken($twitter, 20%);
+								}
+							}
+						}
+					}
 				}
 			}
 
@@ -361,6 +387,16 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 						svg {
 							path, polygon {
 								fill: $googleplus;
+							}
+						}
+					}
+
+					&:hover {
+						.icon {
+							svg {
+								path, polygon {
+									fill: darken($googleplus, 20%);
+								}
 							}
 						}
 					}
@@ -387,6 +423,16 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 							}
 						}
 					}
+
+					&:hover {
+						.icon {
+							svg {
+								path, polygon {
+									fill: darken($youtube, 20%);
+								}
+							}
+						}
+					}
 				}
 			}
 
@@ -399,6 +445,16 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 							}
 						}
 					}
+
+					&:hover {
+						.icon {
+							svg {
+								path, polygon {
+									fill: darken($pinterest, 20%);
+								}
+							}
+						}
+					}
 				}
 			}
 
@@ -408,6 +464,16 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 						svg {
 							path, polygon {
 								fill: $github;
+							}
+						}
+					}
+
+					&:hover {
+						.icon {
+							svg {
+								path, polygon {
+									fill: darken($github, 20%);
+								}
 							}
 						}
 					}
