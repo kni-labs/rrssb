@@ -292,27 +292,27 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 					}
 				}
 
-				&:hover {
-					background-color: transparent;
-					.icon {
-						svg {
-							path, polygon {
-								fill: #000 !important;
-							}
-						}
-					}
-				}
+				// &:hover {
+				// 	background-color: transparent;
+				// 	.icon {
+				// 		svg {
+				// 			path, polygon {
+				// 				fill: #000 !important;
+				// 			}
+				// 		}
+				// 	}
+				// }
 
-				&:active {
-					background-color: transparent;
-					.icon {
-						svg {
-							path, polygon {
-								fill: #000 !important;
-							}
-						}
-					}
-				}
+				// &:active {
+				// 	background-color: transparent;
+				// 	.icon {
+				// 		svg {
+				// 			path, polygon {
+				// 				fill: #000 !important;
+				// 			}
+				// 		}
+				// 	}
+				// }
 			}
 
 			&.email {
