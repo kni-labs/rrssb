@@ -301,6 +301,17 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 						}
 					}
 				}
+
+				&:active {
+					background-color: transparent;
+					.icon {
+						svg {
+							path, polygon {
+								fill: #000 !important;
+							}
+						}
+					}
+				}
 			}
 
 			&.email {
