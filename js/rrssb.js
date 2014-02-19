@@ -24,9 +24,9 @@ var makeExtremityBtns = function() {
 		$('.rrssb-buttons').removeClass('large-format');
 	}
 
-	if (containerWidth < 280) {
-		$('.rrssb-buttons').addClass('tiny-format');
-	} else if (containerWidth > 279) {
+	if (containerWidth < 240) {
+		$('.rrssb-buttons').removeClass('small-format').addClass('tiny-format');
+	} else if (containerWidth > 239) {
 		$('.rrssb-buttons').removeClass('tiny-format');
 	}
 };
@@ -60,6 +60,7 @@ var sizeSmallBtns = function() {
 	// make sure there are small buttons
 	if (smallBtnCount > 0 && smallBtnCount !== $('.rrssb-buttons li').length) {
 
+		$('.rrssb-buttons').removeClass('small-format');
 		//make sure small buttons are square when not all small
 		$('.rrssb-buttons li.small').css('width','42px');
 
@@ -81,9 +82,10 @@ var sizeSmallBtns = function() {
 
 	} else if (smallBtnCount === $('.rrssb-buttons li').length) {
 		// if all buttons are small, change back to percentage
+		$('.rrssb-buttons').addClass('small-format');
 		setPercentBtns();
 	} else {
-
+		$('.rrssb-buttons').removeClass('small-format');
 		setPercentBtns();
 	}
 

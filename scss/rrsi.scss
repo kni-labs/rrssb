@@ -42,7 +42,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	box-sizing: border-box;
 	-moz-box-sizing:border-box;
 	font-family: $main-font;
-	height: auto;
+	height: 36px;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -54,7 +54,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 		float: left;
 		height: 100%;
 		list-style: none;
-		height: 36px;
+		height: 100%;
 		margin: 0;
 		padding: 0 2.5px;
 
@@ -209,8 +209,6 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 		}
 
 		&.small {
-			//width: 42px !important;
-
 			a {
 				padding: 0;
 
@@ -253,7 +251,30 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 			}
 		}
 	}
+	&.small-format {
+		padding-top: 5px;
+
+		li {
+			height: 80%;
+
+			a {
+
+				.icon {
+					height: 100%;
+					padding-top: 0;
+
+					svg {
+						position: relative;
+						top: 7px;
+						height: 50%;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 	&.tiny-format {
+		height: 22px;
 		position: relative;
 		top: 8px;
 
