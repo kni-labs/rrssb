@@ -24,9 +24,9 @@ var makeExtremityBtns = function() {
 		$('.rrssb-buttons').removeClass('large-format');
 	}
 
-	if (containerWidth < 240) {
+	if (containerWidth < 210) {
 		$('.rrssb-buttons').removeClass('small-format').addClass('tiny-format');
-	} else if (containerWidth > 239) {
+	} else if (containerWidth > 209) {
 		$('.rrssb-buttons').removeClass('tiny-format');
 	}
 };
