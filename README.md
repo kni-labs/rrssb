@@ -11,6 +11,6 @@ RRSSB is built with [SASS](http://sass-lang.com/), so you can easily customize i
 
 # About
 
-RRSSB is a [KNI Labs freebie](http://kurtnoble.com/labs/rrssb/) crafted by [@dbox](http://www.twitter.com/dbox) and [@seagoat](http://www.twitter.com/seagoat).
+RRSSB is a [KNI Labs freebie](http://kurtnoble.com/) crafted by [@dbox](http://www.twitter.com/dbox) and [@seagoat](http://www.twitter.com/seagoat).
 
 This content is released under the following [license](http://kurtnoble.com/labs/rrssb/license.txt).
