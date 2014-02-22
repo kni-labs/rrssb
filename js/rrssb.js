@@ -101,6 +101,12 @@ var rrssbInit = function() {
 		checkSize();
 		rrssbMagicLayout(sizeSmallBtns);
 	});
+
+	$('.rrssb-buttons a:not([href^=mailto])').on('click', function(e){
+		var _this = $(this);
+		window.open(_this.attr('href'), _this.find('.text').html(), "width=500,height=500");
+		e.preventDefault();
+	});
 };
 
 var rrssbMagicLayout = function(callback) {
