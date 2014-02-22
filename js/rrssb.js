@@ -1,32 +1,27 @@
 var buttonWidth;
 var smallBtnCount;
 
-
-
 var setPercentBtns = function() {
 	var numOfButtons = $('.rrssb-buttons li').length;
 	var initBtnWidth = 100 / numOfButtons;
-
 	// set initial width of buttons
 	$('.rrssb-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
 };
 
 var makeExtremityBtns = function() {
 	//get button width
-	var containerWidth;
-	containerWidth = parseFloat($('.rrssb-buttons').width());
+	var containerWidth = parseFloat($('.rrssb-buttons').width());
 	buttonWidth = $('.rrssb-buttons li').not('.small').first().width();
-
 	// enlarge buttons if they get wide enough
 	if (buttonWidth > 170 && smallBtnCount < 1) {
 		$('.rrssb-buttons').addClass('large-format');
-	} else if (buttonWidth <= 170) {
+	} else {
 		$('.rrssb-buttons').removeClass('large-format');
 	}
 
 	if (containerWidth < 200) {
 		$('.rrssb-buttons').removeClass('small-format').addClass('tiny-format');
-	} else if (containerWidth > 199) {
+	} else {
 		$('.rrssb-buttons').removeClass('tiny-format');
 	}
 };
@@ -36,8 +31,8 @@ var checkSize = function() {
 	$('.rrssb-buttons li:not(.small)').each(function(index) {
 		// record width of container
 		containerWidth = $('.rrssb-buttons').width();
-		var txtWdth = parseFloat($(this).attr('data-size')) + 55;
-		var btnWdth = parseFloat($(this).width());
+		var txtWdth = parseFloat($(this).attr('data-size')) + 55, 
+				btnWdth = parseFloat($(this).width());
 
 		if (txtWdth > btnWdth) {
 			$('.rrssb-buttons li').not('.small').last().addClass('small').css('width', '42px').attr('data-break', containerWidth);
@@ -109,12 +104,9 @@ var rrssbInit = function() {
 };
 
 var rrssbMagicLayout = function(callback) {
-	var totalTxt = 0, containerWidth;
+	var totalTxt = 0, containerWidth = $('.rrssb-buttons').width();
 
 	smallBtnCount = $('.rrssb-buttons li.small').length;
-
-	// record width of container
-	containerWidth = $('.rrssb-buttons').width();
 
 	checkSize();
 
@@ -154,5 +146,4 @@ $(window).resize(function () {
 $(document).ready(function(){
 	rrssbInit();
 });
-
 
