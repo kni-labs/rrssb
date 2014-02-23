@@ -102,9 +102,9 @@ var rrssbInit = function() {
 		rrssbMagicLayout(sizeSmallBtns);
 	});
 
-	$('.rrssb-buttons a:not([href^=mailto])').on('click', function(e){
+	$('.rrssb-buttons a.popup').on('click', function(e){
 		var _this = $(this);
-		window.open(_this.attr('href'), _this.find('.text').html(), "width=500,height=500");
+		window.open(_this.attr('href'), _this.find('.text').html(), "width=580,height=470");
 		e.preventDefault();
 	});
 };
