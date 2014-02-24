@@ -181,6 +181,19 @@
 		callback();
 	};
 
+	var waitForFinalEvent = (function () {
+		var timers = {};
+		return function (callback, ms, uniqueId) {
+			if (!uniqueId) {
+				uniqueId = "Don't call this twice without a uniqueId";
+			}
+			if (timers[uniqueId]) {
+				clearTimeout (timers[uniqueId]);
+			}
+			timers[uniqueId] = setTimeout(callback, ms);
+		};
+	})();
+
 	/*
 	 * Event listners
 	 */
@@ -195,6 +208,10 @@
 	// resize function
 	$(window).resize(function () {
 		rrssbMagicLayout(sizeSmallBtns);
+
+		waitForFinalEvent(function(){
+			rrssbMagicLayout(sizeSmallBtns);
+		}, 100, "finished resizing");
 	});
 
 	// init load
