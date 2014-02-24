@@ -57,7 +57,7 @@
 		}
 	};
 
-	var checkSize = function() {
+	var checkSize = function(init) {
 		$('.rrssb-buttons li:not(.small)').each(function(index) {
 			// record width of container
 			var containerWidth = $('.rrssb-buttons').width();
@@ -67,9 +67,12 @@
 			if (txtWidth > btnWidth) {
 				$('.rrssb-buttons li').not('.small').last().addClass('small').css('width', '42px').attr('data-break', containerWidth);
 				$('.rrssb-buttons ').attr('data-break', containerWidth);
-				return false;
 			}
 		});
+
+		if (init === true) {
+			rrssbMagicLayout(sizeSmallBtns);
+		}
 	};
 
 	var sizeSmallBtns = function() {
@@ -102,6 +105,7 @@
 				magicWidth = 'calc('+regPercent+'% - '+smallBtnFraction+'px)';
 			}
 			$('.rrssb-buttons li').not('.small').css('width', magicWidth);
+
 		} else if (smallBtnCount === $('.rrssb-buttons li').length) {
 
 			// if all buttons are small, change back to percentage
@@ -123,8 +127,7 @@
 			$(this).closest('li').attr('data-size', txtWdth);
 		});
 		$('.rrssb-buttons li:not(.small)').each(function(index) {
-			checkSize();
-			rrssbMagicLayout(sizeSmallBtns);
+			checkSize(true);
 		});
 	};
 

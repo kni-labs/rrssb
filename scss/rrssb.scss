@@ -41,6 +41,12 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     transition: $expression;
 }
 
+%backface-visibility {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+}
+
 // some generic classes
 .clearfix:before,
 .clearfix:after {
@@ -240,6 +246,8 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	}
 
 	&.large-format {
+		height: auto;
+
 		li {
 			height: auto;
 
@@ -248,6 +256,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				font-size: 1vw; // ZOMG!!
 				padding: 7% 0% 7% 12%;
 				border-radius: 0.2em;
+				@extend %backface-visibility;
 
 				.icon {
 					left: 7%;
@@ -258,6 +267,19 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 						height: 100%;
 						width: 100%;
 					}
+				}
+
+				.text {
+					font-size: 13px;
+					font-size: 1vw; // ZOMG!!
+					@extend %backface-visibility;
+				}
+
+				&:hover {
+					font-size: 13px;
+					font-size: 1vw; // ZOMG!!
+					padding: 7% 0% 7% 12%;
+					border-radius: 0.2em;
 				}
 			}
 		}
