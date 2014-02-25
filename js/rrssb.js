@@ -176,6 +176,8 @@
 
 		smallBtnCount = $('.rrssb-buttons li.small').length;
 
+		$('.rrssb-buttons li.small').removeClass('small');
+
 		checkSize();
 
 		callback();
@@ -207,6 +209,7 @@
 
 	// resize function
 	$(window).resize(function () {
+
 		rrssbMagicLayout(sizeSmallBtns);
 
 		waitForFinalEvent(function(){
