@@ -19,21 +19,21 @@
 
 
 // config settings
-$button-contents: #fff;
-$email: #0a88ff;
-$facebook: #306199;
-$tumblr: #32506d;
-$linkedin: #007bb6;
-$twitter: #26c4f1;
-$googleplus: #e93f2e;
-$reddit: #8bbbe3;
-$youtube: #df1c31;
-$pinterest: #b81621;
-$github: #444;
+$rrssb-txt: #fff;
+$rrssb-email: #0a88ff;
+$rrssb-facebook: #306199;
+$rrssb-tumblr: #32506d;
+$rrssb-linkedin: #007bb6;
+$rrssb-twitter: #26c4f1;
+$rrssb-googleplus: #e93f2e;
+$rrssb-reddit: #8bbbe3;
+$rrssb-youtube: #df1c31;
+$rrssb-pinterest: #b81621;
+$rrssb-github: #444;
 
-$border-radius: 2px;
+$rrssb-border-radius: 2px;
 
-$main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 @mixin transition($expression) {
@@ -68,7 +68,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 .rrssb-buttons {
 	box-sizing: border-box;
 	-moz-box-sizing:border-box;
-	font-family: $main-font;
+	font-family: $rrssb-main-font;
 	height: 36px;
 	margin: 0;
 	padding: 0;
@@ -89,7 +89,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			box-sizing: border-box;
 			-moz-box-sizing:border-box;
 			background-color: #ccc;
-			border-radius: $border-radius;
+			border-radius: $rrssb-border-radius;
 			display: block;
 			font-size: 11px;
 			font-weight: bold;
@@ -118,13 +118,13 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 					width: 17px;
 
 					path, polygon {
-						fill: $button-contents;
+						fill: $rrssb-txt;
 					}
 				}
 			}
 
 			.text {
-				color: $button-contents;
+				color: $rrssb-txt;
 			}
 
 			&:active {
@@ -134,60 +134,60 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 		&.email {
 			a {
-				background-color: $email;
+				background-color: $rrssb-email;
 
 				&:hover {
-					background-color: darken($email, 10%);
+					background-color: darken($rrssb-email, 10%);
 				}
 			}
 		}
 
 		&.facebook {
 			a {
-				background-color: $facebook;
+				background-color: $rrssb-facebook;
 
 				&:hover {
-					background-color: darken($facebook, 10%);
+					background-color: darken($rrssb-facebook, 10%);
 				}
 			}
 		}
 
 		&.tumblr {
 			a {
-				background-color: $tumblr;
+				background-color: $rrssb-tumblr;
 
 				&:hover {
-					background-color: darken($tumblr, 10%);
+					background-color: darken($rrssb-tumblr, 10%);
 				}
 			}
-		}		
+		}
 
 		&.linkedin {
 			a {
-				background-color: $linkedin;
+				background-color: $rrssb-linkedin;
 
 				&:hover {
-					background-color: darken($linkedin, 10%);
+					background-color: darken($rrssb-linkedin, 10%);
 				}
 			}
 		}
 
 		&.twitter {
 			a {
-				background-color: $twitter;
+				background-color: $rrssb-twitter;
 
 				&:hover {
-					background-color: darken($twitter, 10%);
+					background-color: darken($rrssb-twitter, 10%);
 				}
 			}
 		}
 
 		&.googleplus {
 			a {
-				background-color: $googleplus;
+				background-color: $rrssb-googleplus;
 
 				&:hover {
-					background-color: darken($googleplus, 10%);
+					background-color: darken($rrssb-googleplus, 10%);
 				}
 			}
 
@@ -196,49 +196,49 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 				//fill: #fff;
 			}
 			.style2 {
-				fill: $googleplus;
+				fill: $rrssb-googleplus;
 			}
 			.style3 {
-				fill: $googleplus;
+				fill: $rrssb-googleplus;
 			}
 		}
 
 		&.youtube {
 			a {
-				background-color: $youtube;
+				background-color: $rrssb-youtube;
 
 				&:hover {
-					background-color: darken($youtube, 10%);
+					background-color: darken($rrssb-youtube, 10%);
 				}
 			}
 		}
 
 		&.reddit {
 			a {
-				background-color: $reddit;
+				background-color: $rrssb-reddit;
 
 				&:hover {
-					background-color: darken($reddit, 10%);
+					background-color: darken($rrssb-reddit, 10%);
 				}
 			}
 		}
 
 		&.pinterest {
 			a {
-				background-color: $pinterest;
+				background-color: $rrssb-pinterest;
 
 				&:hover {
-					background-color: darken($pinterest, 10%);
+					background-color: darken($rrssb-pinterest, 10%);
 				}
 			}
 		}
 
 		&.github {
 			a {
-				background-color: $github;
+				background-color: $rrssb-github;
 
 				&:hover {
-					background-color: darken($github, 10%);
+					background-color: darken($rrssb-github, 10%);
 				}
 			}
 		}
@@ -357,7 +357,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 					.icon {
 						svg {
 							path, polygon {
-								fill: $email;
+								fill: $rrssb-email;
 							}
 						}
 					}
@@ -366,7 +366,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 						.icon {
 							svg {
 								path, polygon {
-									fill: darken($email, 20%);
+									fill: darken($rrssb-email, 20%);
 								}
 							}
 						}
@@ -379,7 +379,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 					.icon {
 						svg {
 							path, polygon {
-								fill: $facebook;
+								fill: $rrssb-facebook;
 							}
 						}
 					}
@@ -388,7 +388,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 						.icon {
 							svg {
 								path, polygon {
-									fill: darken($facebook, 20%);
+									fill: darken($rrssb-facebook, 20%);
 								}
 							}
 						}
@@ -401,7 +401,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 					.icon {
 						svg {
 							path, polygon {
-								fill: $linkedin;
+								fill: $rrssb-linkedin;
 							}
 						}
 					}
@@ -410,7 +410,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 						.icon {
 							svg {
 								path, polygon {
-									fill: darken($linkedin, 20%);
+									fill: darken($rrssb-linkedin, 20%);
 								}
 							}
 						}
@@ -423,7 +423,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 					.icon {
 						svg {
 							path, polygon {
-								fill: $twitter;
+								fill: $rrssb-twitter;
 							}
 						}
 					}
@@ -432,7 +432,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 						.icon {
 							svg {
 								path, polygon {
-									fill: darken($twitter, 20%);
+									fill: darken($rrssb-twitter, 20%);
 								}
 							}
 						}
@@ -445,7 +445,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 					.icon {
 						svg {
 							path, polygon {
-								fill: $googleplus;
+								fill: $rrssb-googleplus;
 							}
 						}
 					}
@@ -454,7 +454,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 						.icon {
 							svg {
 								path, polygon {
-									fill: darken($googleplus, 20%);
+									fill: darken($rrssb-googleplus, 20%);
 								}
 							}
 						}
@@ -466,10 +466,10 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 					//fill: #fff;
 				}
 				.style2 {
-					fill: $googleplus;
+					fill: $rrssb-googleplus;
 				}
 				.style3 {
-					fill: $googleplus;
+					fill: $rrssb-googleplus;
 				}
 			}
 
@@ -478,7 +478,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 					.icon {
 						svg {
 							path, polygon {
-								fill: $youtube;
+								fill: $rrssb-youtube;
 							}
 						}
 					}
@@ -487,7 +487,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 						.icon {
 							svg {
 								path, polygon {
-									fill: darken($youtube, 20%);
+									fill: darken($rrssb-youtube, 20%);
 								}
 							}
 						}
@@ -500,7 +500,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 					.icon {
 						svg {
 							path, polygon {
-								fill: $pinterest;
+								fill: $rrssb-pinterest;
 							}
 						}
 					}
@@ -509,7 +509,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 						.icon {
 							svg {
 								path, polygon {
-									fill: darken($pinterest, 20%);
+									fill: darken($rrssb-pinterest, 20%);
 								}
 							}
 						}
@@ -522,7 +522,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 					.icon {
 						svg {
 							path, polygon {
-								fill: $github;
+								fill: $rrssb-github;
 							}
 						}
 					}
@@ -531,7 +531,7 @@ $main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 						.icon {
 							svg {
 								path, polygon {
-									fill: darken($github, 20%);
+									fill: darken($rrssb-github, 20%);
 								}
 							}
 						}
