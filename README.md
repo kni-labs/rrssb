@@ -8,7 +8,7 @@ RRSSB is built with [SASS](http://sass-lang.com/), so you can easily customize i
 
 ### Demo
 
-[View the demo here](http://kurtnoble.com/labs/rrssb/)
+[**View the demo here**](http://kurtnoble.com/labs/rrssb/)
 
 ### Usage
 
