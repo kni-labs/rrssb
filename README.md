@@ -6,11 +6,11 @@ Love them or hate them social sharing buttons appear to be with us for a while. 
 RRSSB is built with [SASS](http://sass-lang.com/), so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit &mdash; the rest will fill in automagically in the container.
 
 
-## Demo
+### Demo
 
 [View the demo here](http://kurtnoble.com/labs/rrssb/)
 
-## Usage
+### Usage
 
 Buttons will automatically fill to the size of the ul `rrssb-buttons`. 
 
@@ -19,7 +19,7 @@ Adding a class of `popup` to the anchor tag for each share button will make the 
 RRSSB is also registered with Bower under the name RRSSB. Use the following command to find it: `bower search rrssb`
 
 
-## About
+### About
 
 RRSSB is a [KNI Labs freebie](http://kurtnoble.com/) crafted by [@dbox](http://www.twitter.com/dbox) and [@seagoat](http://www.twitter.com/seagoat).
 
