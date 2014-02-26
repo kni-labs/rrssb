@@ -22,6 +22,7 @@
 $button-contents: #fff;
 $email: #0a88ff;
 $facebook: #306199;
+$tumblr: #32506d;
 $linkedin: #007bb6;
 $twitter: #26c4f1;
 $googleplus: #e93f2e;
@@ -32,7 +33,7 @@ $github: #444;
 
 $border-radius: 2px;
 
-$main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 @mixin transition($expression) {
@@ -150,6 +151,16 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				}
 			}
 		}
+
+		&.tumblr {
+			a {
+				background-color: $tumblr;
+
+				&:hover {
+					background-color: darken($tumblr, 10%);
+				}
+			}
+		}		
 
 		&.linkedin {
 			a {
