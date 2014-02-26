@@ -25,6 +25,7 @@ $facebook: #306199;
 $linkedin: #007bb6;
 $twitter: #26c4f1;
 $googleplus: #e93f2e;
+$reddit: #8bbbe3;
 $youtube: #df1c31;
 $pinterest: #b81621;
 $github: #444;
@@ -201,6 +202,16 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 				&:hover {
 					background-color: darken($youtube, 10%);
+				}
+			}
+		}
+
+		&.reddit {
+			a {
+				background-color: $reddit;
+
+				&:hover {
+					background-color: darken($reddit, 10%);
 				}
 			}
 		}
