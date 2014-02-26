@@ -138,10 +138,6 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 				&:hover {
 					background-color: darken($email, 10%);
 				}
-
-				&:active {
-					background-color: darken($email, 10%);
-				}
 			}
 		}
 
