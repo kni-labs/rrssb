@@ -198,7 +198,7 @@
 
 		// Puts focus on the newWindow
 		if (window.focus) {
-		newWindow.focus();
+			newWindow.focus();
 		}
 	};
 
