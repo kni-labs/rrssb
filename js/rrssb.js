@@ -233,7 +233,10 @@
 
 		waitForFinalEvent(function(){
 			rrssbMagicLayout(sizeSmallBtns);
-		}, 100, "finished resizing");
+			var causeRepaintsOn = $('.rrssb-buttons li');
+			$(causeRepaintsOn).css('z-index', '1');
+		}, 200, "finished resizing");
+
 	});
 
 	// init load
