@@ -1,5 +1,5 @@
 
-# <span style="line-height="1.3em">Ridiculously Responsive Social Sharing Buttons</span>
+# Ridiculously Responsive Social Sharing Buttons
 
 [<img align="right" src="http://kurtnoble.com/labs/_img/rrssb-preview.png" width="359" height="213"/>](http://kurtnoble.com/labs/rrssb/) Love them or hate them social sharing buttons appear to be with us for a while. It seemed like [we](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
 
