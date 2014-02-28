@@ -225,7 +225,7 @@
 		e.preventDefault();
 	});
 
-
+	var altcrement = -1;
 	// resize function
 	$(window).resize(function () {
 
@@ -233,10 +233,7 @@
 
 		waitForFinalEvent(function(){
 			rrssbMagicLayout(sizeSmallBtns);
-			var causeRepaintsOn = $('.rrssb-buttons li');
-			$(causeRepaintsOn).css('z-index', '1');
 		}, 200, "finished resizing");
-
 	});
 
 	// init load
