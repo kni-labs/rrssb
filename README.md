@@ -1,7 +1,7 @@
 
 # Ridiculously Responsive Social Sharing Buttons
 
-[<img style="float: right" src="whttp://kurtnoble.com/labs/_img/rrssb-preview.png" width="359" height="213"/>](http://kurtnoble.com/labs/rrssb/) Love them or hate them social sharing buttons appear to be with us for a while. It seemed like [we](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
+[<img align="right" src="http://kurtnoble.com/labs/_img/rrssb-preview.png" width="359" height="213"/>](http://kurtnoble.com/labs/rrssb/) Love them or hate them social sharing buttons appear to be with us for a while. It seemed like [we](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
 
 RRSSB is built with [SASS](http://sass-lang.com/), so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit &mdash; the rest will fill in automagically in the container.
 
