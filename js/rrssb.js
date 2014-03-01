@@ -225,7 +225,6 @@
 		e.preventDefault();
 	});
 
-	var altcrement = -1;
 	// resize function
 	$(window).resize(function () {
 
