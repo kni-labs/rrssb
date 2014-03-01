@@ -47,25 +47,29 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 	-ms-backface-visibility: hidden;
 }
 
+%border-box {
+	-moz-box-sizing:border-box;
+	box-sizing: border-box;
+}
+
 // some generic classes
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
 .clearfix {
-    *zoom: 1;
+	*zoom: 1;
+
+	&:after {
+		clear: both;
+	}
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
 }
 
 // the meat and potatoes
 .rrssb-buttons {
-	box-sizing: border-box;
-	-moz-box-sizing:border-box;
+	@extend %border-box;
 	font-family: $rrssb-main-font;
 	height: 36px;
 	margin: 0;
@@ -73,8 +77,7 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 	width: 100%;
 
 	li {
-		box-sizing: border-box;
-		-moz-box-sizing: border-box;
+		@extend %border-box;
 		display: block;
 		float: left;
 		height: 100%;
@@ -84,8 +87,7 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 		padding: 0 2.5px;
 
 		a {
-			box-sizing: border-box;
-			-moz-box-sizing:border-box;
+			@extend %border-box;
 			background-color: #ccc;
 			border-radius: $rrssb-border-radius;
 			display: block;

@@ -23,22 +23,6 @@ $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     transition: all  $time+s ease;
 }
 
-// some generic classes
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
-
-
 body {
 	overflow-x: hidden;
 }
