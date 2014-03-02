@@ -34,11 +34,31 @@ $rrssb-border-radius: 2px !default;
 $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 
+
+// This variable list determines the output of the @each
+// control directive.  Add / subtract social accounts from
+// this list to edit the compiled CSS classes.
+$social-list: (
+	email				$rrssb-email,
+	facebook		$rrssb-facebook,
+	tumblr			$rrssb-tumblr,
+	linkedin		$rrssb-linkedin,
+	twitter			$rrssb-twitter,
+	googleplus	$rrssb-googleplus,
+	youtube			$rrssb-youtube,
+	reddit			$rrssb-reddit,
+	pinterest		$rrssb-pinterest,
+	github			$rrssb-github
+);
+
+
+
+
 @mixin transition($expression) {
-    -webkit-transition: $expression;
-    -moz-transition: $expression;
-    -o-transition: $expression;
-    transition: $expression;
+	-webkit-transition: $expression;
+	-moz-transition: $expression;
+	-o-transition: $expression;
+	transition: $expression;
 }
 
 %backface-visibility {
@@ -78,13 +98,43 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 	li {
 		@extend %border-box;
-		display: block;
 		float: left;
 		height: 100%;
 		list-style: none;
-		height: 100%;
 		margin: 0;
 		padding: 0 2.5px;
+
+
+		// Control directive to output a class for each item in
+		// the variable list $social-list located on line 41
+		@each $s-name in $social-list {
+
+			&.#{nth($s-name, 1)} {
+				a {
+					background-color: nth($s-name, 2);
+
+					&:hover {
+						background-color: darken(nth($s-name, 2), 10%);
+					}
+				}
+			}
+
+		}
+
+		&.googleplus {
+			//custom path colors
+			.style1 {
+				//fill: #fff;
+			}
+			.style2 {
+				fill: $rrssb-googleplus;
+			}
+			.style3 {
+				fill: $rrssb-googleplus;
+			}
+		}
+
+
 
 		a {
 			@extend %border-box;
@@ -132,128 +182,17 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 			}
 		}
 
-		&.email {
-			a {
-				background-color: $rrssb-email;
-
-				&:hover {
-					background-color: darken($rrssb-email, 10%);
-				}
-			}
-		}
-
-		&.facebook {
-			a {
-				background-color: $rrssb-facebook;
-
-				&:hover {
-					background-color: darken($rrssb-facebook, 10%);
-				}
-			}
-		}
-
-		&.tumblr {
-			a {
-				background-color: $rrssb-tumblr;
-
-				&:hover {
-					background-color: darken($rrssb-tumblr, 10%);
-				}
-			}
-		}
-
-		&.linkedin {
-			a {
-				background-color: $rrssb-linkedin;
-
-				&:hover {
-					background-color: darken($rrssb-linkedin, 10%);
-				}
-			}
-		}
-
-		&.twitter {
-			a {
-				background-color: $rrssb-twitter;
-
-				&:hover {
-					background-color: darken($rrssb-twitter, 10%);
-				}
-			}
-		}
-
-		&.googleplus {
-			a {
-				background-color: $rrssb-googleplus;
-
-				&:hover {
-					background-color: darken($rrssb-googleplus, 10%);
-				}
-			}
-
-			//custom path colors
-			.style1 {
-				//fill: #fff;
-			}
-			.style2 {
-				fill: $rrssb-googleplus;
-			}
-			.style3 {
-				fill: $rrssb-googleplus;
-			}
-		}
-
-		&.youtube {
-			a {
-				background-color: $rrssb-youtube;
-
-				&:hover {
-					background-color: darken($rrssb-youtube, 10%);
-				}
-			}
-		}
-
-		&.reddit {
-			a {
-				background-color: $rrssb-reddit;
-
-				&:hover {
-					background-color: darken($rrssb-reddit, 10%);
-				}
-			}
-		}
-
-		&.pinterest {
-			a {
-				background-color: $rrssb-pinterest;
-
-				&:hover {
-					background-color: darken($rrssb-pinterest, 10%);
-				}
-			}
-		}
-
-		&.github {
-			a {
-				background-color: $rrssb-github;
-
-				&:hover {
-					background-color: darken($rrssb-github, 10%);
-				}
-			}
-		}
-
 		&.small {
 			a {
 				padding: 0;
 
 				.icon {
-					position: relative;
-					margin: 0 auto;
-					top: auto;
-					left: auto;
-					overflow: hidden;
 					height: 100%;
+					left: auto;
+					margin: 0 auto;
+					overflow: hidden;
+					position: relative;
+					top: auto;
 					width: 100%;
 				}
 				.text {
@@ -316,9 +255,9 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 					padding-top: 0;
 
 					svg {
+						height: 48%;
 						position: relative;
 						top: 6px;
-						height: 48%;
 						width: 80%;
 					}
 				}
@@ -343,201 +282,41 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 					}
 				}
 
-				&:hover {
-					background-color: transparent;
-				}
-
-				&:active {
+				&:hover, &:active {
 					background-color: transparent;
 				}
 			}
 
-			&.email {
-				a {
-					.icon {
-						svg {
-							path, polygon {
-								fill: $rrssb-email;
-							}
-						}
-					}
 
-					&:hover {
+
+			// Control directive to output a class for each item in
+			// the variable list $social-list located on line 41
+			@each $s-name in $social-list {
+
+				&.#{nth($s-name, 1)} {
+					a {
 						.icon {
 							svg {
 								path, polygon {
-									fill: darken($rrssb-email, 20%);
+									fill: nth($s-name, 2);
 								}
 							}
-						}
-					}
-				}
-			}
 
-			&.facebook {
-				a {
-					.icon {
-						svg {
-							path, polygon {
-								fill: $rrssb-facebook;
-							}
-						}
-					}
-
-					&:hover {
-						.icon {
-							svg {
-								path, polygon {
-									fill: darken($rrssb-facebook, 20%);
-								}
-							}
-						}
-					}
-				}
-			}
-
-			&.linkedin {
-				a {
-					.icon {
-						svg {
-							path, polygon {
-								fill: $rrssb-linkedin;
-							}
-						}
-					}
-
-					&:hover {
-						.icon {
-							svg {
-								path, polygon {
-									fill: darken($rrssb-linkedin, 20%);
-								}
-							}
-						}
-					}
-				}
-			}
-
-			&.twitter {
-				a {
-					.icon {
-						svg {
-							path, polygon {
-								fill: $rrssb-twitter;
-							}
-						}
-					}
-
-					&:hover {
-						.icon {
-							svg {
-								path, polygon {
-									fill: darken($rrssb-twitter, 20%);
-								}
-							}
-						}
-					}
-				}
-			}
-
-			&.googleplus {
-				a {
-					.icon {
-						svg {
-							path, polygon {
-								fill: $rrssb-googleplus;
-							}
-						}
-					}
-
-					&:hover {
-						.icon {
-							svg {
-								path, polygon {
-									fill: darken($rrssb-googleplus, 20%);
+							&:hover {
+								.icon {
+									svg {
+										path, polygon {
+											fill: darken(nth($s-name, 2), 20%);
+										}
+									}
 								}
 							}
 						}
 					}
 				}
 
-				//custom path colors
-				.style1 {
-					//fill: #fff;
-				}
-				.style2 {
-					fill: $rrssb-googleplus;
-				}
-				.style3 {
-					fill: $rrssb-googleplus;
-				}
-			}
+			}  // end @each directive
 
-			&.youtube {
-				a {
-					.icon {
-						svg {
-							path, polygon {
-								fill: $rrssb-youtube;
-							}
-						}
-					}
-
-					&:hover {
-						.icon {
-							svg {
-								path, polygon {
-									fill: darken($rrssb-youtube, 20%);
-								}
-							}
-						}
-					}
-				}
-			}
-
-			&.pinterest {
-				a {
-					.icon {
-						svg {
-							path, polygon {
-								fill: $rrssb-pinterest;
-							}
-						}
-					}
-
-					&:hover {
-						.icon {
-							svg {
-								path, polygon {
-									fill: darken($rrssb-pinterest, 20%);
-								}
-							}
-						}
-					}
-				}
-			}
-
-			&.github {
-				a {
-					.icon {
-						svg {
-							path, polygon {
-								fill: $rrssb-github;
-							}
-						}
-					}
-
-					&:hover {
-						.icon {
-							svg {
-								path, polygon {
-									fill: darken($rrssb-github, 20%);
-								}
-							}
-						}
-					}
-				}
-			}
 		}
 	}
 }
