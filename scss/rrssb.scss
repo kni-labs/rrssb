@@ -33,7 +33,7 @@ $rrssb-border-radius: 2px !default;
 
 $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
-// Variable list for all social button colors to be iterated over.
+// Variable list for all social button colors to be iterated over. This is where you add/remove buttons
 $social-list: (
 	email			$rrssb-email,
 	facebook		$rrssb-facebook,
