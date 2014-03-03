@@ -270,8 +270,7 @@ $social-list: (
 
 
 
-			// Control directive to output a class for each item in
-			// the variable list $social-list located on line 41
+			// Control directive to generate individual button classes for each item in social list
 			@each $s-name in $social-list {
 
 				&.#{nth($s-name, 1)} {
