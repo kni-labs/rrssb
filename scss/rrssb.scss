@@ -120,21 +120,6 @@ $social-list: (
 
 		}
 
-		&.googleplus {
-			//custom path colors
-			.style1 {
-				//fill: #fff;
-			}
-			.style2 {
-				fill: $rrssb-googleplus;
-			}
-			.style3 {
-				fill: $rrssb-googleplus;
-			}
-		}
-
-
-
 		a {
 			@extend %border-box;
 			background-color: #ccc;
