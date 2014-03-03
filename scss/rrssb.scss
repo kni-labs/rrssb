@@ -35,9 +35,7 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 
 
-// This variable list determines the output of the @each
-// control directive.  Add / subtract social accounts from
-// this list to edit the compiled CSS classes.
+// Variable list for all social button colors to be iterated over.
 $social-list: (
 	email			$rrssb-email,
 	facebook		$rrssb-facebook,
@@ -104,8 +102,7 @@ $social-list: (
 		padding: 0 2.5px;
 
 
-		// Control directive to output a class for each item in
-		// the variable list $social-list located on line 41
+		// Control directive to generate individual button classes for each item in social list
 		@each $s-name in $social-list {
 
 			&.#{nth($s-name, 1)} {
