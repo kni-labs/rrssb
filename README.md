@@ -18,6 +18,11 @@ Adding a class of `popup` to the anchor tag for each share button will make the 
 
 RRSSB is also registered with Bower under the name RRSSB. Use the following command to find it: `bower search rrssb`
 
+### FAQ
+
+*Why are buttons so small on mobile?*
+The current demo is just to show how large and small it can go.  Remember: the buttons fill their container. We recommend full 320px width container for mobile, so that icons remain larger and touch-friendly.
+
 
 ### About
 
