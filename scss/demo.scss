@@ -59,7 +59,7 @@ a {
 	}
 	small {
 		display: block;
-		margin-top: 50px;
+		margin: 40px 0;
 		font-size: 12px;
 		color: #999;
 	}
@@ -85,10 +85,23 @@ hr {
 		font-size: 14px;
 		padding: 10px 0 0;
 		width: 115px;
+
+		@media screen and (max-width: 320px)  {
+			font-size: 12px;
+        	width: 100%;
+        	float: none;
+    	}
+
 	}
 
 	.rrssb-buttons {
 		float: left;
 		width: calc(100% - 116px);
+
+		@media screen and (max-width: 320px)  {
+        	width: 100%;
+        	float: none;
+        	clear: both;
+    	}
 	}
 }
