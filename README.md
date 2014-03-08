@@ -5,7 +5,6 @@
 
 RRSSB is built with [SASS](http://sass-lang.com/), so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit &mdash; the rest will fill in automagically in the container.
 
-
 ### Demo
 
 [**View the demo here**](http://kurtnoble.com/labs/rrssb/)
@@ -17,11 +16,6 @@ Buttons will automatically fill to the size of the ul `rrssb-buttons`.
 Adding a class of `popup` to the anchor tag for each share button will make the share dialog open in a popup, rather than a new window.
 
 RRSSB is also registered with Bower under the name RRSSB. Use the following command to find it: `bower search rrssb`
-
-### FAQ
-
-**Why are buttons so small on mobile?**  
-The current demo is just to show how large and small it can go.  Remember: the buttons fill their container. We recommend a full width container for mobile, so that icons remain larger and touch-friendly.
 
 
 ### About
