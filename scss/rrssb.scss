@@ -16,6 +16,8 @@
 //       \__\/         \__\/
 
 
+// How to use: Add/remove buttons from config settings and $social-list.
+
 // config settings
 $rrssb-txt: #fff !default;
 $rrssb-email: #0a88ff !default;
@@ -33,7 +35,7 @@ $rrssb-border-radius: 2px !default;
 
 $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
-// Variable list for all social button colors to be iterated over. This is where you add/remove buttons
+// Variable list for all social button colors to be iterated over. 
 $social-list: (
 	email			$rrssb-email,
 	facebook		$rrssb-facebook,
@@ -46,8 +48,6 @@ $social-list: (
 	pinterest		$rrssb-pinterest,
 	github			$rrssb-github
 );
-
-
 
 @mixin transition($expression) {
 	-webkit-transition: $expression;
@@ -99,8 +99,7 @@ $social-list: (
 		margin: 0;
 		padding: 0 2.5px;
 
-
-		// Control directive to generate individual button classes for each item in social list
+		// This generates individual button classes for each item in social list on line 39.
 		@each $s-name in $social-list {
 
 			&.#{nth($s-name, 1)} {
@@ -188,8 +187,8 @@ $social-list: (
 			height: auto;
 
 			a {
-				font-size: 13px;
-				font-size: 1vw; // ZOMG!!
+				font-size: 15px; // fallback
+				font-size: 1vw;  // scales font with browser
 				padding: 7% 0% 7% 12%;
 				border-radius: 0.2em;
 				@extend %backface-visibility;
@@ -206,20 +205,21 @@ $social-list: (
 				}
 
 				.text {
-					font-size: 13px;
-					font-size: 1vw; // ZOMG!!
+					font-size: 15px;
+					font-size: 1vw; 
 					@extend %backface-visibility;
 				}
 
 				&:hover {
-					font-size: 13px;
-					font-size: 1vw; // ZOMG!!
+					font-size: 15px;
+					font-size: 1vw; 
 					padding: 7% 0% 7% 12%;
 					border-radius: 0.2em;
 				}
 			}
 		}
 	}
+
 	&.small-format {
 		padding-top: 5px;
 
@@ -228,7 +228,6 @@ $social-list: (
 			padding: 0 1.5px;
 
 			a {
-
 				.icon {
 					height: 100%;
 					padding-top: 0;
@@ -266,9 +265,7 @@ $social-list: (
 				}
 			}
 
-
-
-			// Control directive to generate individual button classes for each item in social list
+			// This generates individual button classes for each item in social list on line 39.
 			@each $s-name in $social-list {
 
 				&.#{nth($s-name, 1)} {
