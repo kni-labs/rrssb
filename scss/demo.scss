@@ -54,6 +54,7 @@ a {
 
 	p {
 		font-size: 16px;
+		line-height: 1.4em;
 
 		@media screen and (min-width: 1024px)  {
         font-size: 20px;
@@ -67,8 +68,9 @@ a {
 		@include transition-all(0.2);
 
 		@media screen and (max-width: 400px)  {
-			width: 100%;
-			margin: -25px 0 15px 0;
+			// width: 100%;
+			width: 60%;
+			// margin: -25px 0 15px 0;
     	}
 
 	}
@@ -93,6 +95,10 @@ hr {
 .share-container {
 	position: relative;
 	padding: 0 0 25px;
+
+	@media screen and (max-width: 320px)  {
+		padding: 0 0 12px;
+	}
 
 	.label {
 		color: #777;
