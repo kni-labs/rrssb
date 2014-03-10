@@ -17,6 +17,7 @@ Adding a class of `popup` to the anchor tag for each share button will make the 
 
 RRSSB is also registered with Bower under the name RRSSB. Use the following command to find it: `bower search rrssb`
 
+Need it as [Wordpress plugin](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/)? 
 
 ### About
 
