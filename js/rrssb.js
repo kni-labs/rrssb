@@ -241,4 +241,4 @@
 	});
 
 
-})(window, $);
+})(window, jQuery);
