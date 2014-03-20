@@ -21,11 +21,6 @@
 ;(function(window, jQuery, undefined) {
 	'use strict';
 
-	/*
-	 * Global variables
-	 */
-	var smallBtnCount;
-
 
 	/*
 	 * Utility functions
@@ -42,6 +37,7 @@
 		//get button width
 		var containerWidth = parseFloat(jQuery('.rrssb-buttons').width());
 		var buttonWidth = jQuery('.rrssb-buttons li').not('.small').first().width();
+		var smallBtnCount = jQuery('.rrssb-buttons li.small').length;
 
 		// enlarge buttons if they get wide enough
 		if (buttonWidth > 170 && smallBtnCount < 1) {
@@ -59,6 +55,7 @@
 
 	var backUpFromSmall = function() {
 		var totalBtnSze = 0, totalTxtSze = 0, upCandidate, nextBackUp;
+		var smallBtnCount = jQuery('.rrssb-buttons li.small').length;
 
 		if (smallBtnCount === jQuery('.rrssb-buttons li').length) {
 			var btnCalc = smallBtnCount * 42;
@@ -125,7 +122,7 @@
 				smallBtnFraction;
 
 		// readjust buttons for small display
-		smallBtnCount = jQuery('.rrssb-buttons li.small').length;
+		var smallBtnCount = jQuery('.rrssb-buttons li.small').length;
 		jQuery('.smallbtnsdude span').html(smallBtnCount);
 
 		// make sure there are small buttons
@@ -160,6 +157,10 @@
 	};
 
 	var rrssbInit = function() {
+		jQuery('.rrssb-buttons').each(function(index) {
+			jQuery(this).addClass('rrssb-'+(index + 1));
+		});
+
 		setPercentBtns();
 
 		// grab initial text width of each button and add as data attr
@@ -173,8 +174,6 @@
 
 	var rrssbMagicLayout = function(callback) {
 		var containerWidth = jQuery('.rrssb-buttons').width();
-
-		smallBtnCount = jQuery('.rrssb-buttons li.small').length;
 
 		jQuery('.rrssb-buttons li.small').removeClass('small');
 
