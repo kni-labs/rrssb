@@ -117,10 +117,10 @@
 					var btnWidth = parseFloat(jQuery(this).width());
 
 					if (txtWidth > btnWidth) {
-						console.log($(self).attr('class')+' '+$(this).attr('class')+' txtWidth: '+txtWidth+ ' & btnWidth: '+btnWidth);
+						//console.log($(self).attr('class')+' '+$(this).attr('class')+' txtWidth: '+txtWidth+ ' & btnWidth: '+btnWidth);
 						var btn2small = jQuery('li', self).not('.small').last();
 						jQuery(btn2small).addClass('small');
-						console.log($(btn2small).attr('class'));
+						//console.log($(btn2small).attr('class'));
 						sizeSmallBtns();
 					}
 				}
