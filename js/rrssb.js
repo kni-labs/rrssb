@@ -173,8 +173,9 @@
 				jQuery(self).removeClass('small-format');
 				setPercentBtns();
 			}
-			makeExtremityBtns();
-		});
+		}); //end loop
+
+		makeExtremityBtns();
 	};
 
 	var rrssbInit = function() {
