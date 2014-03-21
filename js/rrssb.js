@@ -105,21 +105,24 @@
 	var checkSize = function(init) {
 		// loop through each instance of buttons
 		jQuery('.rrssb-buttons').each(function(index) {
+			//console.log('starting check for: '+(index+1));
 			var self = jQuery(this);
 			var elems = jQuery('li', self).nextAll(), count = elems.length;
 
 			// get buttons in reverse order and loop through each
-			jQuery(jQuery('li', self).get().reverse()).each(function(index) {
+			jQuery(jQuery('li', self).get().reverse()).each(function(index, count) {
 
 				if (jQuery(this).hasClass('small') === false) {
 					var txtWidth = parseFloat(jQuery(this).attr('data-size')) + 55;
 					var btnWidth = parseFloat(jQuery(this).width());
 
 					if (txtWidth > btnWidth) {
+						console.log($(self).attr('class')+' '+$(this).attr('class')+' txtWidth: '+txtWidth+ ' & btnWidth: '+btnWidth);
 						var btn2small = jQuery('li', self).not('.small').last();
 						jQuery(btn2small).addClass('small');
+						console.log($(btn2small).attr('class'));
+						sizeSmallBtns();
 					}
-					sizeSmallBtns();
 				}
 
 				if (!--count) backUpFromSmall();
