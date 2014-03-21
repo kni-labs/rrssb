@@ -15,6 +15,8 @@ Buttons will automatically fill to the size of the ul `rrssb-buttons`.
 
 Adding a class of `popup` to the anchor tag for each share button will make the share dialog open in a popup, rather than a new window.
 
+Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
+
 RRSSB is also registered with Bower under the name RRSSB. Use the following command to find it: `bower search rrssb`
 
 Need it as [Wordpress plugin](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/)? 
