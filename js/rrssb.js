@@ -98,24 +98,30 @@
 	};
 
 	var checkSize = function(init) {
-		var elems = jQuery('.rrssb-buttons li').nextAll(), count = elems.length;
+		// loop through each instance of buttons
+		jQuery('.rrssb-buttons').each(function(index) {
+			var self = jQuery(this);
+			var elems = jQuery('li', self).nextAll(), count = elems.length;
 
-		jQuery(jQuery('.rrssb-buttons li').get().reverse()).each(function(index) {
+			// get buttons in reverse order and loop through each
+			jQuery(jQuery('li', self).get().reverse()).each(function(index) {
 
-			if (jQuery(this).hasClass('small') === false) {
-				var txtWidth = parseFloat(jQuery(this).attr('data-size')) + 55;
-				var btnWidth = parseFloat(jQuery(this).width());
+				if (jQuery(this).hasClass('small') === false) {
+					var txtWidth = parseFloat(jQuery(this).attr('data-size')) + 55;
+					var btnWidth = parseFloat(jQuery(this).width());
 
-				if (txtWidth > btnWidth) {
-					var btn2small = jQuery('.rrssb-buttons li').not('.small').last();
-					jQuery(btn2small).addClass('small');
+					if (txtWidth > btnWidth) {
+						var btn2small = jQuery('li', self).not('.small').last();
+						jQuery(btn2small).addClass('small');
+					}
+					sizeSmallBtns();
 				}
-				sizeSmallBtns();
-			}
 
-			if (!--count) backUpFromSmall();
+				if (!--count) backUpFromSmall();
+			});
 		});
 
+		// if first time running, put it through the magic layout
 		if (init === true) {
 			rrssbMagicLayout(sizeSmallBtns);
 		}
