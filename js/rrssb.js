@@ -26,7 +26,7 @@
 	 * Utility functions
 	 */
 	var setPercentBtns = function() {
-
+		// loop through each instance of buttons
 		jQuery('.rrssb-buttons').each(function(index) {
 			var self = jQuery(this);
 			var numOfButtons = jQuery('li', self).length;
@@ -38,6 +38,7 @@
 	};
 
 	var makeExtremityBtns = function() {
+		// loop through each instance of buttons
 		jQuery('.rrssb-buttons').each(function(index) {
 			var self = jQuery(this);
 			//get button width
@@ -132,45 +133,48 @@
 	};
 
 	var sizeSmallBtns = function() {
-		var regButtonCount,
-				regPercent,
-				pixelsOff,
-				magicWidth,
-				smallBtnFraction;
+		// loop through each instance of buttons
+		jQuery('.rrssb-buttons').each(function(index) {
+			var self = jQuery(this);
+			var regButtonCount,
+					regPercent,
+					pixelsOff,
+					magicWidth,
+					smallBtnFraction;
 
-		// readjust buttons for small display
-		var smallBtnCount = jQuery('.rrssb-buttons li.small').length;
-		jQuery('.smallbtnsdude span').html(smallBtnCount);
+			// readjust buttons for small display
+			var smallBtnCount = jQuery('li.small', self).length;
 
-		// make sure there are small buttons
-		if (smallBtnCount > 0 && smallBtnCount !== jQuery('.rrssb-buttons li').length) {
-			jQuery('.rrssb-buttons').removeClass('small-format');
+			// make sure there are small buttons
+			if (smallBtnCount > 0 && smallBtnCount !== jQuery('li', self).length) {
+				jQuery(self).removeClass('small-format');
 
-			//make sure small buttons are square when not all small
-			jQuery('.rrssb-buttons li.small').css('width','42px');
-			pixelsOff = smallBtnCount * 42;
-			regButtonCount = jQuery('.rrssb-buttons li').not('.small').length;
-			regPercent = 100 / regButtonCount;
-			smallBtnFraction = pixelsOff / regButtonCount;
+				//make sure small buttons are square when not all small
+				jQuery('li.small', self).css('width','42px');
+				pixelsOff = smallBtnCount * 42;
+				regButtonCount = jQuery('li', self).not('.small').length;
+				regPercent = 100 / regButtonCount;
+				smallBtnFraction = pixelsOff / regButtonCount;
 
-			if (navigator.userAgent.indexOf('Chrome') >= 0 || navigator.userAgent.indexOf('Safari') >= 0) {
-				magicWidth = '-webkit-calc('+regPercent+'% - '+smallBtnFraction+'px)';
-			} else if (navigator.userAgent.indexOf('Firefox') >= 0) {
-				magicWidth = '-moz-calc('+regPercent+'% - '+smallBtnFraction+'px)';
+				if (navigator.userAgent.indexOf('Chrome') >= 0 || navigator.userAgent.indexOf('Safari') >= 0) {
+					magicWidth = '-webkit-calc('+regPercent+'% - '+smallBtnFraction+'px)';
+				} else if (navigator.userAgent.indexOf('Firefox') >= 0) {
+					magicWidth = '-moz-calc('+regPercent+'% - '+smallBtnFraction+'px)';
+				} else {
+					magicWidth = 'calc('+regPercent+'% - '+smallBtnFraction+'px)';
+				}
+				jQuery('li', self).not('.small').css('width', magicWidth);
+
+			} else if (smallBtnCount === jQuery('li', self).length) {
+				// if all buttons are small, change back to percentage
+				jQuery(self).addClass('small-format');
+				setPercentBtns();
 			} else {
-				magicWidth = 'calc('+regPercent+'% - '+smallBtnFraction+'px)';
+				jQuery(self).removeClass('small-format');
+				setPercentBtns();
 			}
-			jQuery('.rrssb-buttons li').not('.small').css('width', magicWidth);
-
-		} else if (smallBtnCount === jQuery('.rrssb-buttons li').length) {
-			// if all buttons are small, change back to percentage
-			jQuery('.rrssb-buttons').addClass('small-format');
-			setPercentBtns();
-		} else {
-			jQuery('.rrssb-buttons').removeClass('small-format');
-			setPercentBtns();
-		}
-		makeExtremityBtns();
+			makeExtremityBtns();
+		});
 	};
 
 	var rrssbInit = function() {
@@ -190,8 +194,7 @@
 	};
 
 	var rrssbMagicLayout = function(callback) {
-		var containerWidth = jQuery('.rrssb-buttons').width();
-
+		//remove small buttons before each conversion try
 		jQuery('.rrssb-buttons li.small').removeClass('small');
 
 		checkSize();
