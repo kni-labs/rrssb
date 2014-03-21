@@ -26,31 +26,38 @@
 	 * Utility functions
 	 */
 	var setPercentBtns = function() {
-		var numOfButtons = jQuery('.rrssb-buttons li').length;
-		var initBtnWidth = 100 / numOfButtons;
 
-		// set initial width of buttons
-		jQuery('.rrssb-buttons li').css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
+		jQuery('.rrssb-buttons').each(function(index) {
+			var self = jQuery(this);
+			var numOfButtons = jQuery('li', self).length;
+			var initBtnWidth = 100 / numOfButtons;
+
+			// set initial width of buttons
+			jQuery('li', self).css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
+		});
 	};
 
 	var makeExtremityBtns = function() {
-		//get button width
-		var containerWidth = parseFloat(jQuery('.rrssb-buttons').width());
-		var buttonWidth = jQuery('.rrssb-buttons li').not('.small').first().width();
-		var smallBtnCount = jQuery('.rrssb-buttons li.small').length;
+		jQuery('.rrssb-buttons').each(function(index) {
+			var self = jQuery(this);
+			//get button width
+			var containerWidth = parseFloat(jQuery(self).width());
+			var buttonWidth = jQuery('li', self).not('.small').first().width();
+			var smallBtnCount = jQuery('li.small', self).length;
 
-		// enlarge buttons if they get wide enough
-		if (buttonWidth > 170 && smallBtnCount < 1) {
-			jQuery('.rrssb-buttons').addClass('large-format');
-		} else {
-			jQuery('.rrssb-buttons').removeClass('large-format');
-		}
+			// enlarge buttons if they get wide enough
+			if (buttonWidth > 170 && smallBtnCount < 1) {
+				jQuery(self).addClass('large-format');
+			} else {
+				jQuery(self).removeClass('large-format');
+			}
 
-		if (containerWidth < 200) {
-			jQuery('.rrssb-buttons').removeClass('small-format').addClass('tiny-format');
-		} else {
-			jQuery('.rrssb-buttons').removeClass('tiny-format');
-		}
+			if (containerWidth < 200) {
+				jQuery(self).removeClass('small-format').addClass('tiny-format');
+			} else {
+				jQuery(self).removeClass('tiny-format');
+			}
+		});
 	};
 
 	var backUpFromSmall = function() {
