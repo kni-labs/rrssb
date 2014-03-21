@@ -19,7 +19,13 @@ Each sharing URL requires various parameters that allow you to pass through mess
 
 RRSSB is also registered with Bower under the name RRSSB. Use the following command to find it: `bower search rrssb`
 
-Need it as [Wordpress plugin](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/)? 
+Need it as [Wordpress plugin](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/)?
+
+### Support
+
+Currently tested between [140px](https://www.dropbox.com/s/2k6lcebg2887ge3/Screenshot%202014-02-18%2009.45.45.png) and [15,465px](https://www.dropbox.com/s/1juq03011lixk3r/Screenshot%202014-02-18%2009.43.57.png) on current versions of Chrome 33, Safari 7.0.2, Firefox 27, Opera 20, and IE9+. 
+
+Requires calc and SVG support.
 
 ### About
 
