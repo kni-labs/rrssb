@@ -12,6 +12,10 @@
     "social",
     "buttons"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kni-labs/rrssb"
+  },
   "license": "MIT",
   "homepage": "http://kurtnoble.com/labs/rrssb/"
 }
