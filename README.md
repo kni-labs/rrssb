@@ -17,7 +17,7 @@ Adding a class of `popup` to the anchor tag for each share button will make the 
 
 Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
 
-Install with bower: `bower search rrssb`
+Install with [**Bower**](http://bower.io): `bower search rrssb`
 
 In Rails: [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
 
