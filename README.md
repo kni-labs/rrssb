@@ -21,7 +21,7 @@ Install with [**Bower**](http://bower.io): `bower search rrssb`
 
 In Rails: [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
 
-In Wordpress: [**Wordpress plugin by @aarreedd**](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/)?
+In Wordpress: [**Wordpress plugin by @aarreedd**](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/)
 
 ### Support
 
