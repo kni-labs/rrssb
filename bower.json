@@ -6,7 +6,7 @@
     "(Daniel Box <daniel@kurtnoble.com>)"
   ],
   "description": "Ridiculously Responsive Social Sharing Buttons",
-  "main": [ 
+  "main": [
     "js/rrssb.js",
     "css/rrssb.css"
     ],
