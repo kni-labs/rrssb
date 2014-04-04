@@ -1,4 +1,3 @@
-
 # Ridiculously Responsive Social Sharing Buttons
 
 [<img align="right" src="media/rrssb-preview.png" width="359" height="auto"/>](http://kurtnoble.com/labs/rrssb/) Love them or hate them social sharing buttons appear to be with us for a while. It seemed like [we](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
@@ -22,6 +21,8 @@ Install with [**Bower**](http://bower.io): `bower search rrssb`
 In Rails: [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
 
 In Wordpress: [**Wordpress plugin by @aarreedd**](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/)
+
+CDN: [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb)
 
 ### Support
 
