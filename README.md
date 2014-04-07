@@ -55,7 +55,7 @@ CDN: [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb)
 
 Currently tested between [**140px**](https://www.dropbox.com/s/2k6lcebg2887ge3/Screenshot%202014-02-18%2009.45.45.png) and [**15,465px**](https://www.dropbox.com/s/1juq03011lixk3r/Screenshot%202014-02-18%2009.43.57.png) on current versions of Chrome 33, Safari 7.0.2, Firefox 27, Opera 20, and IE9+. 
 
-Requires calc and SVG support.
+Requires `calc` and SVG support.
 
 ### About
 
