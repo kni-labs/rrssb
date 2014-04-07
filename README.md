@@ -10,13 +10,13 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 
 ### Usage
 
-1) Link to the css file in header:
+**1) Link to the css file in header:**
 
 ```html
 <link rel="stylesheet" href="css/rrssb.css" />
 ```
 
-2) Copy `.rrssb-buttons` unordered list to desired location:
+**2) Copy `.rrssb-buttons` unordered list to desired location:**
 
 ```html
  <ul class="rrssb-buttons clearfix">
@@ -27,17 +27,16 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
  </ul>
 ```
 
-- Buttons will automatically fill to the size of the ul `rrssb-buttons`.
+- Buttons will automatically flow to the size of the ul `rrssb-buttons`. If you need them to be a fix size wrap a fixed-width container around `rrssb-buttons.`
 - Only copy the `li`s of the buttons you want. 
 - Adding a class of `popup` to the anchor tag for each share button will make the share dialog open in a popup, rather than a new window.
 - Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
 
-3) Link to the .js file at the bottom of your page:
+**3) Link to the .js file at the bottom of your page:**
 
 ```html
 <script src="js/rrssb.min.js"></script>
 ```
-
 
 
 #### Other install options:
