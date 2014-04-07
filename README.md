@@ -43,13 +43,11 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 
 #### Other install options:
 
-With [**Bower**](http://bower.io): `bower search rrssb`
-
-In Rails: [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
-
-In Wordpress: [**Wordpress plugin by @aarreedd**](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/)
-
-CDN: [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb)
+------------
+With [**Bower**](http://bower.io)| `bower search rrssb`
+In Rails |  [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
+In Wordpress | [**Wordpress plugin by @aarreedd**](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/)
+CDN: | [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb)
 
 ### Support
 
