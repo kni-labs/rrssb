@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" > <!--<![endif]-->
+<html>
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -20,26 +17,31 @@
 
         <link rel="icon" type="image/png" href="media/favicon.png" />
         <link rel="stylesheet" href="css/normalize.min.css" />
+
+        <!-- Stylesheet required to power RRSSB. Copy this css file to your header -->
         <link rel="stylesheet" href="css/rrssb.css" />
+
         <link rel="stylesheet" href="css/demo.css" />
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
+        <!--[if lt IE 9]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
         <div class="main-container">
-            <!-- page stuff -->
             <h1>Ridiculously Responsive Social Sharing Buttons</h1>
             <hr />
 
             <div class="share-container clearfix">
                 <span class="label">share this page:</span>
-                <!-- buttons start here -->
+
+                <!-- Buttons start here. Copy this ul to your document. -->
                 <ul class="rrssb-buttons clearfix">
                     <li class="email">
+
+                        <!-- Replace subject with your message using URL Endocding: http://meyerweb.com/eric/tools/dencoder/ -->
                         <a href="mailto:?subject=Check%20out%20how%20ridiculously%20responsive%20these%20social%20buttons%20are&amp;body=http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb%2Findex.html">
                             <span class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g><path d="M20.111 26.147c-2.336 1.051-4.361 1.401-7.125 1.401c-6.462 0-12.146-4.633-12.146-12.265 c0-7.94 5.762-14.833 14.561-14.833c6.853 0 11.8 4.7 11.8 11.252c0 5.684-3.194 9.265-7.399 9.3 c-1.829 0-3.153-0.934-3.347-2.997h-0.077c-1.208 1.986-2.96 2.997-5.023 2.997c-2.532 0-4.361-1.868-4.361-5.062 c0-4.749 3.504-9.071 9.111-9.071c1.713 0 3.7 0.4 4.6 0.973l-1.169 7.203c-0.388 2.298-0.116 3.3 1 3.4 c1.673 0 3.773-2.102 3.773-6.58c0-5.061-3.27-8.994-9.303-8.994c-5.957 0-11.175 4.673-11.175 12.1 c0 6.5 4.2 10.2 10 10.201c1.986 0 4.089-0.43 5.646-1.245L20.111 26.147z M16.646 10.1 c-0.311-0.078-0.701-0.155-1.207-0.155c-2.571 0-4.595 2.53-4.595 5.529c0 1.5 0.7 2.4 1.9 2.4 c1.441 0 2.959-1.828 3.311-4.087L16.646 10.068z"/></g></svg>
@@ -48,6 +50,8 @@
                         </a>
                     </li>
                     <li class="facebook">
+                        <!-- Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header: 
+                        https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/ -->
                         <a href="https://www.facebook.com/sharer/sharer.php?u=http://kurtnoble.com/labs/rrssb/index.html" class="popup">
                             <span class="icon">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -68,6 +72,7 @@
                         </a>
                     </li> -->
                     <li class="linkedin">
+                        <!-- Replace href with your meta and URL information -->
                         <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://kurtnoble.com/labs/rrssb/index.html&amp;title=Ridiculously%20Responsive%20Social%20Sharing%20Buttons&amp;summary=Responsive%20social%20icons%20by%20KNI%20Labs" class="popup">
                             <span class="icon">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -82,6 +87,7 @@
                         </a>
                     </li>
                     <li class="twitter">
+                        <!-- Replace href with your Meta and URL information  -->
                         <a href="http://twitter.com/home?status=Ridiculously%20Responsive%20Social%20Sharing%20Buttons%20by%20@seagoat%20and%20@dbox%20http://kurtnoble.com/labs/rrssb" class="popup">
                             <span class="icon">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -106,6 +112,7 @@
                         </a>
                     </li> -->
                     <li class="googleplus">
+                        <!-- Replace href with your meta and URL information.  -->
                         <a href="https://plus.google.com/share?url=Check%20out%20how%20ridiculously%20responsive%20these%20social%20buttons%20are%20http://kurtnoble.com/labs/rrssb/index.html" class="popup">
                             <span class="icon">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -141,6 +148,7 @@
                         </a>
                     </li> -->
                     <li class="pinterest">
+                        <!-- Replace href with your meta and URL information.  -->
                         <a href="http://pinterest.com/pin/create/button/?url=http://kurtnoble.com/labs/rrssb/index.html&amp;media=http://kurtnoble.com/labs/rrssb/media/facebook-share.jpg&amp;description=Ridiculously%20responsive%20social%20sharing%20buttons%20by%20KNI%20Labs.">
                             <span class="icon">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -175,7 +183,7 @@
                         </a>
                     </li>
                 </ul>
-                <!-- buttons end here -->
+                <!-- Buttons end here -->
             </div>
 
             <p><img class="rrssb-preview" src="media/rrssb-preview.png" /><a href="http://worldsmostshareablewebsite.greig.cc/">Love them</a> or <a href="http://solomon.io/why-im-done-with-social-media-buttons/">hate them</a> social sharing buttons appear to be with us for a while. It seemed like <a href="http://www.kurtnoble.com">we</a> were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.</p>
@@ -335,9 +343,10 @@
 
         </div> <!-- #main-container -->
 
+        <!-- Required Javascript files. Copy these to your document. -->
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
 
         <script src="js/rrssb.min.js"></script>
 
