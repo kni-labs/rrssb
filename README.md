@@ -6,7 +6,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 
 ### Demo
 
-[**View the demo here**](http://kurtnoble.com/labs/rrssb/)
+> [**View the demo here**](http://kurtnoble.com/labs/rrssb/)
 
 ### Usage
 
@@ -17,7 +17,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 ```
 
 
-2) Copy `.rrssb-buttons` unordered list to desired location:
+2) Copy `.rrssb-buttons` unordered list to desired location(s):
 
 ```html
  <ul class="rrssb-buttons clearfix">
