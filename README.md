@@ -30,6 +30,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 - Buttons will automatically fill to the size of the ul `rrssb-buttons`.
 - Only copy the `li`s of the buttons you want. 
 - Adding a class of `popup` to the anchor tag for each share button will make the share dialog open in a popup, rather than a new window.
+- Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
 
 3) Link to the .js file at the bottom of your page:
 
@@ -38,11 +39,10 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 ```
 
 
+
 #### Other install options:
 
-Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
-
-Install with [**Bower**](http://bower.io): `bower search rrssb`
+With [**Bower**](http://bower.io): `bower search rrssb`
 
 In Rails: [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
 
