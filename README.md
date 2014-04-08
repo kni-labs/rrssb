@@ -1,6 +1,6 @@
 # Ridiculously Responsive Social Sharing Buttons
 
-[<img align="right" src="media/rrssb-preview.png" width="359" height="auto"/>](http://kurtnoble.com/labs/rrssb/) Love them or hate them, social sharing buttons appear to be with us for a while. It seemed like [we](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
+[<img align="right" src="media/rrssb-preview.png" width="359" height="auto"/>](http://kurtnoble.com/labs/rrssb/) Love them or hate them, social sharing buttons appear to be with us for a while. It seemed like [**we**](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
 
 RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit &mdash; the rest will fill in automagically in the container.
 
@@ -34,7 +34,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 - Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
 
 
-3) Link to javascript files (jQuery CDN, [jQuery fallback](http://css-tricks.com/snippets/jquery/fallback-for-cdn-hosted-jquery/) and `rrssb.min.js`):
+3) Link to javascript files (jQuery CDN, [**jQuery fallback**](http://css-tricks.com/snippets/jquery/fallback-for-cdn-hosted-jquery/), and `rrssb.min.js`):
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -56,7 +56,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 
 Currently tested between [**140px**](https://www.dropbox.com/s/2k6lcebg2887ge3/Screenshot%202014-02-18%2009.45.45.png) and [**15,465px**](https://www.dropbox.com/s/1juq03011lixk3r/Screenshot%202014-02-18%2009.43.57.png) on current versions of Chrome 33, Safari 7.0.2, Firefox 27, Opera 20, and IE9+. 
 
-Requires `calc` and SVG support.
+Requires [**calc**](http://caniuse.com/calc) and [**SVG**](http://caniuse.com/svg)
 
 ### About
 
