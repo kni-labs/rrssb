@@ -30,12 +30,13 @@ $rrssb-reddit: #8bbbe3 !default;
 $rrssb-youtube: #df1c31 !default;
 $rrssb-pinterest: #b81621 !default;
 $rrssb-github: #444 !default;
+$rrssb-pocket: #ED4054 !default;
 
 $rrssb-border-radius: 2px !default;
 
 $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
-// Variable list for all social button colors to be iterated over. 
+// Variable list for all social button colors to be iterated over.
 $social-list: (
 	email			$rrssb-email,
 	facebook		$rrssb-facebook,
@@ -46,7 +47,8 @@ $social-list: (
 	youtube			$rrssb-youtube,
 	reddit			$rrssb-reddit,
 	pinterest		$rrssb-pinterest,
-	github			$rrssb-github
+	github			$rrssb-github,
+	pocket			$rrssb-pocket
 );
 
 @mixin transition($expression) {
@@ -206,13 +208,13 @@ $social-list: (
 
 				.text {
 					font-size: 15px;
-					font-size: 1vw; 
+					font-size: 1vw;
 					@extend %backface-visibility;
 				}
 
 				&:hover {
 					font-size: 15px;
-					font-size: 1vw; 
+					font-size: 1vw;
 					padding: 7% 0% 7% 12%;
 					border-radius: 0.2em;
 				}
