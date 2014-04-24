@@ -98,6 +98,7 @@ $social-list: (
 		list-style: none;
 		margin: 0;
 		padding: 0 2.5px;
+		line-height: 13px;
 
 		// This generates individual button classes for each item in social list on line 39.
 		@each $s-name in $social-list {
@@ -191,6 +192,7 @@ $social-list: (
 				font-size: 1vw;  // scales font with browser
 				padding: 7% 0% 7% 12%;
 				border-radius: 0.2em;
+				line-height: 1vw;
 				@extend %backface-visibility;
 
 				.icon {
