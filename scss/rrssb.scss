@@ -29,6 +29,7 @@ $rrssb-googleplus: #e93f2e !default;
 $rrssb-reddit: #8bbbe3 !default;
 $rrssb-youtube: #df1c31 !default;
 $rrssb-pinterest: #b81621 !default;
+$rrssb-pocket: #ED4054 !default;
 $rrssb-github: #444 !default;
 
 $rrssb-border-radius: 2px !default;
@@ -46,6 +47,7 @@ $social-list: (
 	youtube			$rrssb-youtube,
 	reddit			$rrssb-reddit,
 	pinterest		$rrssb-pinterest,
+	pocket			$rrssb-pocket,
 	github			$rrssb-github
 );
 
