@@ -48,10 +48,12 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 | Service							| Link |
 | :---------------------------------	| :------- |
 | [**Bower**](http://bower.io)	| `bower search rrssb` |
-| Rails 							| [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/) |
-| Wordpress 						| [**Wordpress plugin by @aarreedd**](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/) |
-| Drupal							| [**Drupal Install Instructions**](https://drupal.org/project/rrssb)
-| CDN 								| [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb) |
+| Rails * 							| [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/) |
+| Wordpress * 						| [**Wordpress plugin by @aarreedd**](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/) |
+| Drupal *							| [**Drupal Install Instructions**](https://drupal.org/project/rrssb) |
+| CDN * 								| [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb) |
+
+<small>* Managed by 3rd parties. Please contact project hosts for support.</small>
 
 ### Support
 
