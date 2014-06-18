@@ -54,7 +54,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
                     c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851
                     C26.275,7.229,25.39,8.196,24.253,8.756z"/>
                 </svg>
-           </span>
+           	</span>
             <span class="text">twitter</span>
         </a>
     </li>
@@ -62,7 +62,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 <!-- Buttons end here -->
 ```
 
-- Only copy the `li`s of the buttons you want. 
+- Only copy the `li`s of the buttons you want (index.html has examples of all available types).
 - Adding a class of `popup` to the anchor tag for each share button will make the share dialog open in a popup, rather than a new window. (Good for Facebook, Twitter, Google Plus, etc.)
 - Buttons will automatically flow to the size of the ul `rrssb-buttons`. If specifically sized buttons are needed, nest `rrssb-buttons` in a fixed-width container.
 - Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
