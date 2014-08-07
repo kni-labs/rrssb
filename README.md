@@ -4,6 +4,8 @@
 
 RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit &mdash; the rest will fill in automagically in the container.
 
+<img src="media/rrssb-preview.gif" width="100%" height="auto"/>
+
 ### Demo
 
 > [**View the demo here**](http://kurtnoble.com/labs/rrssb/)
