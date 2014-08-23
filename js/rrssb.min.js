@@ -1,6 +1,6 @@
 /*
  Ridiculously Responsive Social Sharing Buttons
- Team: @dbox, @seagoat
+ Team: @dbox, @joshuatuscan
  Site: http://www.kurtnoble.com/labs/rrssb
  Twitter: @therealkni
 

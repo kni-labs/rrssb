@@ -29,7 +29,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 ```
 
 - Buttons will automatically flow to the size of the ul `rrssb-buttons`. If specifically sized buttons are needed, nest `rrssb-buttons` in a fixed-width container.
-- Only copy the `li`s of the buttons you want. 
+- Only copy the `li`s of the buttons you want.
 - Adding a class of `popup` to the anchor tag for each share button will make the share dialog open in a popup, rather than a new window. (Good for Facebook, Twitter, Google Plus, etc.)
 - Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
 
@@ -57,12 +57,12 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 
 ### Support
 
-Currently tested between [**140px**](https://www.dropbox.com/s/2k6lcebg2887ge3/Screenshot%202014-02-18%2009.45.45.png) and [**15,465px**](https://www.dropbox.com/s/1juq03011lixk3r/Screenshot%202014-02-18%2009.43.57.png) on current versions of Chrome 33, Safari 7.0.2, Firefox 27, Opera 20, and IE9+. 
+Currently tested between [**140px**](https://www.dropbox.com/s/2k6lcebg2887ge3/Screenshot%202014-02-18%2009.45.45.png) and [**15,465px**](https://www.dropbox.com/s/1juq03011lixk3r/Screenshot%202014-02-18%2009.43.57.png) on current versions of Chrome 33, Safari 7.0.2, Firefox 27, Opera 20, and IE9+.
 
 Requires [**calc**](http://caniuse.com/calc) and [**SVG**](http://caniuse.com/svg)
 
 ### About
 
-RRSSB is a [**KNI Labs freebie**](http://kurtnoble.com/) crafted by [**@dbox**](http://www.twitter.com/dbox) and [**@seagoat**](http://www.twitter.com/seagoat).
+RRSSB is a [**KNI Labs freebie**](http://kurtnoble.com/) crafted by [**@dbox**](http://www.twitter.com/dbox) and [**@joshuatuscan**](http://www.twitter.com/joshuatuscan).
 
 This content is released under the [**Creative Commons Attribution-ShareAlike 4.0 International**](http://creativecommons.org/licenses/by-sa/4.0/legalcode) license.

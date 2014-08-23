@@ -1,5 +1,5 @@
 // Ridiculously Responsive Social Sharing Buttons
-// Team: @dbox, @seagoat
+// Team: @dbox, @joshuatuscan
 // Site: http://www.kurtnoble.com/labs/rrssb
 // Twitter: @therealkni
 
@@ -36,7 +36,7 @@ $rrssb-border-radius: 2px !default;
 
 $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
-// Variable list for all social button colors to be iterated over. 
+// Variable list for all social button colors to be iterated over.
 $social-list: (
 	email			$rrssb-email,
 	facebook		$rrssb-facebook,
@@ -210,13 +210,13 @@ $social-list: (
 
 				.text {
 					font-size: 15px;
-					font-size: 1vw; 
+					font-size: 1vw;
 					@extend %backface-visibility;
 				}
 
 				&:hover {
 					font-size: 15px;
-					font-size: 1vw; 
+					font-size: 1vw;
 					padding: 7% 0% 7% 12%;
 					border-radius: 0.2em;
 				}
