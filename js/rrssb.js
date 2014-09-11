@@ -263,5 +263,7 @@
 		rrssbInit();
 	});
 
+	// Make global
+	window.rrssbInit = rrssbInit;
 
 })(window, jQuery);
