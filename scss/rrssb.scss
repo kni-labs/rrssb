@@ -31,6 +31,7 @@ $rrssb-youtube: #df1c31 !default;
 $rrssb-pinterest: #b81621 !default;
 $rrssb-pocket: #ED4054 !default;
 $rrssb-github: #444 !default;
+$rrssb-vk: #4d71a9 !default;
 
 $rrssb-border-radius: 2px !default;
 
@@ -48,7 +49,8 @@ $social-list: (
 	reddit			$rrssb-reddit,
 	pinterest		$rrssb-pinterest,
 	pocket			$rrssb-pocket,
-	github			$rrssb-github
+	github			$rrssb-github,
+    vk              $rrssb-vk
 );
 
 @mixin transition($expression) {
