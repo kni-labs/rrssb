@@ -238,28 +238,28 @@
 		};
 	})();
 
-	/*
-	 * Event listners
-	 */
-
-	jQuery('.rrssb-buttons a.popup').on('click', function(e){
-		var _this = jQuery(this);
-		popupCenter(_this.attr('href'), _this.find('.text').html(), 580, 470);
-		e.preventDefault();
-	});
-
-	// resize function
-	jQuery(window).resize(function () {
-
-		rrssbMagicLayout(sizeSmallBtns);
-
-		waitForFinalEvent(function(){
-			rrssbMagicLayout(sizeSmallBtns);
-		}, 200, "finished resizing");
-	});
-
 	// init load
 	jQuery(document).ready(function(){
+		/*
+		 * Event listners
+		 */
+
+		jQuery('.rrssb-buttons a.popup').on('click', function(e){
+			var _this = jQuery(this);
+			popupCenter(_this.attr('href'), _this.find('.text').html(), 580, 470);
+			e.preventDefault();
+		});
+
+		// resize function
+		jQuery(window).resize(function () {
+
+			rrssbMagicLayout(sizeSmallBtns);
+
+			waitForFinalEvent(function(){
+				rrssbMagicLayout(sizeSmallBtns);
+			}, 200, "finished resizing");
+		});
+
 		rrssbInit();
 	});
 
