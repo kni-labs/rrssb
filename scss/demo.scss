@@ -15,7 +15,6 @@ $border-radius: 2px;
 
 $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
-
 @mixin transition-all($time) {
     -webkit-transition: all $time+s ease;
     -moz-transition: all $time+s ease;
@@ -63,8 +62,6 @@ a {
 		font-size: 12px;
 		color: #999;
 	}
-
-
 }
 
 
