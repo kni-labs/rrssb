@@ -18,7 +18,7 @@
 
 // How to use: Add/remove buttons from config settings and $social-list.
 
-// config settings
+// Config settings
 $rrssb-txt: #fff !default;
 $rrssb-email: #0a88ff !default;
 $rrssb-facebook: #306199 !default;
@@ -31,7 +31,9 @@ $rrssb-youtube: #df1c31 !default;
 $rrssb-pinterest: #b81621 !default;
 $rrssb-pocket: #ED4054 !default;
 $rrssb-github: #444 !default;
+$rrssb-instagram: #517fa4 !default;
 
+// Set the border radius for the buttons
 $rrssb-border-radius: 2px !default;
 
 $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
@@ -48,7 +50,8 @@ $social-list: (
 	reddit			$rrssb-reddit,
 	pinterest		$rrssb-pinterest,
 	pocket			$rrssb-pocket,
-	github			$rrssb-github
+	github			$rrssb-github,
+	instagram 		$rrssb-instagram
 );
 
 @mixin transition($expression) {
@@ -84,7 +87,7 @@ $social-list: (
 	}
 }
 
-// the meat and potatoes
+// The meat and potatoes
 .rrssb-buttons {
 	@extend %border-box;
 	font-family: $rrssb-main-font;
