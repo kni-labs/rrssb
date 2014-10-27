@@ -40,18 +40,18 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 // Variable list for all social button colors to be iterated over.
 $social-list: (
-	email			$rrssb-email,
-	facebook		$rrssb-facebook,
-	tumblr			$rrssb-tumblr,
-	linkedin		$rrssb-linkedin,
-	twitter			$rrssb-twitter,
-	googleplus		$rrssb-googleplus,
-	youtube			$rrssb-youtube,
-	reddit			$rrssb-reddit,
-	pinterest		$rrssb-pinterest,
-	pocket			$rrssb-pocket,
-	github			$rrssb-github,
-	instagram 		$rrssb-instagram
+	rrssb-email				$rrssb-email,
+	rrssb-facebook			$rrssb-facebook,
+	rrssb-tumblr			$rrssb-tumblr,
+	rrssb-linkedin			$rrssb-linkedin,
+	rrssb-twitter			$rrssb-twitter,
+	rrssb-googleplus		$rrssb-googleplus,
+	rrssb-youtube			$rrssb-youtube,
+	rrssb-reddit			$rrssb-reddit,
+	rrssb-pinterest			$rrssb-pinterest,
+	rrssb-pocket			$rrssb-pocket,
+	rrssb-github			$rrssb-github,
+	rrssb-instagram 		$rrssb-instagram
 );
 
 @mixin transition($expression) {
@@ -251,7 +251,7 @@ $social-list: (
 			}
 		}
 	}
-	
+
 	&.tiny-format {
 		height: 22px;
 		position: relative;
