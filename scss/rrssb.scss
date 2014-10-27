@@ -100,10 +100,10 @@ $social-list: (
 		@extend %border-box;
 		float: left;
 		height: 100%;
+		line-height: 13px;
 		list-style: none;
 		margin: 0;
 		padding: 0 2.5px;
-		line-height: 13px;
 
 		// This generates individual button classes for each item in social list on line 39.
 		@each $s-name in $social-list {
@@ -133,9 +133,9 @@ $social-list: (
 			text-align: center;
 			text-decoration: none;
 			text-transform: uppercase;
+			width: 100%;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
-			width: 100%;
 			@include transition(background-color 0.2s ease-in-out);
 
 			.icon {
@@ -193,11 +193,11 @@ $social-list: (
 			height: auto;
 
 			a {
+				border-radius: 0.2em;				
 				font-size: 15px; // fallback
 				font-size: 1vw;  // scales font with browser
+				line-height: 1vw;				
 				padding: 7% 0% 7% 12%;
-				border-radius: 0.2em;
-				line-height: 1vw;
 				@extend %backface-visibility;
 
 				.icon {
@@ -208,6 +208,8 @@ $social-list: (
 					svg {
 						height: 100%;
 						width: 100%;
+						position: absolute;
+						top:0;						
 					}
 				}
 
@@ -249,6 +251,7 @@ $social-list: (
 			}
 		}
 	}
+	
 	&.tiny-format {
 		height: 22px;
 		position: relative;
@@ -296,9 +299,7 @@ $social-list: (
 						}
 					}
 				}
-
 			}  // end @each directive
-
 		}
 	}
 }
