@@ -138,7 +138,7 @@ $social-list: (
 			-moz-osx-font-smoothing: grayscale;
 			@include transition(background-color 0.2s ease-in-out);
 
-			.icon {
+			.rrssb-icon {
 				display: block;
 				height: 100%;
 				left: 10px;
@@ -157,7 +157,7 @@ $social-list: (
 				}
 			}
 
-			.text {
+			.rrssb-text {
 				color: $rrssb-txt;
 			}
 
@@ -170,7 +170,7 @@ $social-list: (
 			a {
 				padding: 0;
 
-				.icon {
+				.rrssb-icon {
 					height: 100%;
 					left: auto;
 					margin: 0 auto;
@@ -179,7 +179,7 @@ $social-list: (
 					top: auto;
 					width: 100%;
 				}
-				.text {
+				.rrssb-text {
 					visibility: hidden;
 				}
 			}
@@ -200,7 +200,7 @@ $social-list: (
 				padding: 7% 0% 7% 12%;
 				@extend %backface-visibility;
 
-				.icon {
+				.rrssb-icon {
 					left: 7%;
 					padding-top: 0;
 					width: 12%;
@@ -213,7 +213,7 @@ $social-list: (
 					}
 				}
 
-				.text {
+				.rrssb-text {
 					font-size: 15px;
 					font-size: 1vw;
 					@extend %backface-visibility;
@@ -237,7 +237,7 @@ $social-list: (
 			padding: 0 1.5px;
 
 			a {
-				.icon {
+				.rrssb-icon {
 					height: 100%;
 					padding-top: 0;
 
@@ -263,7 +263,7 @@ $social-list: (
 				background-color: transparent;
 				padding: 0;
 
-				.icon {
+				.rrssb-icon {
 					svg {
 						height: 70%;
 						width: 100%;
@@ -280,7 +280,7 @@ $social-list: (
 
 				&.#{nth($s-name, 1)} {
 					a {
-						.icon {
+						.rrssb-icon {
 							svg {
 								path, polygon {
 									fill: nth($s-name, 2);
@@ -288,7 +288,7 @@ $social-list: (
 							}
 
 							&:hover {
-								.icon {
+								.rrssb-icon {
 									svg {
 										path, polygon {
 											fill: darken(nth($s-name, 2), 20%);

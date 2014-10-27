@@ -189,7 +189,7 @@
 		setPercentBtns();
 
 		// grab initial text width of each button and add as data attr
-		jQuery('.rrssb-buttons li .text').each(function(index) {
+		jQuery('.rrssb-buttons li .rrssb-text').each(function(index) {
 			var txtWdth = parseFloat(jQuery(this).width());
 			jQuery(this).closest('li').attr('data-size', txtWdth);
 		});
@@ -246,7 +246,7 @@
 
 		jQuery('.rrssb-buttons a.popup').on('click', function(e){
 			var _this = jQuery(this);
-			popupCenter(_this.attr('href'), _this.find('.text').html(), 580, 470);
+			popupCenter(_this.attr('href'), _this.find('.rrssb-text').html(), 580, 470);
 			e.preventDefault();
 		});
 
