@@ -99,6 +99,11 @@ Currently tested between [**140px**](https://www.dropbox.com/s/2k6lcebg2887ge3/S
 
 Requires [**calc**](http://caniuse.com/calc) and [**SVG**](http://caniuse.com/svg)
 
+
+### Version Notes
+
+1.6.5 - Namespace CSS classes [(#42)](https://github.com/kni-labs/rrssb/issues/42) - Legacy HTML will be incompatible until class names updated.
+
 ### About
 
 RRSSB is a [**KNI Labs freebie**](http://kurtnoble.com/) crafted by [**@dbox**](http://www.twitter.com/dbox) and [**@joshuatuscan**](http://www.twitter.com/joshuatuscan).
