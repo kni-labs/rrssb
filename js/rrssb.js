@@ -29,7 +29,7 @@
 		// loop through each instance of buttons
 		jQuery('.rrssb-buttons').each(function(index) {
 			var self = jQuery(this);
-			var numOfButtons = jQuery('li', self).length;
+			var numOfButtons = jQuery('li:visible', self).length;
 			var initBtnWidth = 100 / numOfButtons;
 
 			// set initial width of buttons
