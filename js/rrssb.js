@@ -4,27 +4,53 @@
  Site: http://www.kurtnoble.com/labs/rrssb
  Twitter: @therealkni
 
-        ___           ___
-       /__/|         /__/\        ___
-      |  |:|         \  \:\      /  /\
-      |  |:|          \  \:\    /  /:/
-    __|  |:|      _____\__\:\  /__/::\
+		___           ___
+	   /__/|         /__/\        ___
+	  |  |:|         \  \:\      /  /\
+	  |  |:|          \  \:\    /  /:/
+	__|  |:|      _____\__\:\  /__/::\
    /__/\_|:|____ /__/::::::::\ \__\/\:\__
    \  \:\/:::::/ \  \:\~~\~~\/    \  \:\/\
-    \  \::/~~~~   \  \:\  ~~~      \__\::/
-     \  \:\        \  \:\          /__/:/
-      \  \:\        \  \:\         \__\/
-       \__\/         \__\/
+	\  \::/~~~~   \  \:\  ~~~      \__\::/
+	 \  \:\        \  \:\          /__/:/
+	  \  \:\        \  \:\         \__\/
+	   \__\/         \__\/
 */
 
 
 ;(function(window, jQuery, undefined) {
 	'use strict';
 
+	var support = {
+		calc : false,
+		viewportUnits : false
+	};
 
 	/*
 	 * Utility functions
 	 */
+	var detectCalcSupport = function(){
+		//detect if calc is natively supported.
+		var $el = $('<div>');
+		var calcProps = [
+			'calc',
+			'-webkit-calc',
+			'-moz-calc'
+		];
+
+		$('body').append($el);
+
+		for (var i=0; i < calcProps.length; i++) {
+			$el.css('width', calcProps[i] + '(1px)');
+			if($el.width() === 1){
+				support.calc = calcProps[i];
+				break;
+			}
+		}
+
+		$el.remove();
+	};
+
 	var setPercentBtns = function() {
 		// loop through each instance of buttons
 		jQuery('.rrssb-buttons').each(function(index) {
@@ -159,13 +185,15 @@
 				regPercent = 100 / regButtonCount;
 				smallBtnFraction = pixelsOff / regButtonCount;
 
-				if (navigator.userAgent.indexOf('Chrome') >= 0 || navigator.userAgent.indexOf('Safari') >= 0) {
-					magicWidth = '-webkit-calc('+regPercent+'% - '+smallBtnFraction+'px)';
-				} else if (navigator.userAgent.indexOf('Firefox') >= 0) {
-					magicWidth = '-moz-calc('+regPercent+'% - '+smallBtnFraction+'px)';
+				// if calc is not supported. calculate the width on the fly.
+				if (support.calc === false) {
+					magicWidth = (self.innerWidth() / regButtonCount) - smallBtnFraction;
+					magicWidth = Math.floor(magicWidth*1000) / 1000;
+					magicWidth += 'px';
 				} else {
-					magicWidth = 'calc('+regPercent+'% - '+smallBtnFraction+'px)';
+					magicWidth = support.calc+'('+regPercent+'% - '+smallBtnFraction+'px)';
 				}
+
 				jQuery('li', self).not('.small').css('width', magicWidth);
 
 			} else if (smallBtnCount === jQuery('li', self).length) {
@@ -185,6 +213,8 @@
 		jQuery('.rrssb-buttons').each(function(index) {
 			jQuery(this).addClass('rrssb-'+(index + 1));
 		});
+
+		detectCalcSupport();
 
 		setPercentBtns();
 
