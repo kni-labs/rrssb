@@ -21,8 +21,7 @@
 	'use strict';
 
 	var support = {
-		calc : false,
-		viewportUnits : false
+		calc : false
 	};
 
 	/*
@@ -93,11 +92,11 @@
 
 			var buttons = jQuery('li', self);
 			var smallButtons = buttons.filter('.small');
-			var	totalBtnSze = 0;
-			var	totalTxtSze = 0;
-			var	upCandidate = smallButtons.first();
-			var	nextBackUp = parseFloat(upCandidate.attr('data-size')) + 55;
-			var	smallBtnCount = smallButtons.length;
+			var totalBtnSze = 0;
+			var totalTxtSze = 0;
+			var upCandidate = smallButtons.first();
+			var nextBackUp = parseFloat(upCandidate.attr('data-size')) + 55;
+			var smallBtnCount = smallButtons.length;
 
 			if (smallBtnCount === buttons.length) {
 				var btnCalc = smallBtnCount * 42;
@@ -137,7 +136,7 @@
 			var self = jQuery(this);
 			var buttons = jQuery('li', self);
 			var elems = buttons.nextAll();
-			var	count = elems.length;
+			var count = elems.length;
 
 			// get buttons in reverse order and loop through each
 			jQuery(buttons.get().reverse()).each(function(index, count) {
@@ -170,7 +169,7 @@
 		jQuery('.rrssb-buttons').each(function(index) {
 			var self = jQuery(this);
 			var regButtonCount;
-			var	regPercent;
+			var regPercent;
 			var pixelsOff;
 			var magicWidth;
 			var smallBtnFraction;
