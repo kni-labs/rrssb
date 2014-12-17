@@ -191,7 +191,7 @@
 				smallBtnFraction = pixelsOff / regButtonCount;
 
 				// if calc is not supported. calculate the width on the fly.
-				if (true ||support.calc === false) {
+				if (support.calc === false) {
 					magicWidth = ((self.innerWidth()-1) / regButtonCount) - smallBtnFraction;
 					magicWidth = Math.floor(magicWidth*1000) / 1000;
 					magicWidth += 'px';
