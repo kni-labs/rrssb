@@ -164,22 +164,22 @@ Requires [**calc**](http://caniuse.com/calc) and [**SVG**](http://caniuse.com/sv
 
 - Install sass through bundler:
 
-      bundle install --binstubs
+        bundle install --binstubs
 
 - Install the burbon library:
 
-      bin/bourbon install --path=scss
+        bin/bourbon install --path=scss
 
 - Run build:
 
-      grunt
+        grunt
 
 #### Useful commands
 
 - Compile sass files with bundler:
 
-      bundle exec sass --require bourbon --sourcemap=none --style compressed scss/demo.scss css/demo.css
-      bundle exec sass --sourcemap=none --style compressed scss/rrssb.scss css/rrssb.css
+        bundle exec sass --require bourbon --sourcemap=none --style compressed scss/demo.scss css/demo.css
+        bundle exec sass --sourcemap=none --style compressed scss/rrssb.scss css/rrssb.css
 
 - To preview it locally run the following
 
