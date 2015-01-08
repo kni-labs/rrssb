@@ -131,6 +131,16 @@ Requires [**calc**](http://caniuse.com/calc) and [**SVG**](http://caniuse.com/sv
       bundle exec sass --require bourbon --sourcemap=none --style compressed scss/demo.scss css/demo.css
       bundle exec sass --sourcemap=none --style compressed scss/rrssb.scss css/rrssb.css
 
+- To preview it locally run the following
+
+  Files and copy them to the `dist` directory:
+
+      grunt dist
+
+  Run a local server:
+
+      grunt connect:server:keepalive
+
 ### About
 
 RRSSB is a [**KNI Labs freebie**](http://kurtnoble.com/) crafted by [**@dbox**](http://www.twitter.com/dbox) and [**@joshuatuscan**](http://www.twitter.com/joshuatuscan).

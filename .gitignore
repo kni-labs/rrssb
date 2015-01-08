@@ -9,3 +9,7 @@ bin
 # Ignore SASS related stuff
 .sass-cache
 scss/bourbon
+
+# Ignore the dist directory but track dist/test.html
+dist
+!dist/test.html

@@ -3,12 +3,17 @@ module.exports = function(grunt) {
   // load all grunt tasks matching the `grunt-*` pattern
   require('load-grunt-tasks')(grunt);
 
+  var jsBannerPostfix = '/*' +"\n"+
+                        'Team: @dbox, @joshuatuscan, @czerasz' +"\n"+
+                        'Site: http://www.kurtnoble.com/labs/rrssb' +"\n"+
+                        'Twitter: @therealkni' +"\n"+
+                        '*/';
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-        '<%= grunt.template.today("yyyy-mm-dd") %> */'+"\n"
+        banner: '/*! <%= pkg.name %> (Ridiculously Responsive Social Sharing Buttons) - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>*/'+ jsBannerPostfix +"\n"
       },
       default: {
         files: {
@@ -51,9 +56,37 @@ module.exports = function(grunt) {
           'img/icons.svg': ['img/icons/*.svg']
         }
       }
-
     },
+    copy: {
+      options: {
+
+      },
+      dist: {
+        files: [
+          {
+            expand: true,
+            src: [
+              'img/icons.svg',
+              'css/rrssb.css',
+              'js/rrssb.min.js',
+              'js/vendor/*'
+            ],
+            dest: 'dist/'
+          }
+        ]
+      }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 8080,
+          hostname: '*',
+          base: 'dist'
+        }
+      }
+    }
   });
 
   grunt.registerTask('default', ['uglify', 'svgstore', 'sass', 'autoprefixer']);
+  grunt.registerTask('dist', ['default', 'copy:dist']);
 }
