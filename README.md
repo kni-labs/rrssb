@@ -80,7 +80,6 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 <script src="js/rrssb.min.js"></script>
 ```
 
-
 #### Other install options:
 
 | Service							| Link |
@@ -103,6 +102,34 @@ Requires [**calc**](http://caniuse.com/calc) and [**SVG**](http://caniuse.com/sv
 ### Version Notes
 
 1.6.5 - Namespace CSS classes [(#42)](https://github.com/kni-labs/rrssb/issues/42) - Legacy HTML will be incompatible until class names updated.
+
+### Contribute
+
+#### Requirements
+
+- [Ruby](https://www.ruby-lang.org/en/) with [Bundler](http://bundler.io/) or [Sass](http://sass-lang.com/) support
+- [Node.js](http://nodejs.org/)
+
+#### Setup
+
+- Install sass through bundler:
+
+      bundle install --binstubs
+
+- Install the burbon library:
+
+      bin/bourbon install --path=scss
+
+- Run build:
+
+      grunt
+
+#### Useful commands
+
+- Compile sass files with bundler:
+
+      bundle exec sass --require bourbon --sourcemap=none --style compressed scss/demo.scss css/demo.css
+      bundle exec sass --sourcemap=none --style compressed scss/rrssb.scss css/rrssb.css
 
 ### About
 
