@@ -1,2 +1,5 @@
-
 .DS_Store
+
+# Ignore ruby libraries
+bin
+
