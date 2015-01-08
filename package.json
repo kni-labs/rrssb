@@ -1,6 +1,6 @@
 {
   "name": "rrssb",
-  "version": "1.6.5",
+  "version": "1.7.5",
   "description": "Ridiculously Responsive Social Sharing Buttons",
   "main": "Gruntfile.js",
   "scripts": {

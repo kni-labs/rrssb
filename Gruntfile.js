@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> (Ridiculously Responsive Social Sharing Buttons) - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>*/'+ jsBannerPostfix +"\n"
+        banner: '/*! <%= pkg.name %> (Ridiculously Responsive Social Sharing Buttons) - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>*/' +"\n"+ jsBannerPostfix +"\n"
       },
       default: {
         files: {
