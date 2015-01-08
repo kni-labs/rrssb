@@ -1,5 +1,5 @@
-@import "bourbon";
 
+@import "bourbon";
 // config settings
 $button-contents: #fff;
 $email: #0a88ff;
@@ -17,9 +17,6 @@ $border-radius: 2px;
 $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 @mixin transition-all($time) {
-    -webkit-transition: all $time+s ease;
-    -moz-transition: all $time+s ease;
-    -o-transition: all $time+s ease;
     transition: all  $time+s ease;
 }
 
