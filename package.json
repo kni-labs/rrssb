@@ -1,0 +1,60 @@
+{
+  "name": "rrssb",
+  "version": "1.6.5",
+  "description": "Ridiculously Responsive Social Sharing Buttons",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kni-labs/rrssb.git"
+  },
+  "keywords": [
+    "social",
+    "sharing",
+    "buttons",
+    "delicious",
+    "facebook",
+    "github",
+    "google plus",
+    "instagram",
+    "linkedin",
+    "mail",
+    "pinterest",
+    "pocket",
+    "reddit",
+    "tumblr",
+    "twitter",
+    "youtube",
+    "ascetic"
+  ],
+  "author": "Daniel Box",
+  "contributors": [
+    {
+      "name": "Daniel Box",
+      "url": "https://twitter.com/dbox"
+    },
+    {
+      "name": "Joshua Tuscan",
+      "url": "https://twitter.com/joshuatuscan"
+    },
+    {
+      "name": "Michał Czeraszkiewicz",
+      "email": "https://twitter.com/czerasz"
+    }
+  ],
+  "license": "Creative Commons Attribution-ShareAlike 4.0 International",
+  "bugs": {
+    "url": "https://github.com/kni-labs/rrssb/issues"
+  },
+  "homepage": "https://github.com/kni-labs/rrssb",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^2.0.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-svgstore": "^0.4.1",
+    "load-grunt-tasks": "^1.0.0"
+  }
+}

@@ -1,5 +1,11 @@
 .DS_Store
 
+# Ignore node modules
+node_modules
+
 # Ignore ruby libraries
 bin
 
+# Ignore SASS related stuff
+.sass-cache
+scss/bourbon
