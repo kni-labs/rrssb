@@ -72,7 +72,7 @@ Or use the more performant version (the svg sprite can be cached by the browser)
   <li class="rrssb-email">
     <a href="mailto:?subject=Check%20out%20how%20ridiculously%20responsive%20these%20social%20buttons%20are&amp;body=http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb%2Findex.html">
       <span class="rrssb-icon">
-        <svg viewBox="0 0 28 28" class="svg-icon" alt="share via email" style='fill: #fff;'>
+        <svg viewBox="0 0 28 28" class="svg-icon" role="img" aria-label="share via email" style='fill: #fff;'>
           <use xlink:href="img/icons.svg#icon-mail"></use>
         </svg>
       </span>
@@ -82,7 +82,7 @@ Or use the more performant version (the svg sprite can be cached by the browser)
   <li class="rrssb-facebook">
     <a href="https://www.facebook.com/sharer/sharer.php?u=http://kurtnoble.com/labs/rrssb/index.html" class="popup">
       <span class="rrssb-icon">
-        <svg viewBox="0 0 28 28" class="svg-icon" alt="share on facebook" style='fill: #fff;'>
+        <svg viewBox="0 0 28 28" class="svg-icon" role="img" aria-label="share on facebook" style='fill: #fff;'>
           <use xlink:href="img/icons.svg#icon-facebook"></use>
         </svg>
       </span>
@@ -92,7 +92,7 @@ Or use the more performant version (the svg sprite can be cached by the browser)
   <li class="rrssb-twitter">
     <a href="http://twitter.com/home?status=Ridiculously%20Responsive%20Social%20Sharing%20Buttons%20by%20@seagoat%20and%20@dbox%20http://kurtnoble.com/labs/rrssb" class="popup">
       <span class="rrssb-icon">
-        <svg viewBox="0 0 28 28" class="svg-icon" alt="share via twitter" style='fill: #fff;'>
+        <svg viewBox="0 0 28 28" class="svg-icon" role="img" aria-label="share via twitter" style='fill: #fff;'>
           <use xlink:href="img/icons.svg#icon-twitter"></use>
         </svg>
       </span>
@@ -102,7 +102,7 @@ Or use the more performant version (the svg sprite can be cached by the browser)
   <li class="rrssb-delicious">
     <a href="https://delicious.com/save?v=5&amp;provider=kurtnoble.com&amp;noui&amp;jump=close&amp;url=http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb&amp;title=Ridiculously%20Responsive%20Social%20Sharing%20Buttons%20by%20@seagoat%20and%20@dbox%20" class="popup">
       <span class="rrssb-icon">
-        <svg viewBox="0 0 28 28" class="svg-icon" alt="save on delicious" style='fill: #fff;'>
+        <svg viewBox="0 0 28 28" class="svg-icon" role="img" aria-label="save on delicious" style='fill: #fff;'>
           <use xlink:href="img/icons.svg#icon-delicious"></use>
         </svg>
       </span>

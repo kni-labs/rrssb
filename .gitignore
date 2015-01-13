@@ -11,5 +11,5 @@ bin
 scss/bourbon
 
 # Ignore the dist directory but track dist/test.html
-dist
+dist/*
 !dist/test.html
