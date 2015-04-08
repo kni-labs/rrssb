@@ -32,6 +32,7 @@ $rrssb-pinterest: #b81621 !default;
 $rrssb-pocket: #ED4054 !default;
 $rrssb-github: #444 !default;
 $rrssb-instagram: #517fa4 !default;
+$rrssb-delicious: #0B79E5 !default;
 
 // Set the border radius for the buttons
 $rrssb-border-radius: 2px !default;
@@ -51,15 +52,9 @@ $social-list: (
 	rrssb-pinterest			$rrssb-pinterest,
 	rrssb-pocket			$rrssb-pocket,
 	rrssb-github			$rrssb-github,
-	rrssb-instagram 		$rrssb-instagram
+	rrssb-instagram 		$rrssb-instagram,
+	rrssb-delicious			$rrssb-delicious
 );
-
-@mixin transition($expression) {
-	-webkit-transition: $expression;
-	-moz-transition: $expression;
-	-o-transition: $expression;
-	transition: $expression;
-}
 
 %backface-visibility {
 	-webkit-backface-visibility: hidden;
@@ -73,7 +68,7 @@ $social-list: (
 }
 
 // some generic classes
-.clearfix {
+.rrssb-buttons.clearfix, .rrssb-clearfix {
 	*zoom: 1;
 
 	&:after {
@@ -136,7 +131,8 @@ $social-list: (
 			width: 100%;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
-			@include transition(background-color 0.2s ease-in-out);
+
+			transition: background-color 0.2s ease-in-out;
 
 			.rrssb-icon {
 				display: block;
@@ -193,10 +189,10 @@ $social-list: (
 			height: auto;
 
 			a {
-				border-radius: 0.2em;				
+				border-radius: 0.2em;
 				font-size: 15px; // fallback
 				font-size: 1vw;  // scales font with browser
-				line-height: 1vw;				
+				line-height: 1vw;
 				padding: 7% 0% 7% 12%;
 				@extend %backface-visibility;
 
@@ -209,7 +205,7 @@ $social-list: (
 						height: 100%;
 						width: 100%;
 						position: absolute;
-						top:0;						
+						top:0;
 					}
 				}
 

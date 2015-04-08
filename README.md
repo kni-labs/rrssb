@@ -64,6 +64,56 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 <!-- Buttons end here -->
 ```
 
+Or use the more performant version (the svg sprite can be cached by the browser):
+
+```html
+<!-- Buttons start here. Copy this ul to your document. -->
+<ul class="rrssb-buttons clearfix">
+  <li class="rrssb-email">
+    <a href="mailto:?subject=Check%20out%20how%20ridiculously%20responsive%20these%20social%20buttons%20are&amp;body=http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb%2Findex.html">
+      <span class="rrssb-icon">
+        <svg viewBox="0 0 28 28" class="svg-icon" role="img" aria-label="share via email" style='fill: #fff;'>
+          <use xlink:href="img/icons.svg#icon-mail"></use>
+        </svg>
+      </span>
+      <span class="rrssb-text">email</span>
+    </a>
+  </li>
+  <li class="rrssb-facebook">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://kurtnoble.com/labs/rrssb/index.html" class="popup">
+      <span class="rrssb-icon">
+        <svg viewBox="0 0 28 28" class="svg-icon" role="img" aria-label="share on facebook" style='fill: #fff;'>
+          <use xlink:href="img/icons.svg#icon-facebook"></use>
+        </svg>
+      </span>
+      <span class="rrssb-text">facebook</span>
+    </a>
+  </li>
+  <li class="rrssb-twitter">
+    <a href="http://twitter.com/home?status=Ridiculously%20Responsive%20Social%20Sharing%20Buttons%20by%20@seagoat%20and%20@dbox%20http://kurtnoble.com/labs/rrssb" class="popup">
+      <span class="rrssb-icon">
+        <svg viewBox="0 0 28 28" class="svg-icon" role="img" aria-label="share via twitter" style='fill: #fff;'>
+          <use xlink:href="img/icons.svg#icon-twitter"></use>
+        </svg>
+      </span>
+      <span class="rrssb-text">twitter</span>
+    </a>
+  </li>
+  <li class="rrssb-delicious">
+    <a href="https://delicious.com/save?v=5&amp;provider=kurtnoble.com&amp;noui&amp;jump=close&amp;url=http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb&amp;title=Ridiculously%20Responsive%20Social%20Sharing%20Buttons%20by%20@seagoat%20and%20@dbox%20" class="popup">
+      <span class="rrssb-icon">
+        <svg viewBox="0 0 28 28" class="svg-icon" role="img" aria-label="save on delicious" style='fill: #fff;'>
+          <use xlink:href="img/icons.svg#icon-delicious"></use>
+        </svg>
+      </span>
+      <span class="rrssb-text">delicious</span>
+    </a>
+  </li>
+</ul>
+<!-- Buttons end here -->
+```
+
+
 
 - Only copy the `li`s of the buttons you want (index.html has examples of all available types).
 
@@ -79,7 +129,6 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 <script>window.jQuery || document.write('<script src="js/vendor/jquery.1.10.2.min.js"><\/script>')</script>
 <script src="js/rrssb.min.js"></script>
 ```
-
 
 #### Other install options:
 
@@ -103,6 +152,44 @@ Requires [**calc**](http://caniuse.com/calc) and [**SVG**](http://caniuse.com/sv
 ### Version Notes
 
 1.6.5 - Namespace CSS classes [(#42)](https://github.com/kni-labs/rrssb/issues/42) - Legacy HTML will be incompatible until class names updated.
+
+### Contribute
+
+#### Requirements
+
+- [Ruby](https://www.ruby-lang.org/en/) with [Bundler](http://bundler.io/) or [Sass](http://sass-lang.com/) support
+- [Node.js](http://nodejs.org/)
+
+#### Setup
+
+- Install sass through bundler:
+
+        bundle install --binstubs
+
+- Install the burbon library:
+
+        bin/bourbon install --path=scss
+
+- Run build:
+
+        grunt
+
+#### Useful commands
+
+- Compile sass files with bundler:
+
+        bundle exec sass --require bourbon --sourcemap=none --style compressed scss/demo.scss css/demo.css
+        bundle exec sass --sourcemap=none --style compressed scss/rrssb.scss css/rrssb.css
+
+- To preview it locally run the following
+
+  Files and copy them to the `dist` directory:
+
+      grunt dist
+
+  Run a local server:
+
+      grunt connect:server:keepalive
 
 ### About
 
