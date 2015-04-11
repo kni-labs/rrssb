@@ -298,7 +298,7 @@
 		 * Event listners
 		 */
 
-		jQuery('.rrssb-buttons a.rrssb-popup').on('click', function(e){
+		jQuery('.rrssb-buttons a.popup').on('click', function(e){
 			var _this = jQuery(this);
 			popupCenter(_this.attr('href'), _this.find('.rrssb-text').html(), 580, 470);
 			e.preventDefault();
