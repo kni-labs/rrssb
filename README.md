@@ -68,8 +68,9 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 - Only copy the `li`s of the buttons you want (index.html has examples of all available types).
 
 - Adding a class of `popup` to the anchor tag for each share button will make the share dialog open in a popup, rather than a new window. (Good for Facebook, Twitter, Google Plus, etc.)
-- Buttons will automatically flow to the size of the ul `rrssb-buttons`. If specifically sized buttons are needed, nest `rrssb-buttons` in a fixed-width container.
+- Buttons will automatically flow to the size of the ul `rrssb-buttons`. If fixed sized buttons are needed, nest `rrssb-buttons` in a fixed-width container.
 - Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
+- Optionally, all share meta and links can be configured in `rrssb.js`
 
 
 3) Link to javascript files at the bottom of your document before the closing body tag for best results. (jQuery CDN, [**jQuery fallback**](http://css-tricks.com/snippets/jquery/fallback-for-cdn-hosted-jquery/), and `rrssb.min.js`):
@@ -101,8 +102,16 @@ Requires [**SVG**](http://caniuse.com/svg)
 
 
 ### Version Notes
+| Version | Note | Issue | Backwards compatible?
+| :---	| :------- | :------- | :------- |
+| 1.7 | Javascript Meta attributes as variables thanks @aicarlson| [(#47)](https://github.com/kni-labs/rrssb/issues/47) | &#x2713; |
+| 1.6.5 | Namespace CSS classes - Legacy HTML will be incompatible until class names updated.| [(#42)](https://github.com/kni-labs/rrssb/issues/42) | &#x2715;
 
-1.6.5 - Namespace CSS classes [(#42)](https://github.com/kni-labs/rrssb/issues/42) - Legacy HTML will be incompatible until class names updated.
+
+### Contributing
+
+Thanks for helping! Please use `dev` branch for all pull requests.
+
 
 ### About
 

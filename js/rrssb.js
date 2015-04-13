@@ -25,6 +25,48 @@
 	};
 
 	/*
+	 * Public Function
+	 */
+
+	 jQuery.fn.rrssb = function( options ) {
+
+		// Settings that $.rrssb() will accept.
+		var settings = jQuery.extend({
+			description: undefined,
+			emailAddress: undefined,
+			emailBody: undefined,
+			emailSubject: undefined,
+			image: undefined,
+			title: undefined,
+			url: undefined
+		}, options );
+
+		// Return the encoded strings if the settings have been changed.
+		for (var key in settings) {
+			if (settings.hasOwnProperty(key) && settings[key] !== undefined) {
+				settings[key] = encodeString(settings[key]);
+			}
+		};
+
+		if (settings.url !== undefined) {
+			jQuery(this).find('.rrssb-facebook a').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + settings.url);
+			jQuery(this).find('.rrssb-tumblr a').attr('href', 'http://tumblr.com/share/link?url=' + settings.url + (settings.title !== undefined ? '&name=' + settings.title : '')  + (settings.description !== undefined ? '&description=' + settings.description : ''));
+			jQuery(this).find('.rrssb-linkedin a').attr('href', 'http://www.linkedin.com/shareArticle?mini=true&url=' + settings.url + (settings.title !== undefined ? '&title=' + settings.title : '') + (settings.description !== undefined ? '&summary=' + settings.description : ''));
+			jQuery(this).find('.rrssb-twitter a').attr('href', 'http://twitter.com/home?status=' + (settings.description !== undefined ? settings.description : '') + '%20' + settings.url);
+			jQuery(this).find('.rrssb-reddit a').attr('href', 'http://www.reddit.com/submit?url=' + settings.url + (settings.description !== undefined ? '&text=' + settings.description : '') + (settings.title !== undefined ? '&title=' + settings.title : ''));
+			jQuery(this).find('.rrssb-googleplus a').attr('href', 'https://plus.google.com/share?url=' + (settings.description !== undefined ? settings.description : '') + '%20' + settings.url);
+			jQuery(this).find('.rrssb-pinterest a').attr('href', 'http://pinterest.com/pin/create/button/?url=' + settings.url + ((settings.image !== undefined) ? '&amp;media=' + settings.image : '') + (settings.description !== undefined ? '&amp;description=' + settings.description : ''));
+			jQuery(this).find('.rrssb-pocket a').attr('href', 'https://getpocket.com/save?url=' + settings.url);
+			jQuery(this).find('.rrssb-github a').attr('href', settings.url);
+		}
+
+		if (settings.emailAddress !== undefined) {
+			jQuery(this).find('.rrssb-email a').attr('href', 'mailto:' + settings.emailAddress + '?' + (settings.emailSubject !== undefined ? 'subject=' + settings.emailSubject : '') + (settings.emailBody !== undefined ? '&amp;body=' + settings.emailBody : ''));
+		}
+
+	};
+
+	/*
 	 * Utility functions
 	 */
 	var detectCalcSupport = function(){
@@ -47,6 +89,18 @@
 		}
 
 		el.remove();
+	};
+
+	var encodeString = function(string) {
+		// Recursively decode string first to ensure we aren't double encoding.
+		if (string !== undefined && string !== null) {
+			if (string.match(/%[0-9a-f]{2}/i) !== null) {
+				string = decodeURIComponent(string);
+				encodeString(string);
+			} else {
+				return encodeURIComponent(string);
+			}
+		}
 	};
 
 	var setPercentBtns = function() {
