@@ -107,6 +107,12 @@ Requires [**calc**](http://caniuse.com/calc) and [**SVG**](http://caniuse.com/sv
 | 1.7 | Javascript Meta attributes as variables thanks @aicarlson| [(#47)](https://github.com/kni-labs/rrssb/issues/47) | &#x2713; |
 | 1.6.5 | Namespace CSS classes - Legacy HTML will be incompatible until class names updated.| [(#42)](https://github.com/kni-labs/rrssb/issues/42) | &#x2715;
 
+
+### Contributing
+
+Thanks for helping! Please use `dev` branch for all pull requests.
+
+
 ### About
 
 RRSSB is a [**KNI Labs freebie**](http://kurtnoble.com/) crafted by [**@dbox**](http://www.twitter.com/dbox) and [**@joshuatuscan**](http://www.twitter.com/joshuatuscan).
