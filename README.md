@@ -102,6 +102,9 @@ Requires [**calc**](http://caniuse.com/calc) and [**SVG**](http://caniuse.com/sv
 
 ### Version Notes
 
+1.7 - Javascript Meta attributes as variables [(#47)](https://github.com/kni-labs/rrssb/issues/47)
+Tumblr link updated [(#87)](https://github.com/kni-labs/rrssb/issues/87) Thanks @aicarlson
+
 1.6.5 - Namespace CSS classes [(#42)](https://github.com/kni-labs/rrssb/issues/42) - Legacy HTML will be incompatible until class names updated.
 
 ### About
