@@ -192,12 +192,97 @@ $social-list: (
 		li {
 			height: auto;
 
+			// Determine font-size based on number of siblings
+			&:first-child:nth-last-child(1) {
+				a {
+					font-size: 20px; //fallback
+					font-size: 4vw;
+				}
+			}
+
+			&:first-child:nth-last-child(2),
+  		&:first-child:nth-last-child(2) ~ li {
+				a {
+					font-size: 16px; //fallback
+					font-size: 2vw;
+				}
+			}
+
+			&:first-child:nth-last-child(3),
+			&:first-child:nth-last-child(3) ~ li {
+				a {
+					font-size: 14px; //fallback
+					font-size: 1.7vw;
+				}
+			}
+
+			&:first-child:nth-last-child(4),
+			&:first-child:nth-last-child(4) ~ li {
+				a {
+					font-size: 13px; //fallback
+					font-size: 1.4vw;
+				}
+			}
+
+			&:first-child:nth-last-child(5),
+			&:first-child:nth-last-child(5) ~ li {
+				a {
+					font-size: 13px; //fallback
+					font-size: 1.2vw;
+				}
+			}
+
+			&:first-child:nth-last-child(6),
+			&:first-child:nth-last-child(6) ~ li {
+				a {
+					font-size: 12px; //fallback
+					font-size: 1.05vw;
+				}
+			}
+
+			&:first-child:nth-last-child(7),
+			&:first-child:nth-last-child(7) ~ li {
+				a {
+					font-size: 11px; //fallback
+					font-size: .9vw;
+				}
+			}
+
+			&:first-child:nth-last-child(8),
+			&:first-child:nth-last-child(8) ~ li {
+				a {
+					font-size: 11px; //fallback
+					font-size: .8vw;
+				}
+			}
+
+			&:first-child:nth-last-child(9),
+			&:first-child:nth-last-child(9) ~ li {
+				a {
+					font-size: 11px; //fallback
+					font-size: .7vw;
+				}
+			}
+
+			&:first-child:nth-last-child(10),
+			&:first-child:nth-last-child(10) ~ li {
+				a {
+					font-size: 11px; //fallback
+					font-size: .6vw;
+				}
+			}
+
+			&:first-child:nth-last-child(11),
+			&:first-child:nth-last-child(11) ~ li {
+				a {
+					font-size: 11px; //fallback
+					font-size: .5vw;
+				}
+			}
+
 			a {
 				border-radius: 0.2em;
-				font-size: 15px; // fallback
-				font-size: 1vw;  // scales font with browser
-				line-height: 1vw;
-				padding: 7% 0% 7% 12%;
+				padding: 8.5% 0 8.5% 12%;
 				@extend %backface-visibility;
 
 				.rrssb-icon {
@@ -209,21 +294,12 @@ $social-list: (
 						height: 100%;
 						width: 100%;
 						position: absolute;
-						top:0;
+						top: 0;
 					}
 				}
 
 				.rrssb-text {
-					font-size: 15px;
-					font-size: 1vw;
 					@extend %backface-visibility;
-				}
-
-				&:hover {
-					font-size: 15px;
-					font-size: 1vw;
-					padding: 7% 0% 7% 12%;
-					border-radius: 0.2em;
 				}
 			}
 		}
