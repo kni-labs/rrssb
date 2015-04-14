@@ -19,19 +19,19 @@
 // How to use: Add/remove buttons from config settings and $social-list.
 
 // Config settings
-$rrssb-txt: #fff !default;
-$rrssb-email: #0a88ff !default;
-$rrssb-facebook: #306199 !default;
-$rrssb-tumblr: #32506d !default;
-$rrssb-linkedin: #007bb6 !default;
-$rrssb-twitter: #26c4f1 !default;
-$rrssb-googleplus: #e93f2e !default;
-$rrssb-reddit: #8bbbe3 !default;
-$rrssb-youtube: #df1c31 !default;
-$rrssb-pinterest: #b81621 !default;
-$rrssb-pocket: #ED4054 !default;
-$rrssb-github: #444 !default;
-$rrssb-instagram: #517fa4 !default;
+$rrssb-txt: 				#ffffff !default;
+$rrssb-email: 			#0a88ff !default;
+$rrssb-facebook: 		#306199 !default;
+$rrssb-tumblr: 			#32506d !default;
+$rrssb-linkedin: 		#007bb6 !default;
+$rrssb-twitter: 		#26c4f1 !default;
+$rrssb-googleplus: 	#e93f2e !default;
+$rrssb-reddit: 			#8bbbe3 !default;
+$rrssb-youtube: 		#df1c31 !default;
+$rrssb-pinterest: 	#b81621 !default;
+$rrssb-pocket: 			#ED4054 !default;
+$rrssb-github: 			#444444 !default;
+$rrssb-instagram: 	#517fa4 !default;
 
 // Set the border radius for the buttons
 $rrssb-border-radius: 2px !default;
@@ -41,17 +41,17 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 // Variable list for all social button colors to be iterated over.
 $social-list: (
 	rrssb-email				$rrssb-email,
-	rrssb-facebook			$rrssb-facebook,
+	rrssb-facebook		$rrssb-facebook,
 	rrssb-tumblr			$rrssb-tumblr,
-	rrssb-linkedin			$rrssb-linkedin,
+	rrssb-linkedin		$rrssb-linkedin,
 	rrssb-twitter			$rrssb-twitter,
-	rrssb-googleplus		$rrssb-googleplus,
+	rrssb-googleplus	$rrssb-googleplus,
 	rrssb-youtube			$rrssb-youtube,
 	rrssb-reddit			$rrssb-reddit,
-	rrssb-pinterest			$rrssb-pinterest,
+	rrssb-pinterest		$rrssb-pinterest,
 	rrssb-pocket			$rrssb-pocket,
 	rrssb-github			$rrssb-github,
-	rrssb-instagram 		$rrssb-instagram
+	rrssb-instagram 	$rrssb-instagram
 );
 
 @mixin transition($expression) {
@@ -193,10 +193,10 @@ $social-list: (
 			height: auto;
 
 			a {
-				border-radius: 0.2em;				
+				border-radius: 0.2em;
 				font-size: 15px; // fallback
 				font-size: 1vw;  // scales font with browser
-				line-height: 1vw;				
+				line-height: 1vw;
 				padding: 7% 0% 7% 12%;
 				@extend %backface-visibility;
 
@@ -209,7 +209,7 @@ $social-list: (
 						height: 100%;
 						width: 100%;
 						position: absolute;
-						top:0;						
+						top:0;
 					}
 				}
 
