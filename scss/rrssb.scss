@@ -193,10 +193,10 @@ $social-list: (
 			height: auto;
 
 			a {
-				border-radius: 0.2em;				
+				border-radius: 0.2em;
 				font-size: 15px; // fallback
 				font-size: 1vw;  // scales font with browser
-				line-height: 1vw;				
+				line-height: 1vw;
 				padding: 7% 0% 7% 12%;
 				@extend %backface-visibility;
 
@@ -209,7 +209,7 @@ $social-list: (
 						height: 100%;
 						width: 100%;
 						position: absolute;
-						top:0;						
+						top:0;
 					}
 				}
 
