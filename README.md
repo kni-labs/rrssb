@@ -104,7 +104,7 @@ Requires [**SVG**](http://caniuse.com/svg)
 ### Version Notes
 | Version | Note | Issue | Backwards compatible?
 | :---	| :------- | :------- | :------- |
-| 1.7.5 | Flexible Large Format icons text-size based on sibling count | [(#18)](https://github.com/kni-labs/rrssb/issues/18) | &#x2713;
+| 1.7.5 | Flexible Large Format icons text-size based on sibling count. Switched to MIT license. | [(#18)](https://github.com/kni-labs/rrssb/issues/18) | &#x2713;
 | 1.7.2 | Better calc detection & fallback /via @IanCaunce | [(#89)](https://github.com/kni-labs/rrssb/pull/89) | &#x2713;
 | 1.7 | Javascript Meta attributes as variables /via @aicarlson | [(#47)](https://github.com/kni-labs/rrssb/issues/47) | &#x2713;
 | 1.6.5 | Namespace CSS classes - Legacy HTML will be incompatible until class names updated.| [(#42)](https://github.com/kni-labs/rrssb/issues/42) | &#x2715;
@@ -112,7 +112,7 @@ Requires [**SVG**](http://caniuse.com/svg)
 
 ### Contributing
 
-Thanks for helping! Please use `dev` branch for all pull requests.
+Thanks for helping! Please use [**dev branch**](https://github.com/kni-labs/rrssb/tree/dev) for all pull requests.
 
 
 ### About
