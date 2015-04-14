@@ -104,7 +104,8 @@ Requires [**SVG**](http://caniuse.com/svg)
 ### Version Notes
 | Version | Note | Issue | Backwards compatible?
 | :---	| :------- | :------- | :------- |
-| 1.7 | Javascript Meta attributes as variables thanks @aicarlson| [(#47)](https://github.com/kni-labs/rrssb/issues/47) | &#x2713; |
+| 1.7.2 | Better calc detection & fallback /via @IanCaunce | [(#89)](https://github.com/kni-labs/rrssb/pull/89) | &#x2713; 
+| 1.7 | Javascript Meta attributes as variables /via @aicarlson | [(#47)](https://github.com/kni-labs/rrssb/issues/47) | &#x2713;
 | 1.6.5 | Namespace CSS classes - Legacy HTML will be incompatible until class names updated.| [(#42)](https://github.com/kni-labs/rrssb/issues/42) | &#x2715;
 
 
