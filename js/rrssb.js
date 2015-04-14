@@ -1,71 +1,95 @@
-/*
+/*!
  Ridiculously Responsive Social Sharing Buttons
  Team: @dbox, @joshuatuscan
  Site: http://www.kurtnoble.com/labs/rrssb
  Twitter: @therealkni
 
-        ___           ___
-       /__/|         /__/\        ___
-      |  |:|         \  \:\      /  /\
-      |  |:|          \  \:\    /  /:/
-    __|  |:|      _____\__\:\  /__/::\
+		___           ___
+	   /__/|         /__/\        ___
+	  |  |:|         \  \:\      /  /\
+	  |  |:|          \  \:\    /  /:/
+	__|  |:|      _____\__\:\  /__/::\
    /__/\_|:|____ /__/::::::::\ \__\/\:\__
    \  \:\/:::::/ \  \:\~~\~~\/    \  \:\/\
-    \  \::/~~~~   \  \:\  ~~~      \__\::/
-     \  \:\        \  \:\          /__/:/
-      \  \:\        \  \:\         \__\/
-       \__\/         \__\/
+	\  \::/~~~~   \  \:\  ~~~      \__\::/
+	 \  \:\        \  \:\          /__/:/
+	  \  \:\        \  \:\         \__\/
+	   \__\/         \__\/
 */
 
-
-;(function(window, jQuery, undefined) {
++(function(window, jQuery, undefined) {
 	'use strict';
+
+	var support = {
+		calc : false
+	};
 
 	/*
 	 * Public Function
 	 */
 
 	 jQuery.fn.rrssb = function( options ) {
- 
- 		// Settings that $.rrssb() will accept.
-        var settings = jQuery.extend({
-            description: undefined,
-            emailAddress: undefined,
-            emailBody: undefined,
-            emailSubject: undefined,
-            image: undefined, 
-            title: undefined,
-            url: undefined
-        }, options );
- 
- 		// Return the encoded strings if the settings have been changed.
-        for (var key in settings) {
-        	if (settings.hasOwnProperty(key) && settings[key] !== undefined) {
-        		settings[key] = encodeString(settings[key]);
-        	}
-        };
 
-        if (settings.url !== undefined) {
-        	jQuery(this).find('.rrssb-facebook a').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + settings.url);
-        	jQuery(this).find('.rrssb-tumblr a').attr('href', 'http://tumblr.com/share/link?url=' + settings.url + (settings.title !== undefined ? '&name=' + settings.title : '')  + (settings.description !== undefined ? '&description=' + settings.description : ''));
-        	jQuery(this).find('.rrssb-linkedin a').attr('href', 'http://www.linkedin.com/shareArticle?mini=true&url=' + settings.url + (settings.title !== undefined ? '&title=' + settings.title : '') + (settings.description !== undefined ? '&summary=' + settings.description : ''));
-        	jQuery(this).find('.rrssb-twitter a').attr('href', 'http://twitter.com/home?status=' + (settings.description !== undefined ? settings.description : '') + '%20' + settings.url);
-        	jQuery(this).find('.rrssb-reddit a').attr('href', 'http://www.reddit.com/submit?url=' + settings.url + (settings.description !== undefined ? '&text=' + settings.description : '') + (settings.title !== undefined ? '&title=' + settings.title : ''));
-        	jQuery(this).find('.rrssb-googleplus a').attr('href', 'https://plus.google.com/share?url=' + (settings.description !== undefined ? settings.description : '') + '%20' + settings.url);
-        	jQuery(this).find('.rrssb-pinterest a').attr('href', 'http://pinterest.com/pin/create/button/?url=' + settings.url + ((settings.image !== undefined) ? '&amp;media=' + settings.image : '') + (settings.description !== undefined ? '&amp;description=' + settings.description : ''));
-        	jQuery(this).find('.rrssb-pocket a').attr('href', 'https://getpocket.com/save?url=' + settings.url);
-        	jQuery(this).find('.rrssb-github a').attr('href', settings.url);
-        }
+		// Settings that $.rrssb() will accept.
+		var settings = jQuery.extend({
+			description: undefined,
+			emailAddress: undefined,
+			emailBody: undefined,
+			emailSubject: undefined,
+			image: undefined,
+			title: undefined,
+			url: undefined
+		}, options );
 
-        if (settings.emailAddress !== undefined) {
-        	jQuery(this).find('.rrssb-email a').attr('href', 'mailto:' + settings.emailAddress + '?' + (settings.emailSubject !== undefined ? 'subject=' + settings.emailSubject : '') + (settings.emailBody !== undefined ? '&amp;body=' + settings.emailBody : ''));
-        }
+		// Return the encoded strings if the settings have been changed.
+		for (var key in settings) {
+			if (settings.hasOwnProperty(key) && settings[key] !== undefined) {
+				settings[key] = encodeString(settings[key]);
+			}
+		};
 
-    };
+		if (settings.url !== undefined) {
+			jQuery(this).find('.rrssb-facebook a').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + settings.url);
+			jQuery(this).find('.rrssb-tumblr a').attr('href', 'http://tumblr.com/share/link?url=' + settings.url + (settings.title !== undefined ? '&name=' + settings.title : '')  + (settings.description !== undefined ? '&description=' + settings.description : ''));
+			jQuery(this).find('.rrssb-linkedin a').attr('href', 'http://www.linkedin.com/shareArticle?mini=true&url=' + settings.url + (settings.title !== undefined ? '&title=' + settings.title : '') + (settings.description !== undefined ? '&summary=' + settings.description : ''));
+			jQuery(this).find('.rrssb-twitter a').attr('href', 'http://twitter.com/home?status=' + (settings.description !== undefined ? settings.description : '') + '%20' + settings.url);
+			jQuery(this).find('.rrssb-reddit a').attr('href', 'http://www.reddit.com/submit?url=' + settings.url + (settings.description !== undefined ? '&text=' + settings.description : '') + (settings.title !== undefined ? '&title=' + settings.title : ''));
+			jQuery(this).find('.rrssb-googleplus a').attr('href', 'https://plus.google.com/share?url=' + (settings.description !== undefined ? settings.description : '') + '%20' + settings.url);
+			jQuery(this).find('.rrssb-pinterest a').attr('href', 'http://pinterest.com/pin/create/button/?url=' + settings.url + ((settings.image !== undefined) ? '&amp;media=' + settings.image : '') + (settings.description !== undefined ? '&amp;description=' + settings.description : ''));
+			jQuery(this).find('.rrssb-pocket a').attr('href', 'https://getpocket.com/save?url=' + settings.url);
+			jQuery(this).find('.rrssb-github a').attr('href', settings.url);
+		}
+
+		if (settings.emailAddress !== undefined) {
+			jQuery(this).find('.rrssb-email a').attr('href', 'mailto:' + settings.emailAddress + '?' + (settings.emailSubject !== undefined ? 'subject=' + settings.emailSubject : '') + (settings.emailBody !== undefined ? '&amp;body=' + settings.emailBody : ''));
+		}
+
+	};
 
 	/*
 	 * Utility functions
 	 */
+	var detectCalcSupport = function(){
+		//detect if calc is natively supported.
+		var el = $('<div>');
+		var calcProps = [
+			'calc',
+			'-webkit-calc',
+			'-moz-calc'
+		];
+
+		$('body').append(el);
+
+		for (var i=0; i < calcProps.length; i++) {
+			el.css('width', calcProps[i] + '(1px)');
+			if(el.width() === 1){
+				support.calc = calcProps[i];
+				break;
+			}
+		}
+
+		el.remove();
+	};
 
 	var encodeString = function(string) {
 		// Recursively decode string first to ensure we aren't double encoding.
@@ -83,11 +107,12 @@
 		// loop through each instance of buttons
 		jQuery('.rrssb-buttons').each(function(index) {
 			var self = jQuery(this);
-			var numOfButtons = jQuery('li:visible', self).length;
+			var buttons = jQuery('li:visible', self);
+			var numOfButtons = buttons.length;
 			var initBtnWidth = 100 / numOfButtons;
 
 			// set initial width of buttons
-			jQuery('li', self).css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
+			buttons.css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
 		});
 	};
 
@@ -96,21 +121,20 @@
 		jQuery('.rrssb-buttons').each(function(index) {
 			var self = jQuery(this);
 			//get button width
-			var containerWidth = parseFloat(jQuery(self).width());
+			var containerWidth = self.width();
 			var buttonWidth = jQuery('li', self).not('.small').first().width();
-			var smallBtnCount = jQuery('li.small', self).length;
 
 			// enlarge buttons if they get wide enough
-			if (buttonWidth > 170 && smallBtnCount < 1) {
-				jQuery(self).addClass('large-format');
+			if (buttonWidth > 170 && jQuery('li.small', self).length < 1) {
+				self.addClass('large-format');
 			} else {
-				jQuery(self).removeClass('large-format');
+				self.removeClass('large-format');
 			}
 
 			if (containerWidth < 200) {
-				jQuery(self).removeClass('small-format').addClass('tiny-format');
+				self.removeClass('small-format').addClass('tiny-format');
 			} else {
-				jQuery(self).removeClass('tiny-format');
+				self.removeClass('tiny-format');
 			}
 		});
 	};
@@ -119,37 +143,40 @@
 		// loop through each instance of buttons
 		jQuery('.rrssb-buttons').each(function(index) {
 			var self = jQuery(this);
-			var totalBtnSze = 0, totalTxtSze = 0, upCandidate, nextBackUp;
-			var smallBtnCount = jQuery('li.small', self).length;
 
-			if (smallBtnCount === jQuery('li', self).length) {
+			var buttons = jQuery('li', self);
+			var smallButtons = buttons.filter('.small');
+			var totalBtnSze = 0;
+			var totalTxtSze = 0;
+			var upCandidate = smallButtons.first();
+			var nextBackUp = parseFloat(upCandidate.attr('data-size')) + 55;
+			var smallBtnCount = smallButtons.length;
+
+			if (smallBtnCount === buttons.length) {
 				var btnCalc = smallBtnCount * 42;
-				var containerWidth = parseFloat(jQuery(self).width());
-				upCandidate = jQuery('li.small', self).first();
-				nextBackUp = parseFloat(jQuery(upCandidate).attr('data-size')) + 55;
+				var containerWidth = self.width();
 
 				if ((btnCalc + nextBackUp) < containerWidth) {
-					jQuery(self).removeClass('small-format');
-					jQuery('li.small', self).first().removeClass('small');
+					self.removeClass('small-format');
+					smallButtons.first().removeClass('small');
 
 					sizeSmallBtns();
 				}
 
 			} else {
-				jQuery('li', self).not('.small').each(function(index) {
-					var txtWidth = parseFloat(jQuery(this).attr('data-size')) + 55;
-					var btnWidth = parseFloat(jQuery(this).width());
+				buttons.not('.small').each(function(index) {
+					var button = jQuery(this);
+					var txtWidth = parseFloat(button.attr('data-size')) + 55;
+					var btnWidth = parseFloat(button.width());
 
 					totalBtnSze = totalBtnSze + btnWidth;
 					totalTxtSze = totalTxtSze + txtWidth;
 				});
 
 				var spaceLeft = totalBtnSze - totalTxtSze;
-				upCandidate = jQuery('li.small', self).first();
-				nextBackUp = parseFloat(jQuery(upCandidate).attr('data-size')) + 55;
 
 				if (nextBackUp < spaceLeft) {
-					jQuery(upCandidate).removeClass('small');
+					upCandidate.removeClass('small');
 					sizeSmallBtns();
 				}
 			}
@@ -159,22 +186,24 @@
 	var checkSize = function(init) {
 		// loop through each instance of buttons
 		jQuery('.rrssb-buttons').each(function(index) {
-			//console.log('starting check for: '+(index+1));
+
 			var self = jQuery(this);
-			var elems = jQuery('li', self).nextAll(), count = elems.length;
+			var buttons = jQuery('li', self);
+			var elems = buttons.nextAll();
+			var count = elems.length;
 
 			// get buttons in reverse order and loop through each
-			jQuery(jQuery('li', self).get().reverse()).each(function(index, count) {
+			jQuery(buttons.get().reverse()).each(function(index, count) {
 
-				if (jQuery(this).hasClass('small') === false) {
-					var txtWidth = parseFloat(jQuery(this).attr('data-size')) + 55;
-					var btnWidth = parseFloat(jQuery(this).width());
+				var button = jQuery(this);
+
+				if (button.hasClass('small') === false) {
+					var txtWidth = parseFloat(button.attr('data-size')) + 55;
+					var btnWidth = parseFloat(button.width());
 
 					if (txtWidth > btnWidth) {
-						//console.log($(self).attr('class')+' '+$(this).attr('class')+' txtWidth: '+txtWidth+ ' & btnWidth: '+btnWidth);
-						var btn2small = jQuery('li', self).not('.small').last();
+						var btn2small = buttons.not('.small').last();
 						jQuery(btn2small).addClass('small');
-						//console.log($(btn2small).attr('class'));
 						sizeSmallBtns();
 					}
 				}
@@ -193,41 +222,45 @@
 		// loop through each instance of buttons
 		jQuery('.rrssb-buttons').each(function(index) {
 			var self = jQuery(this);
-			var regButtonCount,
-					regPercent,
-					pixelsOff,
-					magicWidth,
-					smallBtnFraction;
+			var regButtonCount;
+			var regPercent;
+			var pixelsOff;
+			var magicWidth;
+			var smallBtnFraction;
+			var buttons = jQuery('li', self);
+			var smallButtons = buttons.filter('.small');
 
 			// readjust buttons for small display
-			var smallBtnCount = jQuery('li.small', self).length;
+			var smallBtnCount = smallButtons.length;
 
 			// make sure there are small buttons
-			if (smallBtnCount > 0 && smallBtnCount !== jQuery('li', self).length) {
-				jQuery(self).removeClass('small-format');
+			if (smallBtnCount > 0 && smallBtnCount !== buttons.length) {
+				self.removeClass('small-format');
 
 				//make sure small buttons are square when not all small
-				jQuery('li.small', self).css('width','42px');
+				smallButtons.css('width','42px');
 				pixelsOff = smallBtnCount * 42;
-				regButtonCount = jQuery('li', self).not('.small').length;
+				regButtonCount = buttons.not('.small').length;
 				regPercent = 100 / regButtonCount;
 				smallBtnFraction = pixelsOff / regButtonCount;
 
-				if (navigator.userAgent.indexOf('Chrome') >= 0 || navigator.userAgent.indexOf('Safari') >= 0) {
-					magicWidth = '-webkit-calc('+regPercent+'% - '+smallBtnFraction+'px)';
-				} else if (navigator.userAgent.indexOf('Firefox') >= 0) {
-					magicWidth = '-moz-calc('+regPercent+'% - '+smallBtnFraction+'px)';
+				// if calc is not supported. calculate the width on the fly.
+				if (support.calc === false) {
+					magicWidth = ((self.innerWidth()-1) / regButtonCount) - smallBtnFraction;
+					magicWidth = Math.floor(magicWidth*1000) / 1000;
+					magicWidth += 'px';
 				} else {
-					magicWidth = 'calc('+regPercent+'% - '+smallBtnFraction+'px)';
+					magicWidth = support.calc+'('+regPercent+'% - '+smallBtnFraction+'px)';
 				}
-				jQuery('li', self).not('.small').css('width', magicWidth);
 
-			} else if (smallBtnCount === jQuery('li', self).length) {
+				buttons.not('.small').css('width', magicWidth);
+
+			} else if (smallBtnCount === buttons.length) {
 				// if all buttons are small, change back to percentage
-				jQuery(self).addClass('small-format');
+				self.addClass('small-format');
 				setPercentBtns();
 			} else {
-				jQuery(self).removeClass('small-format');
+				self.removeClass('small-format');
 				setPercentBtns();
 			}
 		}); //end loop
@@ -240,12 +273,15 @@
 			jQuery(this).addClass('rrssb-'+(index + 1));
 		});
 
+		detectCalcSupport();
+
 		setPercentBtns();
 
 		// grab initial text width of each button and add as data attr
 		jQuery('.rrssb-buttons li .rrssb-text').each(function(index) {
-			var txtWdth = parseFloat(jQuery(this).width());
-			jQuery(this).closest('li').attr('data-size', txtWdth);
+			var buttonTxt = jQuery(this);
+			var txtWdth = buttonTxt.width();
+			buttonTxt.closest('li').attr('data-size', txtWdth);
 		});
 
 		checkSize(true);
@@ -299,8 +335,8 @@
 		 */
 
 		jQuery('.rrssb-buttons a.popup').on('click', function(e){
-			var _this = jQuery(this);
-			popupCenter(_this.attr('href'), _this.find('.rrssb-text').html(), 580, 470);
+			var self = jQuery(this);
+			popupCenter(self.attr('href'), self.find('.rrssb-text').html(), 580, 470);
 			e.preventDefault();
 		});
 
