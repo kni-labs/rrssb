@@ -98,13 +98,15 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 
 Currently tested between [**140px**](https://www.dropbox.com/s/2k6lcebg2887ge3/Screenshot%202014-02-18%2009.45.45.png) and [**15,465px**](https://www.dropbox.com/s/1juq03011lixk3r/Screenshot%202014-02-18%2009.43.57.png) on current versions of Chrome 33, Safari 7.0.2, Firefox 27, Opera 20, and IE9+.
 
-Requires [**calc**](http://caniuse.com/calc) and [**SVG**](http://caniuse.com/svg)
+Requires [**SVG**](http://caniuse.com/svg)
 
 
 ### Version Notes
 | Version | Note | Issue | Backwards compatible?
 | :---	| :------- | :------- | :------- |
-| 1.7 | Javascript Meta attributes as variables thanks @aicarlson| [(#47)](https://github.com/kni-labs/rrssb/issues/47) | &#x2713; |
+| 1.7.5 | Flexible Large Format icons text-size based on sibling count | [(#18)](https://github.com/kni-labs/rrssb/issues/18) | &#x2713; 
+| 1.7.2 | Better calc detection & fallback /via @IanCaunce | [(#89)](https://github.com/kni-labs/rrssb/pull/89) | &#x2713;
+| 1.7 | Javascript Meta attributes as variables /via @aicarlson | [(#47)](https://github.com/kni-labs/rrssb/issues/47) | &#x2713;
 | 1.6.5 | Namespace CSS classes - Legacy HTML will be incompatible until class names updated.| [(#42)](https://github.com/kni-labs/rrssb/issues/42) | &#x2715;
 
 
