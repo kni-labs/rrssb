@@ -103,7 +103,7 @@ $social-list: (
 		line-height: 13px;
 		list-style: none;
 		margin: 0;
-		padding: 0 2.5px;
+		padding: 0 2px;
 
 		// This generates individual button classes for each item in social list on line 39.
 		@each $s-name in $social-list {
@@ -310,7 +310,7 @@ $social-list: (
 
 		li {
 			height: 80%;
-			padding: 0 1.5px;
+			padding: 0 1px;
 
 			a {
 				.rrssb-icon {
