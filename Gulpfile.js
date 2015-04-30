@@ -26,12 +26,8 @@ gulp.task('sass', function() {
   gulp.src(['scss/*.scss'])
   .pipe(sass())
   .on('error', util.log)
-  .pipe(autoprefixer({
-    browsers: ['> 5%']
-  }))
-  .pipe(minifyCss({
-    compatibility: 'ie8'
-  }))
+  .pipe(autoprefixer())
+  .pipe(minifyCss())
   .pipe(gulp.dest('css/'))
   .pipe(filter('**/*.css'))
   .pipe(browserSync.reload({stream:true}));
