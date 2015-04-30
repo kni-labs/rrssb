@@ -30,12 +30,11 @@
     "gulp": "*",
     "gulp-sass": "*",
     "gulp-uglify": "*",
+    "gulp-filter": "*",
     "gulp-util": "*",
     "gulp-rename": "*",
     "gulp-minify-css": "*",
     "gulp-autoprefixer": "*",
-    "gulp-watch": "*",
-    "gulp-changed": "*",
     "gulp-imagemin": "*",
     "browser-sync": "*"
   }
