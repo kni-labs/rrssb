@@ -27,16 +27,6 @@
   "homepage": "http://kurtnoble.com/labs/rrssb/",
   "readme": "ERROR! No readme found!",
   "devDependencies": {
-    "gulp": "*",
-    "gulp-sass": "*",
-    "gulp-uglify": "*",
-    "gulp-util": "*",
-    "gulp-rename": "*",
-    "gulp-minify-css": "*",
-    "gulp-autoprefixer": "*",
-    "gulp-watch": "*",
-    "gulp-changed": "*",
-    "gulp-imagemin": "*",
-    "browser-sync": "*"
+    "gulp": "*"
   }
 }
