@@ -35,12 +35,14 @@ gulp.task('sass', function() {
 
 gulp.task('uglify', function() {
   gulp.src(['js/rrssb.js'])
-  .pipe(gulp.dest('js'))
+  .on('error', util.log)
+  .pipe(gulp.dest('js'));
 });
 
 gulp.task('svg', function() {
   gulp.src(['icons/*.svg', '!icons/*.min.svg'])
   .pipe(imagemin())
+  .on('error', util.log)
   .pipe(rename({
     extname: '.min.svg'
   }))
