@@ -112,6 +112,10 @@ First install Gulp globally using `npm install -g gulp` and then use `npm instal
 
 *Note: On mac you may need to use *`sudo`* before the commands, depending on your directory ownership.*
 
+Once all dependencies are installed, use the `gulp` command to create a local server at `localhost:3000` (by default) and watch for file changes.
+
+*Note: You can access the local server on any device connected to the same network as the device running the server by visiting *`{YOUR_LOCAL_IP_ADDRESS}:3000`*. For example if your local IP address is *`192.168.0.1`*, visit *`192.168.0.1:3000`* from another device connected to the same network to view the pages on the server (they will auto-update as well).*
+
 
 ### About
 
