@@ -18,20 +18,20 @@
 
 // How to use: Add/remove buttons from config settings and $social-list.
 
-// Config settings
-$rrssb-txt: 				#ffffff !default;
-$rrssb-email: 			#0a88ff !default;
-$rrssb-facebook: 		#306199 !default;
-$rrssb-tumblr: 			#32506d !default;
-$rrssb-linkedin: 		#007bb6 !default;
-$rrssb-twitter: 		#26c4f1 !default;
-$rrssb-googleplus: 	#e93f2e !default;
-$rrssb-reddit: 			#8bbbe3 !default;
-$rrssb-youtube: 		#df1c31 !default;
-$rrssb-pinterest: 	#b81621 !default;
-$rrssb-pocket: 			#ED4054 !default;
-$rrssb-github: 			#444444 !default;
-$rrssb-instagram: 	#517fa4 !default;
+// config settings
+$rrssb-txt:         #fff    !default;
+$rrssb-email:       #0a88ff !default;
+$rrssb-facebook:    #306199 !default;
+$rrssb-tumblr:      #32506d !default;
+$rrssb-linkedin:    #007bb6 !default;
+$rrssb-twitter:     #26c4f1 !default;
+$rrssb-googleplus:  #e93f2e !default;
+$rrssb-reddit:      #8bbbe3 !default;
+$rrssb-youtube:     #df1c31 !default;
+$rrssb-pinterest:   #b81621 !default;
+$rrssb-pocket:      #ed4054 !default;
+$rrssb-github:      #444    !default;
+$rrssb-instagram:   #517fa4 !default;
 
 // Set the border radius for the buttons
 $rrssb-border-radius: 2px !default;
@@ -40,341 +40,324 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 // Variable list for all social button colors to be iterated over.
 $social-list: (
-	rrssb-email				$rrssb-email,
-	rrssb-facebook		$rrssb-facebook,
-	rrssb-tumblr			$rrssb-tumblr,
-	rrssb-linkedin		$rrssb-linkedin,
-	rrssb-twitter			$rrssb-twitter,
-	rrssb-googleplus	$rrssb-googleplus,
-	rrssb-youtube			$rrssb-youtube,
-	rrssb-reddit			$rrssb-reddit,
-	rrssb-pinterest		$rrssb-pinterest,
-	rrssb-pocket			$rrssb-pocket,
-	rrssb-github			$rrssb-github,
-	rrssb-instagram 	$rrssb-instagram
+  rrssb-email       $rrssb-email,
+  rrssb-facebook    $rrssb-facebook,
+  rrssb-tumblr      $rrssb-tumblr,
+  rrssb-linkedin    $rrssb-linkedin,
+  rrssb-twitter     $rrssb-twitter,
+  rrssb-googleplus  $rrssb-googleplus,
+  rrssb-youtube     $rrssb-youtube,
+  rrssb-reddit      $rrssb-reddit,
+  rrssb-pinterest   $rrssb-pinterest,
+  rrssb-pocket      $rrssb-pocket,
+  rrssb-github      $rrssb-github,
+  rrssb-instagram   $rrssb-instagram
 );
-
-@mixin transition($expression) {
-	-webkit-transition: $expression;
-	-moz-transition: $expression;
-	-o-transition: $expression;
-	transition: $expression;
-}
-
-%backface-visibility {
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	-ms-backface-visibility: hidden;
-}
-
-%border-box {
-	-moz-box-sizing:border-box;
-	box-sizing: border-box;
-}
 
 // some generic classes
 .clearfix {
-	*zoom: 1;
 
-	&:after {
-		clear: both;
-	}
+  &:after {
+    clear: both;
+  }
 
-	&:before,
-	&:after {
-		content: " ";
-		display: table;
-	}
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
 }
 
 // The meat and potatoes
 .rrssb-buttons {
-	@extend %border-box;
-	font-family: $rrssb-main-font;
-	height: 36px;
-	margin: 0;
-	padding: 0;
-	width: 100%;
+  box-sizing: border-box;
+  font-family: $rrssb-main-font;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 
-	li {
-		@extend %border-box;
-		float: left;
-		height: 100%;
-		line-height: 13px;
-		list-style: none;
-		margin: 0;
-		padding: 0 2px;
+  li {
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    line-height: 13px;
+    list-style: none;
+    margin: 0;
+    padding: 0 2px;
 
-		// This generates individual button classes for each item in social list on line 39.
-		@each $s-name in $social-list {
+    // This generates individual button classes for each item in social list on line 39.
+    @each $s-name in $social-list {
 
-			&.#{nth($s-name, 1)} {
-				a {
-					background-color: nth($s-name, 2);
+      &.#{nth($s-name, 1)} {
+        a {
+          background-color: nth($s-name, 2);
 
-					&:hover {
-						background-color: darken(nth($s-name, 2), 10%);
-					}
-				}
-			}
+          &:hover {
+            background-color: darken(nth($s-name, 2), 10%);
+          }
+        }
+      }
 
-		} // end @each directive
+    } // end @each directive
 
-		a {
-			@extend %border-box;
-			background-color: #ccc;
-			border-radius: $rrssb-border-radius;
-			display: block;
-			font-size: 11px;
-			font-weight: bold;
-			height: 100%;
-			padding: 11px 7px 12px 27px;
-			position: relative;
-			text-align: center;
-			text-decoration: none;
-			text-transform: uppercase;
-			width: 100%;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-			@include transition(background-color 0.2s ease-in-out);
+    a {
+      background-color: #ccc;
+      border-radius: $rrssb-border-radius;
+      box-sizing: border-box;
+      display: block;
+      font-size: 11px;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-weight: bold;
+      height: 100%;
+      padding: 11px 7px 12px 27px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color .2s ease-in-out;
+      width: 100%;
 
-			.rrssb-icon {
-				display: block;
-				left: 10px;
-				padding-top: 9px;
-				position: absolute;
-				top: 0;
-				width: 10%;
+      .rrssb-icon {
+        display: block;
+        left: 10px;
+        padding-top: 9px;
+        position: absolute;
+        top: 0;
+        width: 10%;
 
-				svg {
-					height: 17px;
-					width: 17px;
+        svg {
+          height: 17px;
+          width: 17px;
 
-					path, polygon {
-						fill: $rrssb-txt;
-					}
-				}
-			}
+          path, polygon {
+            fill: $rrssb-txt;
+          }
+        }
+      }
 
-			.rrssb-text {
-				color: $rrssb-txt;
-			}
+      .rrssb-text {
+        color: $rrssb-txt;
+      }
 
-			&:active {
-				box-shadow:inset 1px 3px 15px 0 rgba(022,0,0,.25);
-			}
-		}
+      &:active {
+        box-shadow: inset 1px 3px 15px 0 rgba(22, 0, 0, .25);
+      }
+    }
 
-		&.small {
-			a {
-				padding: 0;
+    &.small {
+      a {
+        padding: 0;
 
-				.rrssb-icon {
-					left: auto;
-					margin: 0 auto;
-					overflow: hidden;
-					position: relative;
-					top: auto;
-					width: 100%;
-				}
-				.rrssb-text {
-					visibility: hidden;
-				}
-			}
-		}
-	}
+        .rrssb-icon {
+          left: auto;
+          margin: 0 auto;
+          overflow: hidden;
+          position: relative;
+          top: auto;
+          width: 100%;
+        }
 
-	&.large-format {
-		height: auto;
+        .rrssb-text {
+          visibility: hidden;
+        }
+      }
+    }
+  }
 
-		li {
-			height: auto;
+  &.large-format {
+    height: auto;
 
-			// Determine font-size based on number of siblings
-			&:first-child:nth-last-child(1) {
-				a {
-					font-size: 20px; //fallback
-					font-size: 4vw;
-				}
-			}
+    li {
+      height: auto;
 
-			&:first-child:nth-last-child(2),
-  		&:first-child:nth-last-child(2) ~ li {
-				a {
-					font-size: 16px; //fallback
-					font-size: 2vw;
-				}
-			}
+      // Determine font-size based on number of siblings
+      &:first-child:nth-last-child(1) {
+        a {
+          font-size: 20px; //fallback
+          font-size: 4vw;
+        }
+      }
 
-			&:first-child:nth-last-child(3),
-			&:first-child:nth-last-child(3) ~ li {
-				a {
-					font-size: 14px; //fallback
-					font-size: 1.7vw;
-				}
-			}
+      &:first-child:nth-last-child(2),
+      &:first-child:nth-last-child(2) ~ li {
+        a {
+          font-size: 16px; //fallback
+          font-size: 2vw;
+        }
+      }
 
-			&:first-child:nth-last-child(4),
-			&:first-child:nth-last-child(4) ~ li {
-				a {
-					font-size: 13px; //fallback
-					font-size: 1.4vw;
-				}
-			}
+      &:first-child:nth-last-child(3),
+      &:first-child:nth-last-child(3) ~ li {
+        a {
+          font-size: 14px; //fallback
+          font-size: 1.7vw;
+        }
+      }
 
-			&:first-child:nth-last-child(5),
-			&:first-child:nth-last-child(5) ~ li {
-				a {
-					font-size: 13px; //fallback
-					font-size: 1.2vw;
-				}
-			}
+      &:first-child:nth-last-child(4),
+      &:first-child:nth-last-child(4) ~ li {
+        a {
+          font-size: 13px; //fallback
+          font-size: 1.4vw;
+        }
+      }
 
-			&:first-child:nth-last-child(6),
-			&:first-child:nth-last-child(6) ~ li {
-				a {
-					font-size: 12px; //fallback
-					font-size: 1.05vw;
-				}
-			}
+      &:first-child:nth-last-child(5),
+      &:first-child:nth-last-child(5) ~ li {
+        a {
+          font-size: 13px; //fallback
+          font-size: 1.2vw;
+        }
+      }
 
-			&:first-child:nth-last-child(7),
-			&:first-child:nth-last-child(7) ~ li {
-				a {
-					font-size: 11px; //fallback
-					font-size: .9vw;
-				}
-			}
+      &:first-child:nth-last-child(6),
+      &:first-child:nth-last-child(6) ~ li {
+        a {
+          font-size: 12px; //fallback
+          font-size: 1.05vw;
+        }
+      }
 
-			&:first-child:nth-last-child(8),
-			&:first-child:nth-last-child(8) ~ li {
-				a {
-					font-size: 11px; //fallback
-					font-size: .8vw;
-				}
-			}
+      &:first-child:nth-last-child(7),
+      &:first-child:nth-last-child(7) ~ li {
+        a {
+          font-size: 11px; //fallback
+          font-size: .9vw;
+        }
+      }
 
-			&:first-child:nth-last-child(9),
-			&:first-child:nth-last-child(9) ~ li {
-				a {
-					font-size: 11px; //fallback
-					font-size: .7vw;
-				}
-			}
+      &:first-child:nth-last-child(8),
+      &:first-child:nth-last-child(8) ~ li {
+        a {
+          font-size: 11px; //fallback
+          font-size: .8vw;
+        }
+      }
 
-			&:first-child:nth-last-child(10),
-			&:first-child:nth-last-child(10) ~ li {
-				a {
-					font-size: 11px; //fallback
-					font-size: .6vw;
-				}
-			}
+      &:first-child:nth-last-child(9),
+      &:first-child:nth-last-child(9) ~ li {
+        a {
+          font-size: 11px; //fallback
+          font-size: .7vw;
+        }
+      }
 
-			&:first-child:nth-last-child(11),
-			&:first-child:nth-last-child(11) ~ li {
-				a {
-					font-size: 11px; //fallback
-					font-size: .5vw;
-				}
-			}
+      &:first-child:nth-last-child(10),
+      &:first-child:nth-last-child(10) ~ li {
+        a {
+          font-size: 11px; //fallback
+          font-size: .6vw;
+        }
+      }
 
-			a {
-				border-radius: 0.2em;
-				padding: 8.5% 0 8.5% 12%;
-				@extend %backface-visibility;
+      &:first-child:nth-last-child(11),
+      &:first-child:nth-last-child(11) ~ li {
+        a {
+          font-size: 11px; //fallback
+          font-size: .5vw;
+        }
+      }
 
-				.rrssb-icon {
-					height: 100%;
-					left: 7%;
-					padding-top: 0;
-					width: 12%;
+      a {
+        backface-visibility: hidden;
+        border-radius: .2em;
+        padding: 8.5% 0 8.5% 12%;
 
-					svg {
-						height: 100%;
-						width: 100%;
-						position: absolute;
-						top:0;
-					}
-				}
+        .rrssb-icon {
+          height: 100%;
+          left: 7%;
+          padding-top: 0;
+          width: 12%;
 
-				.rrssb-text {
-					@extend %backface-visibility;
-				}
-			}
-		}
-	}
+          svg {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
+        }
 
-	&.small-format {
-		padding-top: 5px;
+        .rrssb-text {
+          backface-visibility: hidden;
+        }
+      }
+    }
+  }
 
-		li {
-			height: 80%;
-			padding: 0 1px;
+  &.small-format {
+    padding-top: 5px;
 
-			a {
-				.rrssb-icon {
-					height: 100%;
-					padding-top: 0;
+    li {
+      height: 80%;
+      padding: 0 1px;
 
-					svg {
-						height: 48%;
-						position: relative;
-						top: 6px;
-						width: 80%;
-					}
-				}
-			}
-		}
-	}
+      a {
+        .rrssb-icon {
+          height: 100%;
+          padding-top: 0;
 
-	&.tiny-format {
-		height: 22px;
-		position: relative;
+          svg {
+            height: 48%;
+            position: relative;
+            top: 6px;
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
 
-		li {
-			padding-right: 7px;
+  &.tiny-format {
+    height: 22px;
+    position: relative;
 
-			a {
-				background-color: transparent;
-				padding: 0;
+    li {
+      padding-right: 7px;
 
-				.rrssb-icon {
-					svg {
-						height: 70%;
-						width: 100%;
-					}
-				}
+      a {
+        background-color: transparent;
+        padding: 0;
 
-				&:hover, &:active {
-					background-color: transparent;
-				}
-			}
+        .rrssb-icon {
+          svg {
+            height: 70%;
+            width: 100%;
+          }
+        }
 
-			// This generates individual button classes for each item in social list on line 39.
-			@each $s-name in $social-list {
+        &:hover,
+        &:active {
+          background-color: transparent;
+        }
+      }
 
-				&.#{nth($s-name, 1)} {
-					a {
-						.rrssb-icon {
-							svg {
-								path, polygon {
-									fill: nth($s-name, 2);
-								}
-							}
+      // This generates individual button classes for each item in social list on line 39.
+      @each $s-name in $social-list {
 
-							&:hover {
-								.rrssb-icon {
-									svg {
-										path, polygon {
-											fill: darken(nth($s-name, 2), 20%);
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}  // end @each directive
-		}
-	}
+        &.#{nth($s-name, 1)} {
+          a {
+            .rrssb-icon {
+              svg {
+                path, polygon {
+                  fill: nth($s-name, 2);
+                }
+              }
+
+              &:hover {
+                .rrssb-icon {
+                  svg {
+                    path, polygon {
+                      fill: darken(nth($s-name, 2), 20%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }  // end @each directive
+    }
+  }
 }
