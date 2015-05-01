@@ -103,8 +103,6 @@ Requires [**SVG**](http://caniuse.com/svg)
 
 Thanks for helping! Please use [**dev branch**](https://github.com/kni-labs/rrssb/tree/dev) for all pull requests.
 
-*Note: You will need to install Bourbon using *`gem install bourbon`*, and then *`bourbon install`* to contribute to this project.*
-
 
 #### Using Gulp
 

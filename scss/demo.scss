@@ -1,5 +1,3 @@
-@import "../bourbon/bourbon";
-
 // config settings
 $button-contents: #fff;
 $email: #0a88ff;
@@ -33,7 +31,7 @@ a {
 	color: $email;
 
 	&:hover {
-		color: shade($email, 55%);
+		color: darken($email, 15%);
 	}
 }
 
