@@ -1,39 +1,27 @@
-// config settings
-$button-contents: #fff;
-$email: #0a88ff;
-$facebook: #306199;
-$linkedin: #007bb6;
-$twitter: #26c4f1;
-$googleplus: #e93f2e;
-$youtube: #df1c31;
-$pinterest: #b81621;
-$github: #444;
-$pocket: #ed4054;
+// Styles for demo page only. Not needed for rrssb.
 
 $heading-color: #444;
-$small-color: #999;
-$label-color: #777;
-$hr-color: #ddd;
+$link-color:    #0a88ff;
+$small-color:   #999;
+$label-color:   #777;
+$hr-color:      #ddd;
 
 $border-radius: 2px;
 
 $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
-@mixin transition-all($time) {
-  transition: all $time+s ease;
-}
 
 body {
   overflow-x: hidden;
 }
 
 a {
-  color: $email;
+  color: $link-color;
   font-weight: 500;
   text-decoration: none;
 
   &:hover {
-    color: darken($email, 15%);
+    color: darken($link-color, 15%);
   }
 }
 
@@ -41,7 +29,7 @@ a {
   padding: 1% 6%;
 
   h1 {
-    @include transition-all(.2);
+    transition: all .2s ease;
     color: $heading-color;
     letter-spacing: -.03em;
     margin: 20px 0 10px;
@@ -67,7 +55,7 @@ a {
   }
 
   .rrssb-preview {
-    @include transition-all(.2);
+    transition: all .2s ease;
     float: right;
     height: auto;
     margin: 0 0 1% 1%;
