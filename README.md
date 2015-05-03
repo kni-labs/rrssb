@@ -104,15 +104,13 @@ Requires [**SVG**](http://caniuse.com/svg)
 Thanks for helping! Please use [**dev branch**](https://github.com/kni-labs/rrssb/tree/dev) for all pull requests.
 
 
-#### Using Gulp
+##### Setup:
 
-First install Gulp globally using `npm install -g gulp` and then use `npm install` to install the dependencies for this project.
+- Make sure [gulp](http://gulpjs.com/) is installed globally: `npm install -g gulp` (May require `sudo`.)
+- run `npm install` to install the dependencies for this project.
+- run `gulp` command to create a local server at `localhost:3000` and watch for file changes.
 
-*Note: On mac you may need to use *`sudo`* before the commands, depending on your directory ownership.*
-
-Once all dependencies are installed, use the `gulp` command to create a local server at `localhost:3000` (by default) and watch for file changes.
-
-*Note: You can access the local server on any device connected to the same network as the device running the server by visiting *`{YOUR_LOCAL_IP_ADDRESS}:3000`*. For example if your local IP address is *`192.168.0.1`*, visit *`192.168.0.1:3000`* from another device connected to the same network to view the pages on the server (they will auto-update as well as syncing the current scroll position across devices).*
+<sub><sup>You can access the local server on any device connected to the same network as the device running the server by visiting *`{YOUR_LOCAL_IP_ADDRESS}:3000`*. For example if your local IP address is *`192.168.0.1`*, visit *`192.168.0.1:3000`* from another device connected to the same network to view the pages on the server (they will auto-update as well as syncing the current scroll position across devices).</sub></sup>
 
 
 ### About
