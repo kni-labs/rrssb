@@ -92,7 +92,7 @@ Requires [**SVG**](http://caniuse.com/svg)
 ### Version Notes
 | Version | Note | Issue(s) | Backwards compatible?
 | :---	| :------- | :------- | :-------: |
-| 1.8.0 | Shiny new gulp/browser-sync dev environment /via @connorwyatt, updated Facebook icon, fixed TypeError: $ in js /via @QWp6t . | [(#93)](https://github.com/kni-labs/rrssb/issues/93), [(#93)](https://github.com/kni-labs/rrssb/issues/97) | &#x2713;
+| 1.8.0 | Shiny new gulp/browser-sync dev environment /via @connorwyatt, updated Facebook icon, fixed TypeError: $ in js /via @QWp6t . | [(#93)](https://github.com/kni-labs/rrssb/issues/93), [(#97)](https://github.com/kni-labs/rrssb/issues/97) | &#x2713;
 | 1.7.6 | Fixed an issue where icon hit areas were breaking out of containers | [(#94)](https://github.com/kni-labs/rrssb/issues/94) | &#x2713;
 | 1.7.5 | Flexible Large Format icons text-size based on sibling count. Switched to MIT license. | [(#18)](https://github.com/kni-labs/rrssb/issues/18) | &#x2713;
 | 1.7.2 | Better calc detection & fallback /via @IanCaunce | [(#89)](https://github.com/kni-labs/rrssb/pull/89) | &#x2713;
