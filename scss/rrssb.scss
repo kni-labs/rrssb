@@ -32,6 +32,7 @@ $rrssb-pinterest:   #b81621 !default;
 $rrssb-pocket:      #ed4054 !default;
 $rrssb-github:      #444    !default;
 $rrssb-instagram:   #517fa4 !default;
+$rrssb-hackernews:  #ff6600 !default;
 
 // Set the border radius for the buttons
 $rrssb-border-radius: 2px !default;
@@ -51,7 +52,8 @@ $social-list: (
   rrssb-pinterest   $rrssb-pinterest,
   rrssb-pocket      $rrssb-pocket,
   rrssb-github      $rrssb-github,
-  rrssb-instagram   $rrssb-instagram
+  rrssb-instagram   $rrssb-instagram,
+  rrssb-hackernews  $rrssb-hackernews  
 );
 
 // some generic classes
