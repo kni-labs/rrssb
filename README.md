@@ -74,7 +74,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 
 | Service							| Link |
 | :---------------------------------	| :------- |
-| [**Bower**](http://bower.io)	| `bower install RRSSB` |
+| [**Bower**](http://bower.io)	| `bower install rrssb` |
 | Rails * 							| [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/) |
 | Wordpress * 						| [**Wordpress plugin by @aarreedd**](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/) |
 | Drupal *							| [**Drupal Install Instructions**](https://drupal.org/project/rrssb) |
