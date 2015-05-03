@@ -16,7 +16,8 @@
 //       \__\/         \__\/
 
 
-// How to use: Add/remove buttons from config settings and $social-list.
+// Note: You can and should add or remove buttons from config settings and
+//       $social-list based on your specific needs.
 
 // config settings
 $rrssb-txt:         #fff    !default;
@@ -56,7 +57,7 @@ $social-list: (
   rrssb-github      $rrssb-github,
   rrssb-instagram   $rrssb-instagram,
   rrssb-delicious   $rrssb-delicious,
-  rrssb-vk			    $rrssb-vk,  
+  rrssb-vk			    $rrssb-vk,
   rrssb-hackernews  $rrssb-hackernews
 );
 
