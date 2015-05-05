@@ -11,6 +11,20 @@ $border-radius: 2px;
 $main-font: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 
+// some generic classes
+.clearfix {
+
+  &:after {
+    clear: both;
+  }
+
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+}
+
 body {
   overflow-x: hidden;
 }
@@ -86,6 +100,7 @@ hr {
 .share-container {
   padding: 0 0 25px;
   position: relative;
+  @extend .clearfix;
 
   @media screen and (max-width: 320px) {
     padding: 0 0 12px;
