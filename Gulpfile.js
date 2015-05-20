@@ -17,13 +17,14 @@ gulp.task('serve', ['sass', 'uglify', 'svg'], function() {
     server: "."
   });
 
-  gulp.watch("scss/*.scss", ['sass']);
-  gulp.watch("*.html").on('change', browserSync.reload);
-  gulp.watch("*.js").on('change', browserSync.reload);
+  gulp.watch("scss/**/*.scss", ['sass']);
+  gulp.watch("**/*.html").on('change', browserSync.reload);
+  gulp.watch(["**/*.js", "!**/*.min.js"], ['uglify']);
+  gulp.watch("**/*.min.js").on('change', browserSync.reload);
 });
 
 gulp.task('sass', function() {
-  gulp.src(['scss/*.scss'])
+  gulp.src(['scss/**/*.scss'])
   .pipe(sass())
   .on('error', util.log)
   .pipe(autoprefixer())
@@ -40,7 +41,7 @@ gulp.task('uglify', function() {
 });
 
 gulp.task('svg', function() {
-  gulp.src(['icons/*.svg', '!icons/*.min.svg'])
+  gulp.src(['icons/**/*.svg', '!icons/**/*.min.svg'])
   .pipe(imagemin())
   .on('error', util.log)
   .pipe(rename({
