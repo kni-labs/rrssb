@@ -229,6 +229,8 @@
 			$(this).addClass('rrssb-'+(index + 1));
 		});
 
+		getShareCounts();
+
 		detectCalcSupport();
 
 		setPercentBtns();
@@ -283,6 +285,55 @@
 			timers[uniqueId] = setTimeout(callback, ms);
 		};
 	})();
+
+	var getShareCounts = function () {
+		var counts = {};
+		var buttonsUsed = [];
+		$('.rrssb-buttons li').each(function() {
+			var button = $(this);
+			var buttonClass = button.prop('class');
+			var socialNetwork = buttonClass.replace("rrssb-","");
+			buttonsUsed.push(socialNetwork);
+		});
+
+		// Remove duplicates
+		var uniqueButtonsUsed = [];
+
+		for (var i in buttonsUsed){
+			if (uniqueButtonsUsed.indexOf(buttonsUsed[i]) === -1) {
+				uniqueButtonsUsed.push(buttonsUsed[i]);
+			}
+		}
+
+		// Facebook
+		if (uniqueButtonsUsed.indexOf("facebook") !== -1) {
+			$.ajax({
+				url: "http://graph.facebook.com/?id=" + window.location.href,
+				success: function (data) {
+					counts.facebook = data.shares;
+				},
+				error: function () {
+					console.error("There was an error getting data from Facebook, counts may be incorrect.");
+				}
+			});
+		}
+
+		// Twitter
+		if (uniqueButtonsUsed.indexOf("twitter") !== -1) {
+			$.ajax({
+				url: "http://cdn.api.twitter.com/1/urls/count.json?url=" + window.location.href,
+				success: function (data) {
+					console.log(data);
+					counts.twitter = data.count;
+					console.log(counts);
+				},
+				error: function () {
+					console.error("There was an error getting data from Twitter, counts may be incorrect.");
+				}
+			});
+		}
+
+	};
 
 	// init load
 	$(document).ready(function(){
