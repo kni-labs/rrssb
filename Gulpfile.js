@@ -11,19 +11,15 @@ var gulp = require('gulp'),
 
 gulp.task('build', ['sass', 'uglify', 'svg']);
 
-gulp.task('serve', function() {
+gulp.task('serve', ['sass', 'uglify', 'svg'], function() {
 
   browserSync.init(['**/*.html', '**/*.css', '**/*.js'], {
     server: "."
   });
 
-});
-
-gulp.task('watch', ['sass', 'uglify', 'svg', 'watch-files']);
-
-gulp.task('watch-files', function() {
   gulp.watch('scss/**/*.scss', ['sass']);
-  gulp.watch('js/**/*.js', ['uglify']);
+  gulp.watch('js/rrssb.js', ['uglify']);
+
 });
 
 gulp.task('sass', function() {
