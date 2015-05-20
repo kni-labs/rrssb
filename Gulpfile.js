@@ -36,6 +36,7 @@ gulp.task('sass', function() {
 
 gulp.task('uglify', function() {
   gulp.src(['js/rrssb.js'])
+  .pipe(uglify())
   .on('error', util.log)
   .pipe(gulp.dest('js'));
 });
