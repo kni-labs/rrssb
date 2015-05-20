@@ -13,34 +13,36 @@ gulp.task('build', ['sass', 'uglify', 'svg']);
 
 gulp.task('serve', ['sass', 'uglify', 'svg'], function() {
 
-  browserSync.init({
+  browserSync.init(['**/*.html', '**/*.css', '**/*.js'], {
     server: "."
   });
 
-  gulp.watch("scss/*.scss", ['sass']);
-  gulp.watch("*.html").on('change', browserSync.reload);
-  gulp.watch("*.js").on('change', browserSync.reload);
+  gulp.watch('scss/**/*.scss', ['sass']);
+  gulp.watch('js/rrssb.js', ['uglify']);
+
 });
 
 gulp.task('sass', function() {
-  gulp.src(['scss/*.scss'])
+  gulp.src(['scss/**/*.scss'])
   .pipe(sass())
   .on('error', util.log)
   .pipe(autoprefixer())
   .pipe(minifyCss())
-  .pipe(gulp.dest('css/'))
-  .pipe(filter('**/*.css'))
-  .pipe(browserSync.reload({stream:true}));
+  .pipe(gulp.dest('css/'));
 });
 
 gulp.task('uglify', function() {
   gulp.src(['js/rrssb.js'])
+  .pipe(uglify())
   .on('error', util.log)
+  .pipe(rename({
+    extname: '.min.js'
+  }))
   .pipe(gulp.dest('js'));
 });
 
 gulp.task('svg', function() {
-  gulp.src(['icons/*.svg', '!icons/*.min.svg'])
+  gulp.src(['icons/**/*.svg', '!icons/**/*.min.svg'])
   .pipe(imagemin())
   .on('error', util.log)
   .pipe(rename({
