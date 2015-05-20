@@ -11,16 +11,19 @@ var gulp = require('gulp'),
 
 gulp.task('build', ['sass', 'uglify', 'svg']);
 
-gulp.task('serve', ['sass', 'uglify', 'svg'], function() {
+gulp.task('serve', function() {
 
-  browserSync.init({
+  browserSync.init(['**/*.html', '**/*.css', '**/*.js'], {
     server: "."
   });
 
-  gulp.watch("scss/**/*.scss", ['sass']);
-  gulp.watch("**/*.html").on('change', browserSync.reload);
-  gulp.watch(["**/*.js", "!**/*.min.js"], ['uglify']);
-  gulp.watch("**/*.min.js").on('change', browserSync.reload);
+});
+
+gulp.task('watch', ['sass', 'uglify', 'svg', 'watch-files']);
+
+gulp.task('watch-files', function() {
+  gulp.watch('scss/**/*.scss', ['sass']);
+  gulp.watch('js/**/*.js', ['uglify']);
 });
 
 gulp.task('sass', function() {
@@ -29,15 +32,16 @@ gulp.task('sass', function() {
   .on('error', util.log)
   .pipe(autoprefixer())
   .pipe(minifyCss())
-  .pipe(gulp.dest('css/'))
-  .pipe(filter('**/*.css'))
-  .pipe(browserSync.reload({stream:true}));
+  .pipe(gulp.dest('css/'));
 });
 
 gulp.task('uglify', function() {
   gulp.src(['js/rrssb.js'])
   .pipe(uglify())
   .on('error', util.log)
+  .pipe(rename({
+    extname: '.min.js'
+  }))
   .pipe(gulp.dest('js'));
 });
 
