@@ -61,19 +61,6 @@ $social-list: (
   rrssb-hackernews  $rrssb-hackernews
 );
 
-// some generic classes
-.clearfix {
-
-  &:after {
-    clear: both;
-  }
-
-  &:before,
-  &:after {
-    content: ' ';
-    display: table;
-  }
-}
 
 // The meat and potatoes
 .rrssb-buttons {
