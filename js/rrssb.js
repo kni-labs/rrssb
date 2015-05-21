@@ -24,15 +24,30 @@
       var twitterTitle = options.pageName.substring(0, 115);
       options.twitterStatus = twitterTitle + " - " + options.url;
     }
-    options.googlePlusStatus === undefined ? options.googlePlusStatus = options.pageName + " - " + options.url : null;
-    options.githubLink === undefined ? options.githubLink = "https://github.com/" : null
+    options.googleplusStatus === undefined ? options.googleplusStatus = options.pageName + " - " + options.url : null;
+    options.githubLink === undefined ? options.githubLink = "https://github.com/" : null;
+    options.tumblrName === undefined ? options.tumblrName = options.pageName : null;
+    options.linkedinTitle === undefined ? options.linkedinTitle = options.pageName : null;
+    options.linkedinSummary === undefined ? options.linkedinSummary = options.pageDescription : null;
+    options.redditTitle === undefined ? options.redditTitle = options.pageName : null;
+    options.redditText === undefined ? options.redditText = options.pageDescription : null;
+    options.hackernewsTitle === undefined ? options.hackernewsTitle = options.pageName : null;
+    options.hackernewsText === undefined ? options.hackernewsText = options.pageDescription : null;
+    options.youtubeUrl === undefined ? options.youtubeUrl = "https://www.youtube.com" : null;
+    options.pinterestMedia === undefined ? options.pinterestMedia = "" : null;
+    options.pinterestDescription === undefined ? options.pinterestDescription = options.pageDescription : null;
 
     var rrssbContainer = this;
     rrssbContainer.addClass("clearfix");
 
-    var rrssbButtons = createButtons(options.socialNetworks);
+    rrssbContainer.append("<ul class='rrssb-buttons'></ul>");
+    var rrssbButtons = rrssbContainer.find(".rrssb-buttons");
 
-    console.log(rrssbButtons);
+    var buttons = createButtons(options.socialNetworks);
+
+    rrssbButtons.append(buttons);
+
+    addIcons(rrssbButtons);
 
   };
 
@@ -61,16 +76,216 @@
 
   var buttonCreators = {};
 
+  buttonCreators.email = function () {
+    var button = $("<li class='rrssb-email'></li>");
+
+    var emailUrl = "mailto:?subject=" + encodeURI(options.pageName) + '&amp;body=Check%20out%20this%20page%3A%20"' + encodeURI(options.pageDescription) + '" - ' + encodeURI(options.url);
+
+    button.append("<a href='" + emailUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>email</span>");
+
+    return button[0].outerHTML;
+  };
+
   buttonCreators.facebook = function () {
-    return "FACEBOOK BUTTON.";
+    var button = $("<li class='rrssb-facebook'></li>");
+
+    var facebookUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(options.url);
+
+    button.append("<a href='" + facebookUrl + "' class='popup'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>facebook</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.tumblr = function () {
+    var button = $("<li class='rrssb-tumblr'></li>");
+
+    var tumblrUrl = "http://tumblr.com/share/link?url=" + encodeURI(options.url) + "&name=" + encodeURI(options.tumblrName);
+
+    button.append("<a href='" + tumblrUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>tumblr</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.linkedin = function () {
+    var button = $("<li class='rrssb-linkedin'></li>");
+
+    var linkedinUrl = "http://www.linkedin.com/shareArticle?mini=true&amp;url=" + encodeURI(options.url) + "&amp;title=" + encodeURI(options.linkedinTitle) + "&amp;summary=" + encodeURI(options.linkedinSummary);
+
+    button.append("<a href='" + linkedinUrl + "' class='popup'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>linkedin</span>");
+
+    return button[0].outerHTML;
   };
 
   buttonCreators.twitter = function () {
-    return "TWITTER BUTTON.";
+    var button = $("<li class='rrssb-twitter'></li>");
+
+    var twitterUrl = "http://twitter.com/home?status=" + encodeURI(options.twitterStatus);
+
+    button.append("<a href='" + twitterUrl + "' class='popup'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>twitter</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.reddit = function () {
+    var button = $("<li class='rrssb-reddit'></li>");
+
+    var redditUrl = "http://www.reddit.com/submit?url=" + encodeURI(options.url) + "&title=" + encodeURI(options.redditTitle) + "&text=" + encodeURI(options.redditText);
+
+    button.append("<a href='" + redditUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>reddit</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.hackernews = function () {
+    var button = $("<li class='rrssb-hackernews'></li>");
+
+    var hackernewsUrl = "https://news.ycombinator.com/submitlink?u=" + encodeURI(options.url) + "&t=" + encodeURI(options.hackernewsTitle) + "&text=" + encodeURI(options.hackernewsText);
+
+    button.append("<a href='" + hackernewsUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>hackernews</span>");
+
+    return button[0].outerHTML;
   };
 
   buttonCreators.googleplus = function () {
-    return "GOOGLEPLUS BUTTON.";
+    var button = $("<li class='rrssb-googleplus'></li>");
+
+    var googleplusUrl = "https://plus.google.com/share?url=" + encodeURI(options.googleplusStatus);
+
+    button.append("<a href='" + googleplusUrl + "' class='popup'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>google+</span>");
+
+    return button[0].outerHTML;
   };
+
+  buttonCreators.youtube = function () {
+    var button = $("<li class='rrssb-youtube'></li>");
+
+    button.append("<a href='" + options.youtubeUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>youtube</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.pinterest = function () {
+    var button = $("<li class='rrssb-pinterest'></li>");
+
+    var pinterestUrl = "http://pinterest.com/pin/create/button/?url=" + encodeURI(options.url) + "&amp;media=" + encodeURI(options.pinterestMedia) + "&amp;description=" + encodeURI(options.pinterestDescription);
+
+    button.append("<a href='" + pinterestUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>pinterest</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.pocket = function () {
+    var button = $("<li class='rrssb-pocket'></li>");
+
+    var pocketUrl = "https://getpocket.com/save?url=" + encodeURI(options.url);
+
+    button.append("<a href='" + pocketUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>pocket</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.github = function () {
+    var button = $("<li class='rrssb-github'></li>");
+
+    button.append("<a href='" + encodeURI(options.githubLink) + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>github</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.vk = function () {
+    var button = $("<li class='rrssb-vk'></li>");
+
+    var vkUrl = "http://vk.com/share.php?url=" + encodeURI(options.url);
+
+    button.append("<a href='" + vkUrl + "' class='popup'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>vk</span>");
+
+    return button[0].outerHTML;
+  };
+
+  function addIcons(rrssbButtons) {
+    var buttons = rrssbButtons.find("li");
+
+    for (var i = 0; i < buttons.length; i++) {
+      var socialNetwork = $(buttons[i]).prop("class").replace("rrssb-", "");
+      var iconContainer = $(buttons[i]).find(".rrssb-icon");
+      getIcon(socialNetwork, iconContainer);
+    }
+  };
+
+  function getIcon(socialNetwork, iconContainer) {
+    $.ajax({
+      url: options.iconsLocation + socialNetwork + ".min.svg",
+      contentType: "text/plain",
+      success: function (data) {
+        iconContainer.html($(data).children()[0].outerHTML);
+      }
+    });
+  };
+
 
 } (jQuery));
