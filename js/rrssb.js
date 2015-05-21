@@ -22,8 +22,7 @@
       options.twitterStatus = twitterTitle + " - " + options.url;
     }
     options.googlePlusStatus === undefined ? options.googlePlusStatus = options.pageName + " - " + options.url : null;
-
-    console.log(options);
+    options.githubLink === undefined ? options.githubLink = "https://github.com/" : null
 
     var rrssbContainer = this;
     rrssbContainer.addClass("clearfix");
@@ -35,12 +34,17 @@
   };
 
   function createButtons(socialNetworks) {
+    var buttons = "";
     if (socialNetworks instanceof Array) {
       if (socialNetworks.length > 0) {
 
-        var buttons = "";
         for (var i = 0; i < socialNetworks.length; i++) {
-
+          try {
+            buttons += buttonCreators[socialNetworks[i]]();
+          }
+          catch(TypeError) {
+            console.error("[RRSSB]: " + socialNetworks[i] + " is not a valid social network.");
+          }
         }
 
       } else {
@@ -49,10 +53,21 @@
     } else {
       console.error("[RRSSB]: The socialNetworks property in the options should be an array.");
     }
+    return buttons;
   }
 
-  function facebookButton() {
+  var buttonCreators = {};
 
-  }
+  buttonCreators.facebook = function () {
+    return "FACEBOOK BUTTON.";
+  };
+
+  buttonCreators.twitter = function () {
+    return "TWITTER BUTTON.";
+  };
+
+  buttonCreators.googleplus = function () {
+    return "GOOGLEPLUS BUTTON.";
+  };
 
 } (jQuery));
