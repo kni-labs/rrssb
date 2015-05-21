@@ -2,6 +2,9 @@
   'use strict';
   $.fn.rrssb = function(options) {
 
+    // Empty selected element
+    this.empty();
+
     // Get document details
     var docDetails = {};
     var metaTags = $("meta");
