@@ -109,6 +109,7 @@
     if (options.showCount === true) {
       $.ajax({
         url: "http://graph.facebook.com/?id=" + options.url,
+        dataType: "jsonp",
         success: function(data) {
           shareCounts.facebook = data.shares;
           console.log(shareCounts);
@@ -171,6 +172,7 @@
     if (options.showCount === true) {
       $.ajax({
         url: "http://cdn.api.twitter.com/1/urls/count.json?url=" + options.url,
+        dataType: "jsonp",
         success: function(data) {
           shareCounts.twitter = data.count;
           console.log(shareCounts);
@@ -257,6 +259,7 @@
     if (options.showCount === true) {
       $.ajax({
         url: "http://api.pinterest.com/v1/urls/count.json?callback=&url=" + options.url,
+        dataType: "jsonp",
         success: function(data) {
           shareCounts.pinterest = data.count;
           console.log(shareCounts);
