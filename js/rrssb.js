@@ -17,9 +17,10 @@
     // Set defaults if options not set
     options.iconsLocation === undefined ? options.iconsLocation = "/images/rrssb/" : null;
     options.url === undefined ? options.url = window.location.href : null;
-    options.emailBody === undefined ? options.emailBody = window.location.href : null;
     options.pageName === undefined ? options.pageName = document.title : null;
     options.pageDescription === undefined ? options.pageDescription = docDetails.description : null;
+    options.emailSubject === undefined ? options.emailSubject = options.pageName : null;
+    options.emailBody === undefined ? options.emailBody = "Check out this page: " + options.pageDescription + " - " + options.url : null;
     if (options.twitterStatus === undefined) {
       var twitterTitle = options.pageName.substring(0, 115);
       options.twitterStatus = twitterTitle + " - " + options.url;
@@ -36,6 +37,8 @@
     options.youtubeUrl === undefined ? options.youtubeUrl = "https://www.youtube.com" : null;
     options.pinterestMedia === undefined ? options.pinterestMedia = "" : null;
     options.pinterestDescription === undefined ? options.pinterestDescription = options.pageDescription : null;
+
+    var shareCounts = {};
 
     var rrssbContainer = this;
     rrssbContainer.addClass("clearfix");
@@ -79,7 +82,7 @@
   buttonCreators.email = function () {
     var button = $("<li class='rrssb-email'></li>");
 
-    var emailUrl = "mailto:?subject=" + encodeURI(options.pageName) + '&amp;body=Check%20out%20this%20page%3A%20"' + encodeURI(options.pageDescription) + '" - ' + encodeURI(options.url);
+    var emailUrl = "mailto:?subject=" + encodeURI(options.emailSubject) + '&amp;body="' + encodeURI(options.emailBody);
 
     button.append("<a href='" + emailUrl + "'></a>");
 
@@ -102,6 +105,19 @@
 
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>facebook</span>");
+
+    if (options.showCount === true) {
+      $.ajax({
+        url: "http://graph.facebook.com/?id=" + options.url,
+        success: function(data) {
+          shareCounts.facebook = data.shares;
+          console.log(shareCounts);
+        },
+        error: function() {
+          console.error("[RRSSB]: There was an error getting share count data from Facebook. It may not be included in the count.");
+        }
+      });
+    }
 
     return button[0].outerHTML;
   };
@@ -133,6 +149,10 @@
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>linkedin</span>");
 
+    if (options.showCount === true) {
+
+    }
+
     return button[0].outerHTML;
   };
 
@@ -147,6 +167,19 @@
 
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>twitter</span>");
+
+    if (options.showCount === true) {
+      $.ajax({
+        url: "http://cdn.api.twitter.com/1/urls/count.json?url=" + options.url,
+        success: function(data) {
+          shareCounts.twitter = data.count;
+          console.log(shareCounts);
+        },
+        error: function() {
+          console.error("[RRSSB]: There was an error getting share count data from Twitter. It may not be included in the count.");
+        }
+      });
+    }
 
     return button[0].outerHTML;
   };
@@ -220,6 +253,19 @@
 
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>pinterest</span>");
+
+    if (options.showCount === true) {
+      $.ajax({
+        url: "http://api.pinterest.com/v1/urls/count.json?callback=&url=" + options.url,
+        success: function(data) {
+          shareCounts.pinterest = data.count;
+          console.log(shareCounts);
+        },
+        error: function() {
+          console.error("[RRSSB]: There was an error getting share count data from Pinterest. It may not be included in the count.");
+        }
+      });
+    }
 
     return button[0].outerHTML;
   };
