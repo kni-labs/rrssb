@@ -371,6 +371,24 @@
         }
       }
     }
+    if (count < 1000000 && count >= 1000) {
+      if (count < 1100) {
+        count = 1;
+      } else {
+        count = (count/1000).toFixed(1);
+      }
+      count += "K";
+      count.replace(/\.0$/, "");
+      console.log(count);
+    } else if (count >= 1000000) {
+      if (count < 1100000) {
+        count = 1;
+      } else {
+        count = (count/1000000).toFixed(1);
+      }
+      count += "M";
+      console.log(count);
+    }
     rrssbNumber.text(count);
   }
 
