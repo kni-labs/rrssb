@@ -55,7 +55,7 @@
       rrssbButtons.css("width", "calc(100% - 60px)");
     }
 
-    var buttons = createButtons(options.socialNetworks, shareCounts);
+    var buttons = createButtons(options.socialNetworks, shareCounts, rrssbNumber);
 
     rrssbButtons.append(buttons);
 
@@ -63,14 +63,14 @@
 
   };
 
-  function createButtons(socialNetworks, shareCounts) {
+  function createButtons(socialNetworks, shareCounts, rrssbNumber) {
     var buttons = "";
     if (socialNetworks instanceof Array) {
       if (socialNetworks.length > 0) {
 
         for (var i = 0; i < socialNetworks.length; i++) {
           try {
-            buttons += buttonCreators[socialNetworks[i]](shareCounts);
+            buttons += buttonCreators[socialNetworks[i]](shareCounts, rrssbNumber);
           }
           catch(TypeError) {
             console.error("[RRSSB]: " + socialNetworks[i] + " is not a valid social network.");
@@ -103,7 +103,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.facebook = function (shareCounts) {
+  buttonCreators.facebook = function (shareCounts, rrssbNumber) {
     var button = $("<li class='rrssb-facebook'></li>");
 
     var facebookUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(options.url);
@@ -121,6 +121,7 @@
         dataType: "jsonp",
         success: function(data) {
           shareCounts.facebook = data.shares;
+          updateCount(shareCounts, rrssbNumber);
         },
         error: function() {
           console.error("[RRSSB]: There was an error getting share count data from Facebook. It may not be included in the count.");
@@ -146,7 +147,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.linkedin = function (shareCounts) {
+  buttonCreators.linkedin = function (shareCounts, rrssbNumber) {
     var button = $("<li class='rrssb-linkedin'></li>");
 
     var linkedinUrl = "http://www.linkedin.com/shareArticle?mini=true&amp;url=" + encodeURI(options.url) + "&amp;title=" + encodeURI(options.linkedinTitle) + "&amp;summary=" + encodeURI(options.linkedinSummary);
@@ -164,6 +165,7 @@
         dataType: "jsonp",
         success: function(data) {
           shareCounts.linkedin = data.shares;
+          updateCount(shareCounts, rrssbNumber);
         },
         error: function() {
           console.error("[RRSSB]: There was an error getting share count data from Facebook. It may not be included in the count.");
@@ -174,7 +176,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.twitter = function (shareCounts) {
+  buttonCreators.twitter = function (shareCounts, rrssbNumber) {
     var button = $("<li class='rrssb-twitter'></li>");
 
     var twitterUrl = "http://twitter.com/home?status=" + encodeURI(options.twitterStatus);
@@ -192,6 +194,7 @@
         dataType: "jsonp",
         success: function(data) {
           shareCounts.twitter = data.count;
+          updateCount(shareCounts, rrssbNumber);
         },
         error: function() {
           console.error("[RRSSB]: There was an error getting share count data from Twitter. It may not be included in the count.");
@@ -260,7 +263,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.pinterest = function (shareCounts) {
+  buttonCreators.pinterest = function (shareCounts, rrssbNumber) {
     var button = $("<li class='rrssb-pinterest'></li>");
 
     var pinterestUrl = "http://pinterest.com/pin/create/button/?url=" + encodeURI(options.url) + "&amp;media=" + encodeURI(options.pinterestMedia) + "&amp;description=" + encodeURI(options.pinterestDescription);
@@ -278,6 +281,7 @@
         dataType: "jsonp",
         success: function(data) {
           shareCounts.pinterest = data.count;
+          updateCount(shareCounts, rrssbNumber);
         },
         error: function() {
           console.error("[RRSSB]: There was an error getting share count data from Pinterest. It may not be included in the count.");
@@ -351,5 +355,16 @@
     });
   };
 
+  function updateCount(shareCounts, rrssbNumber) {
+    var count = 0;
+    for (var key in shareCounts) {
+      if (shareCounts.hasOwnProperty(key)) {
+        if (!isNaN(parseInt(shareCounts[key]))) {
+          count += shareCounts[key];
+        }
+      }
+    }
+    rrssbNumber.text(count);
+  };
 
 } (jQuery));
