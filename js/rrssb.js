@@ -110,7 +110,7 @@
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>facebook</span>");
 
-    if (options.showCount === true) {
+    if (options.showCount) {
       $.ajax({
         url: "http://graph.facebook.com/?id=" + options.url,
         dataType: "jsonp",
@@ -153,7 +153,7 @@
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>linkedin</span>");
 
-    if (options.showCount === true) {
+    if (options.showCount) {
       $.ajax({
         url: "http://www.linkedin.com/countserv/count/share?url=" + options.url,
         dataType: "jsonp",
@@ -181,7 +181,7 @@
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>twitter</span>");
 
-    if (options.showCount === true) {
+    if (options.showCount) {
       $.ajax({
         url: "http://cdn.api.twitter.com/1/urls/count.json?url=" + options.url,
         dataType: "jsonp",
@@ -267,7 +267,7 @@
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>pinterest</span>");
 
-    if (options.showCount === true) {
+    if (options.showCount) {
       $.ajax({
         url: "http://api.pinterest.com/v1/urls/count.json?url=" + options.url,
         dataType: "jsonp",
