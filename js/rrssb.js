@@ -122,6 +122,7 @@
         url: "http://graph.facebook.com/?id=" + options.url,
         dataType: "jsonp",
         success: function(data) {
+          console.log(data);
           shareCounts.facebook = data.shares;
           updateCount(shareCounts, rrssbNumber);
         },
@@ -166,6 +167,7 @@
         url: "http://www.linkedin.com/countserv/count/share?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
+          console.log(data);
           shareCounts.linkedin = data.shares;
           updateCount(shareCounts, rrssbNumber);
         },
@@ -195,6 +197,7 @@
         url: "http://cdn.api.twitter.com/1/urls/count.json?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
+          console.log(data);
           shareCounts.twitter = data.count;
           updateCount(shareCounts, rrssbNumber);
         },
@@ -282,6 +285,7 @@
         url: "http://api.pinterest.com/v1/urls/count.json?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
+          console.log(data);
           shareCounts.pinterest = data.count;
           updateCount(shareCounts, rrssbNumber);
         },
