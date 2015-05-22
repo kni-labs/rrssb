@@ -38,6 +38,8 @@
     options.pinterestMedia === undefined ? options.pinterestMedia = "" : null;
     options.pinterestDescription === undefined ? options.pinterestDescription = options.pageDescription : null;
 
+    console.log(options);
+
     var shareCounts = {};
 
     var rrssbContainer = this;
@@ -52,7 +54,7 @@
     var rrssbButtons = rrssbContainer.find(".rrssb-buttons");
 
     if (options.showCount) {
-      rrssbButtons.css("width", "calc(100% - 60px)");
+      rrssbButtons.addClass("rrssb-withcount");
     }
 
     var buttons = createButtons(options.socialNetworks, shareCounts, rrssbNumber);
@@ -120,6 +122,7 @@
         url: "http://graph.facebook.com/?id=" + options.url,
         dataType: "jsonp",
         success: function(data) {
+          console.log(data);
           shareCounts.facebook = data.shares;
           updateCount(shareCounts, rrssbNumber);
         },
@@ -164,11 +167,12 @@
         url: "http://www.linkedin.com/countserv/count/share?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
+          console.log(data);
           shareCounts.linkedin = data.shares;
           updateCount(shareCounts, rrssbNumber);
         },
         error: function() {
-          console.error("[RRSSB]: There was an error getting share count data from Facebook. It may not be included in the count.");
+          console.error("[RRSSB]: There was an error getting share count data from LinkedIn. It may not be included in the count.");
         }
       });
     }
@@ -193,6 +197,7 @@
         url: "http://cdn.api.twitter.com/1/urls/count.json?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
+          console.log(data);
           shareCounts.twitter = data.count;
           updateCount(shareCounts, rrssbNumber);
         },
@@ -280,6 +285,7 @@
         url: "http://api.pinterest.com/v1/urls/count.json?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
+          console.log(data);
           shareCounts.pinterest = data.count;
           updateCount(shareCounts, rrssbNumber);
         },
@@ -355,12 +361,13 @@
     });
   };
 
-  function updateCount(shareCounts, rrssbNumber) {
+  function updateCount(counts, rrssbNumber) {
+    console.log(counts);
     var count = 0;
-    for (var key in shareCounts) {
-      if (shareCounts.hasOwnProperty(key)) {
-        if (!isNaN(parseInt(shareCounts[key]))) {
-          count += shareCounts[key];
+    for (var key in counts) {
+      if (counts.hasOwnProperty(key)) {
+        if (!isNaN(parseInt(counts[key]))) {
+          count += counts[key];
         }
       }
     }

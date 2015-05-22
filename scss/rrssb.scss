@@ -42,6 +42,10 @@ $rrssb-border-radius: 2px !default;
 
 $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
+$rrssb-count-width: 50px;
+
+$rrssb-count-gutter-width: 10px;
+
 // Variable list for all social button colors to be iterated over.
 $social-list: (
   rrssb-email       $rrssb-email,
@@ -71,21 +75,28 @@ $social-list: (
     height: 36px;
     margin: 0;
     padding: 0;
-    margin-right: 10px;
+    position: relative;
+    margin-right: $rrssb-count-gutter-width;
     text-align: center;
-    width: 50px;
+    width: $rrssb-count-width;
 
     .rrssb-number {
       font-size: inherit;
       margin: 0;
       padding: 0;
+      position: absolute;
+      top: 2px;
+      width: $rrssb-count-width;
     }
 
     .rrssb-shares {
       border-top: 1px solid #ccc;
       font-size: 10px;
       font-weight: 700;
+      position: absolute;
       text-transform: uppercase;
+      bottom: 2px;
+      width: $rrssb-count-width;
     }
   }
 
@@ -97,6 +108,10 @@ $social-list: (
     height: 36px;
     margin: 0;
     padding: 0;
+
+    &.rrssb-withcount {
+      width: calc(100% - #{$rrssb-count-width} - #{$rrssb-count-gutter-width});
+    }
 
     li {
       box-sizing: border-box;
