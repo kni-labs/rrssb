@@ -356,6 +356,7 @@
   };
 
   function updateCount(shareCounts, rrssbNumber) {
+    console.log(shareCounts);
     var count = 0;
     for (var key in shareCounts) {
       if (shareCounts.hasOwnProperty(key)) {
