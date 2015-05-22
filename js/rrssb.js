@@ -38,6 +38,8 @@
     options.pinterestMedia === undefined ? options.pinterestMedia = "" : null;
     options.pinterestDescription === undefined ? options.pinterestDescription = options.pageDescription : null;
 
+    console.log(options);
+
     var shareCounts = {};
 
     var rrssbContainer = this;
@@ -355,13 +357,13 @@
     });
   };
 
-  function updateCount(shareCounts, rrssbNumber) {
-    console.log(shareCounts);
+  function updateCount(counts, rrssbNumber) {
+    console.log(counts);
     var count = 0;
-    for (var key in shareCounts) {
-      if (shareCounts.hasOwnProperty(key)) {
-        if (!isNaN(parseInt(shareCounts[key]))) {
-          count += shareCounts[key];
+    for (var key in counts) {
+      if (counts.hasOwnProperty(key)) {
+        if (!isNaN(parseInt(counts[key]))) {
+          count += counts[key];
         }
       }
     }
