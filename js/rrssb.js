@@ -44,7 +44,7 @@
     rrssbContainer.addClass("clearfix");
 
     if (options.showCount) {
-      rrssbContainer.append("<div class='rrssb-count'></div>");
+      rrssbContainer.append("<div class='rrssb-count'><div class='rrssb-number'>0</div><div class='rrssb-text'>shares</div></div>");
     }
 
     rrssbContainer.append("<ul class='rrssb-buttons'></ul>");
