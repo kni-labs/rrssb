@@ -88,7 +88,7 @@
 
   var buttonCreators = {};
 
-  buttonCreators.email = function (shareCounts) {
+  buttonCreators.email = function () {
     var button = $("<li class='rrssb-email'></li>");
 
     var emailUrl = "mailto:?subject=" + encodeURI(options.emailSubject) + '&amp;body="' + encodeURI(options.emailBody);
@@ -132,7 +132,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.tumblr = function (shareCounts) {
+  buttonCreators.tumblr = function () {
     var button = $("<li class='rrssb-tumblr'></li>");
 
     var tumblrUrl = "http://tumblr.com/share/link?url=" + encodeURI(options.url) + "&name=" + encodeURI(options.tumblrName);
@@ -205,7 +205,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.reddit = function (shareCounts) {
+  buttonCreators.reddit = function () {
     var button = $("<li class='rrssb-reddit'></li>");
 
     var redditUrl = "http://www.reddit.com/submit?url=" + encodeURI(options.url) + "&title=" + encodeURI(options.redditTitle) + "&text=" + encodeURI(options.redditText);
@@ -220,7 +220,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.hackernews = function (shareCounts) {
+  buttonCreators.hackernews = function () {
     var button = $("<li class='rrssb-hackernews'></li>");
 
     var hackernewsUrl = "https://news.ycombinator.com/submitlink?u=" + encodeURI(options.url) + "&t=" + encodeURI(options.hackernewsTitle) + "&text=" + encodeURI(options.hackernewsText);
@@ -235,7 +235,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.googleplus = function (shareCounts) {
+  buttonCreators.googleplus = function () {
     var button = $("<li class='rrssb-googleplus'></li>");
 
     var googleplusUrl = "https://plus.google.com/share?url=" + encodeURI(options.googleplusStatus);
@@ -250,7 +250,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.youtube = function (shareCounts) {
+  buttonCreators.youtube = function () {
     var button = $("<li class='rrssb-youtube'></li>");
 
     button.append("<a href='" + options.youtubeUrl + "'></a>");
@@ -292,7 +292,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.pocket = function (shareCounts) {
+  buttonCreators.pocket = function () {
     var button = $("<li class='rrssb-pocket'></li>");
 
     var pocketUrl = "https://getpocket.com/save?url=" + encodeURI(options.url);
@@ -307,7 +307,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.github = function (shareCounts) {
+  buttonCreators.github = function () {
     var button = $("<li class='rrssb-github'></li>");
 
     button.append("<a href='" + encodeURI(options.githubLink) + "'></a>");
@@ -320,7 +320,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.vk = function (shareCounts) {
+  buttonCreators.vk = function () {
     var button = $("<li class='rrssb-vk'></li>");
 
     var vkUrl = "http://vk.com/share.php?url=" + encodeURI(options.url);
