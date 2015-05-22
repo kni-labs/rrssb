@@ -43,6 +43,10 @@
     var rrssbContainer = this;
     rrssbContainer.addClass("clearfix");
 
+    if (options.showCount) {
+      rrssbContainer.append("<div class='rrssb-count'></div>");
+    }
+
     rrssbContainer.append("<ul class='rrssb-buttons'></ul>");
     var rrssbButtons = rrssbContainer.find(".rrssb-buttons");
 
