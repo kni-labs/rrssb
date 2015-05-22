@@ -46,6 +46,7 @@
     if (options.showCount) {
       rrssbContainer.append("<div class='rrssb-count'><div class='rrssb-number'></div><div class='rrssb-shares'>shares</div></div>");
     }
+    var rrssbNumber = rrssbContainer.find(".rrssb-number");
 
     rrssbContainer.append("<ul class='rrssb-buttons'></ul>");
     var rrssbButtons = rrssbContainer.find(".rrssb-buttons");
