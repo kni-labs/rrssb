@@ -112,7 +112,6 @@
         dataType: "jsonp",
         success: function(data) {
           shareCounts.facebook = data.shares;
-          console.log(shareCounts);
         },
         error: function() {
           console.error("[RRSSB]: There was an error getting share count data from Facebook. It may not be included in the count.");
@@ -175,7 +174,6 @@
         dataType: "jsonp",
         success: function(data) {
           shareCounts.twitter = data.count;
-          console.log(shareCounts);
         },
         error: function() {
           console.error("[RRSSB]: There was an error getting share count data from Twitter. It may not be included in the count.");
@@ -262,7 +260,6 @@
         dataType: "jsonp",
         success: function(data) {
           shareCounts.pinterest = data.count;
-          console.log(shareCounts);
         },
         error: function() {
           console.error("[RRSSB]: There was an error getting share count data from Pinterest. It may not be included in the count.");
