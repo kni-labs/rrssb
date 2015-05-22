@@ -50,6 +50,10 @@
     rrssbContainer.append("<ul class='rrssb-buttons'></ul>");
     var rrssbButtons = rrssbContainer.find(".rrssb-buttons");
 
+    if (options.showCount) {
+      rrssbButtons.css("width", "calc(100% - 60px)");
+    }
+
     var buttons = createButtons(options.socialNetworks, shareCounts);
 
     rrssbButtons.append(buttons);
