@@ -43,10 +43,19 @@
     var rrssbContainer = this;
     rrssbContainer.addClass("clearfix");
 
+    if (options.showCount) {
+      rrssbContainer.append("<div class='rrssb-count'><div class='rrssb-number'></div><div class='rrssb-shares'>shares</div></div>");
+    }
+    var rrssbNumber = rrssbContainer.find(".rrssb-number");
+
     rrssbContainer.append("<ul class='rrssb-buttons'></ul>");
     var rrssbButtons = rrssbContainer.find(".rrssb-buttons");
 
-    var buttons = createButtons(options.socialNetworks, shareCounts);
+    if (options.showCount) {
+      rrssbButtons.css("width", "calc(100% - 60px)");
+    }
+
+    var buttons = createButtons(options.socialNetworks, shareCounts, rrssbNumber);
 
     rrssbButtons.append(buttons);
 
@@ -54,14 +63,14 @@
 
   };
 
-  function createButtons(socialNetworks, shareCounts) {
+  function createButtons(socialNetworks, shareCounts, rrssbNumber) {
     var buttons = "";
     if (socialNetworks instanceof Array) {
       if (socialNetworks.length > 0) {
 
         for (var i = 0; i < socialNetworks.length; i++) {
           try {
-            buttons += buttonCreators[socialNetworks[i]](shareCounts);
+            buttons += buttonCreators[socialNetworks[i]](shareCounts, rrssbNumber);
           }
           catch(TypeError) {
             console.error("[RRSSB]: " + socialNetworks[i] + " is not a valid social network.");
@@ -79,7 +88,7 @@
 
   var buttonCreators = {};
 
-  buttonCreators.email = function (shareCounts) {
+  buttonCreators.email = function () {
     var button = $("<li class='rrssb-email'></li>");
 
     var emailUrl = "mailto:?subject=" + encodeURI(options.emailSubject) + '&amp;body="' + encodeURI(options.emailBody);
@@ -94,7 +103,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.facebook = function (shareCounts) {
+  buttonCreators.facebook = function (shareCounts, rrssbNumber) {
     var button = $("<li class='rrssb-facebook'></li>");
 
     var facebookUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(options.url);
@@ -106,12 +115,13 @@
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>facebook</span>");
 
-    if (options.showCount === true) {
+    if (options.showCount) {
       $.ajax({
         url: "http://graph.facebook.com/?id=" + options.url,
         dataType: "jsonp",
         success: function(data) {
           shareCounts.facebook = data.shares;
+          updateCount(shareCounts, rrssbNumber);
         },
         error: function() {
           console.error("[RRSSB]: There was an error getting share count data from Facebook. It may not be included in the count.");
@@ -122,7 +132,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.tumblr = function (shareCounts) {
+  buttonCreators.tumblr = function () {
     var button = $("<li class='rrssb-tumblr'></li>");
 
     var tumblrUrl = "http://tumblr.com/share/link?url=" + encodeURI(options.url) + "&name=" + encodeURI(options.tumblrName);
@@ -137,7 +147,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.linkedin = function (shareCounts) {
+  buttonCreators.linkedin = function (shareCounts, rrssbNumber) {
     var button = $("<li class='rrssb-linkedin'></li>");
 
     var linkedinUrl = "http://www.linkedin.com/shareArticle?mini=true&amp;url=" + encodeURI(options.url) + "&amp;title=" + encodeURI(options.linkedinTitle) + "&amp;summary=" + encodeURI(options.linkedinSummary);
@@ -149,12 +159,13 @@
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>linkedin</span>");
 
-    if (options.showCount === true) {
+    if (options.showCount) {
       $.ajax({
         url: "http://www.linkedin.com/countserv/count/share?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
           shareCounts.linkedin = data.shares;
+          updateCount(shareCounts, rrssbNumber);
         },
         error: function() {
           console.error("[RRSSB]: There was an error getting share count data from Facebook. It may not be included in the count.");
@@ -165,7 +176,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.twitter = function (shareCounts) {
+  buttonCreators.twitter = function (shareCounts, rrssbNumber) {
     var button = $("<li class='rrssb-twitter'></li>");
 
     var twitterUrl = "http://twitter.com/home?status=" + encodeURI(options.twitterStatus);
@@ -177,12 +188,13 @@
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>twitter</span>");
 
-    if (options.showCount === true) {
+    if (options.showCount) {
       $.ajax({
         url: "http://cdn.api.twitter.com/1/urls/count.json?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
           shareCounts.twitter = data.count;
+          updateCount(shareCounts, rrssbNumber);
         },
         error: function() {
           console.error("[RRSSB]: There was an error getting share count data from Twitter. It may not be included in the count.");
@@ -193,7 +205,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.reddit = function (shareCounts) {
+  buttonCreators.reddit = function () {
     var button = $("<li class='rrssb-reddit'></li>");
 
     var redditUrl = "http://www.reddit.com/submit?url=" + encodeURI(options.url) + "&title=" + encodeURI(options.redditTitle) + "&text=" + encodeURI(options.redditText);
@@ -208,7 +220,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.hackernews = function (shareCounts) {
+  buttonCreators.hackernews = function () {
     var button = $("<li class='rrssb-hackernews'></li>");
 
     var hackernewsUrl = "https://news.ycombinator.com/submitlink?u=" + encodeURI(options.url) + "&t=" + encodeURI(options.hackernewsTitle) + "&text=" + encodeURI(options.hackernewsText);
@@ -223,7 +235,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.googleplus = function (shareCounts) {
+  buttonCreators.googleplus = function () {
     var button = $("<li class='rrssb-googleplus'></li>");
 
     var googleplusUrl = "https://plus.google.com/share?url=" + encodeURI(options.googleplusStatus);
@@ -238,7 +250,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.youtube = function (shareCounts) {
+  buttonCreators.youtube = function () {
     var button = $("<li class='rrssb-youtube'></li>");
 
     button.append("<a href='" + options.youtubeUrl + "'></a>");
@@ -251,7 +263,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.pinterest = function (shareCounts) {
+  buttonCreators.pinterest = function (shareCounts, rrssbNumber) {
     var button = $("<li class='rrssb-pinterest'></li>");
 
     var pinterestUrl = "http://pinterest.com/pin/create/button/?url=" + encodeURI(options.url) + "&amp;media=" + encodeURI(options.pinterestMedia) + "&amp;description=" + encodeURI(options.pinterestDescription);
@@ -263,12 +275,13 @@
     link.append("<span class='rrssb-icon'></span>");
     link.append("<span class='rrssb-text'>pinterest</span>");
 
-    if (options.showCount === true) {
+    if (options.showCount) {
       $.ajax({
         url: "http://api.pinterest.com/v1/urls/count.json?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
           shareCounts.pinterest = data.count;
+          updateCount(shareCounts, rrssbNumber);
         },
         error: function() {
           console.error("[RRSSB]: There was an error getting share count data from Pinterest. It may not be included in the count.");
@@ -279,7 +292,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.pocket = function (shareCounts) {
+  buttonCreators.pocket = function () {
     var button = $("<li class='rrssb-pocket'></li>");
 
     var pocketUrl = "https://getpocket.com/save?url=" + encodeURI(options.url);
@@ -294,7 +307,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.github = function (shareCounts) {
+  buttonCreators.github = function () {
     var button = $("<li class='rrssb-github'></li>");
 
     button.append("<a href='" + encodeURI(options.githubLink) + "'></a>");
@@ -307,7 +320,7 @@
     return button[0].outerHTML;
   };
 
-  buttonCreators.vk = function (shareCounts) {
+  buttonCreators.vk = function () {
     var button = $("<li class='rrssb-vk'></li>");
 
     var vkUrl = "http://vk.com/share.php?url=" + encodeURI(options.url);
@@ -342,5 +355,16 @@
     });
   };
 
+  function updateCount(shareCounts, rrssbNumber) {
+    var count = 0;
+    for (var key in shareCounts) {
+      if (shareCounts.hasOwnProperty(key)) {
+        if (!isNaN(parseInt(shareCounts[key]))) {
+          count += shareCounts[key];
+        }
+      }
+    }
+    rrssbNumber.text(count);
+  };
 
 } (jQuery));

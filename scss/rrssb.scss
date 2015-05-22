@@ -61,297 +61,325 @@ $social-list: (
   rrssb-hackernews  $rrssb-hackernews
 );
 
+.rrssb-container {
 
-// The meat and potatoes
-.rrssb-buttons {
-  box-sizing: border-box;
-  font-family: $rrssb-main-font;
-  height: 36px;
-  margin: 0;
-  padding: 0;
-  width: 100%;
 
-  li {
+  // Share count styles
+  .rrssb-count {
     box-sizing: border-box;
-    float: left;
-    height: 100%;
-    line-height: 13px;
-    list-style: none;
+    display: inline-block;
+    height: 36px;
     margin: 0;
-    padding: 0 2px;
+    padding: 0;
+    margin-right: 10px;
+    text-align: center;
+    width: 50px;
 
-    // This generates individual button classes for each item in social list on line 39.
-    @each $s-name in $social-list {
+    .rrssb-number {
+      font-size: inherit;
+      margin: 0;
+      padding: 0;
+    }
 
-      &.#{nth($s-name, 1)} {
-        a {
-          background-color: nth($s-name, 2);
-
-          &:hover {
-            background-color: darken(nth($s-name, 2), 10%);
-          }
-        }
-      }
-
-    } // end @each directive
-
-    a {
-      background-color: #ccc;
-      border-radius: $rrssb-border-radius;
-      box-sizing: border-box;
-      display: block;
-      font-size: 11px;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      font-weight: bold;
-      height: 100%;
-      padding: 11px 7px 12px 27px;
-      position: relative;
-      text-align: center;
-      text-decoration: none;
+    .rrssb-shares {
+      border-top: 1px solid #ccc;
+      font-size: 10px;
+      font-weight: 700;
       text-transform: uppercase;
-      transition: background-color .2s ease-in-out;
-      width: 100%;
-
-      .rrssb-icon {
-        display: block;
-        left: 10px;
-        padding-top: 9px;
-        position: absolute;
-        top: 0;
-        width: 10%;
-
-        svg {
-          height: 17px;
-          width: 17px;
-
-          path, polygon {
-            fill: $rrssb-txt;
-          }
-        }
-      }
-
-      .rrssb-text {
-        color: $rrssb-txt;
-      }
-
-      &:active {
-        box-shadow: inset 1px 3px 15px 0 rgba(22, 0, 0, .25);
-      }
-    }
-
-    &.small {
-      a {
-        padding: 0;
-
-        .rrssb-icon {
-          left: auto;
-          margin: 0 auto;
-          overflow: hidden;
-          position: relative;
-          top: auto;
-          width: 100%;
-        }
-
-        .rrssb-text {
-          visibility: hidden;
-        }
-      }
     }
   }
 
-  &.large-format {
-    height: auto;
+  // The meat and potatoes
+  .rrssb-buttons {
+    box-sizing: border-box;
+    display: inline-block;
+    font-family: $rrssb-main-font;
+    height: 36px;
+    margin: 0;
+    padding: 0;
 
     li {
-      height: auto;
-
-      // Determine font-size based on number of siblings
-      &:first-child:nth-last-child(1) {
-        a {
-          font-size: 20px; //fallback
-          font-size: 4vw;
-        }
-      }
-
-      &:first-child:nth-last-child(2),
-      &:first-child:nth-last-child(2) ~ li {
-        a {
-          font-size: 16px; //fallback
-          font-size: 2vw;
-        }
-      }
-
-      &:first-child:nth-last-child(3),
-      &:first-child:nth-last-child(3) ~ li {
-        a {
-          font-size: 14px; //fallback
-          font-size: 1.7vw;
-        }
-      }
-
-      &:first-child:nth-last-child(4),
-      &:first-child:nth-last-child(4) ~ li {
-        a {
-          font-size: 13px; //fallback
-          font-size: 1.4vw;
-        }
-      }
-
-      &:first-child:nth-last-child(5),
-      &:first-child:nth-last-child(5) ~ li {
-        a {
-          font-size: 13px; //fallback
-          font-size: 1.2vw;
-        }
-      }
-
-      &:first-child:nth-last-child(6),
-      &:first-child:nth-last-child(6) ~ li {
-        a {
-          font-size: 12px; //fallback
-          font-size: 1.05vw;
-        }
-      }
-
-      &:first-child:nth-last-child(7),
-      &:first-child:nth-last-child(7) ~ li {
-        a {
-          font-size: 11px; //fallback
-          font-size: .9vw;
-        }
-      }
-
-      &:first-child:nth-last-child(8),
-      &:first-child:nth-last-child(8) ~ li {
-        a {
-          font-size: 11px; //fallback
-          font-size: .8vw;
-        }
-      }
-
-      &:first-child:nth-last-child(9),
-      &:first-child:nth-last-child(9) ~ li {
-        a {
-          font-size: 11px; //fallback
-          font-size: .7vw;
-        }
-      }
-
-      &:first-child:nth-last-child(10),
-      &:first-child:nth-last-child(10) ~ li {
-        a {
-          font-size: 11px; //fallback
-          font-size: .6vw;
-        }
-      }
-
-      &:first-child:nth-last-child(11),
-      &:first-child:nth-last-child(11) ~ li {
-        a {
-          font-size: 11px; //fallback
-          font-size: .5vw;
-        }
-      }
-
-      a {
-        backface-visibility: hidden;
-        border-radius: .2em;
-        padding: 8.5% 0 8.5% 12%;
-
-        .rrssb-icon {
-          height: 100%;
-          left: 7%;
-          padding-top: 0;
-          width: 12%;
-
-          svg {
-            height: 100%;
-            position: absolute;
-            top: 0;
-            width: 100%;
-          }
-        }
-
-        .rrssb-text {
-          backface-visibility: hidden;
-        }
-      }
-    }
-  }
-
-  &.small-format {
-    padding-top: 5px;
-
-    li {
-      height: 80%;
-      padding: 0 1px;
-
-      a {
-        .rrssb-icon {
-          height: 100%;
-          padding-top: 0;
-
-          svg {
-            height: 48%;
-            position: relative;
-            top: 6px;
-            width: 80%;
-          }
-        }
-      }
-    }
-  }
-
-  &.tiny-format {
-    height: 22px;
-    position: relative;
-
-    li {
-      padding-right: 7px;
-
-      a {
-        background-color: transparent;
-        padding: 0;
-
-        .rrssb-icon {
-          svg {
-            height: 70%;
-            width: 100%;
-          }
-        }
-
-        &:hover,
-        &:active {
-          background-color: transparent;
-        }
-      }
+      box-sizing: border-box;
+      float: left;
+      height: 100%;
+      line-height: 13px;
+      list-style: none;
+      margin: 0;
+      padding: 0 2px;
 
       // This generates individual button classes for each item in social list on line 39.
       @each $s-name in $social-list {
 
         &.#{nth($s-name, 1)} {
           a {
-            .rrssb-icon {
-              svg {
-                path, polygon {
-                  fill: nth($s-name, 2);
-                }
-              }
+            background-color: nth($s-name, 2);
 
-              &:hover {
-                .rrssb-icon {
-                  svg {
-                    path, polygon {
-                      fill: darken(nth($s-name, 2), 20%);
+            &:hover {
+              background-color: darken(nth($s-name, 2), 10%);
+            }
+          }
+        }
+
+      } // end @each directive
+
+      a {
+        background-color: #ccc;
+        border-radius: $rrssb-border-radius;
+        box-sizing: border-box;
+        display: block;
+        font-size: 11px;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-weight: bold;
+        height: 100%;
+        padding: 11px 7px 12px 27px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background-color .2s ease-in-out;
+        width: 100%;
+
+        .rrssb-icon {
+          display: block;
+          left: 10px;
+          padding-top: 9px;
+          position: absolute;
+          top: 0;
+          width: 10%;
+
+          svg {
+            height: 17px;
+            width: 17px;
+
+            path, polygon {
+              fill: $rrssb-txt;
+            }
+          }
+        }
+
+        .rrssb-text {
+          color: $rrssb-txt;
+        }
+
+        &:active {
+          box-shadow: inset 1px 3px 15px 0 rgba(22, 0, 0, .25);
+        }
+      }
+
+      &.small {
+        a {
+          padding: 0;
+
+          .rrssb-icon {
+            left: auto;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            top: auto;
+            width: 100%;
+          }
+
+          .rrssb-text {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+
+    &.large-format {
+      height: auto;
+
+      li {
+        height: auto;
+
+        // Determine font-size based on number of siblings
+        &:first-child:nth-last-child(1) {
+          a {
+            font-size: 20px; //fallback
+            font-size: 4vw;
+          }
+        }
+
+        &:first-child:nth-last-child(2),
+        &:first-child:nth-last-child(2) ~ li {
+          a {
+            font-size: 16px; //fallback
+            font-size: 2vw;
+          }
+        }
+
+        &:first-child:nth-last-child(3),
+        &:first-child:nth-last-child(3) ~ li {
+          a {
+            font-size: 14px; //fallback
+            font-size: 1.7vw;
+          }
+        }
+
+        &:first-child:nth-last-child(4),
+        &:first-child:nth-last-child(4) ~ li {
+          a {
+            font-size: 13px; //fallback
+            font-size: 1.4vw;
+          }
+        }
+
+        &:first-child:nth-last-child(5),
+        &:first-child:nth-last-child(5) ~ li {
+          a {
+            font-size: 13px; //fallback
+            font-size: 1.2vw;
+          }
+        }
+
+        &:first-child:nth-last-child(6),
+        &:first-child:nth-last-child(6) ~ li {
+          a {
+            font-size: 12px; //fallback
+            font-size: 1.05vw;
+          }
+        }
+
+        &:first-child:nth-last-child(7),
+        &:first-child:nth-last-child(7) ~ li {
+          a {
+            font-size: 11px; //fallback
+            font-size: .9vw;
+          }
+        }
+
+        &:first-child:nth-last-child(8),
+        &:first-child:nth-last-child(8) ~ li {
+          a {
+            font-size: 11px; //fallback
+            font-size: .8vw;
+          }
+        }
+
+        &:first-child:nth-last-child(9),
+        &:first-child:nth-last-child(9) ~ li {
+          a {
+            font-size: 11px; //fallback
+            font-size: .7vw;
+          }
+        }
+
+        &:first-child:nth-last-child(10),
+        &:first-child:nth-last-child(10) ~ li {
+          a {
+            font-size: 11px; //fallback
+            font-size: .6vw;
+          }
+        }
+
+        &:first-child:nth-last-child(11),
+        &:first-child:nth-last-child(11) ~ li {
+          a {
+            font-size: 11px; //fallback
+            font-size: .5vw;
+          }
+        }
+
+        a {
+          backface-visibility: hidden;
+          border-radius: .2em;
+          padding: 8.5% 0 8.5% 12%;
+
+          .rrssb-icon {
+            height: 100%;
+            left: 7%;
+            padding-top: 0;
+            width: 12%;
+
+            svg {
+              height: 100%;
+              position: absolute;
+              top: 0;
+              width: 100%;
+            }
+          }
+
+          .rrssb-text {
+            backface-visibility: hidden;
+          }
+        }
+      }
+    }
+
+    &.small-format {
+      padding-top: 5px;
+
+      li {
+        height: 80%;
+        padding: 0 1px;
+
+        a {
+          .rrssb-icon {
+            height: 100%;
+            padding-top: 0;
+
+            svg {
+              height: 48%;
+              position: relative;
+              top: 6px;
+              width: 80%;
+            }
+          }
+        }
+      }
+    }
+
+    &.tiny-format {
+      height: 22px;
+      position: relative;
+
+      li {
+        padding-right: 7px;
+
+        a {
+          background-color: transparent;
+          padding: 0;
+
+          .rrssb-icon {
+            svg {
+              height: 70%;
+              width: 100%;
+            }
+          }
+
+          &:hover,
+          &:active {
+            background-color: transparent;
+          }
+        }
+
+        // This generates individual button classes for each item in social list on line 39.
+        @each $s-name in $social-list {
+
+          &.#{nth($s-name, 1)} {
+            a {
+              .rrssb-icon {
+                svg {
+                  path, polygon {
+                    fill: nth($s-name, 2);
+                  }
+                }
+
+                &:hover {
+                  .rrssb-icon {
+                    svg {
+                      path, polygon {
+                        fill: darken(nth($s-name, 2), 20%);
+                      }
                     }
                   }
                 }
               }
             }
           }
-        }
-      }  // end @each directive
+        }  // end @each directive
+      }
     }
   }
 }
