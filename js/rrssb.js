@@ -359,7 +359,7 @@
         iconContainer.html($(data).children()[0].outerHTML);
       }
     });
-  };
+  }
 
   function updateCount(counts, rrssbNumber) {
     console.log(counts);
