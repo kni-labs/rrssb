@@ -38,8 +38,6 @@
     options.pinterestMedia === undefined ? options.pinterestMedia = "" : null;
     options.pinterestDescription === undefined ? options.pinterestDescription = options.pageDescription : null;
 
-    console.log(options);
-
     var shareCounts = {};
 
     var rrssbContainer = this;
@@ -122,7 +120,6 @@
         url: "http://graph.facebook.com/?id=" + options.url,
         dataType: "jsonp",
         success: function(data) {
-          console.log(data);
           shareCounts.facebook = data.shares;
           updateCount(shareCounts, rrssbNumber);
         },
@@ -167,7 +164,6 @@
         url: "http://www.linkedin.com/countserv/count/share?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
-          console.log(data);
           shareCounts.linkedin = data.shares;
           updateCount(shareCounts, rrssbNumber);
         },
@@ -197,7 +193,6 @@
         url: "http://cdn.api.twitter.com/1/urls/count.json?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
-          console.log(data);
           shareCounts.twitter = data.count;
           updateCount(shareCounts, rrssbNumber);
         },
@@ -285,7 +280,6 @@
         url: "http://api.pinterest.com/v1/urls/count.json?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
-          console.log(data);
           shareCounts.pinterest = data.count;
           updateCount(shareCounts, rrssbNumber);
         },
@@ -362,7 +356,6 @@
   }
 
   function updateCount(counts, rrssbNumber) {
-    console.log(counts);
     var count = 0;
     for (var key in counts) {
       if (counts.hasOwnProperty(key)) {
@@ -379,7 +372,6 @@
       }
       count += "K";
       count.replace(/\.0$/, "");
-      console.log(count);
     } else if (count >= 1000000) {
       if (count < 1100000) {
         count = 1;
@@ -387,9 +379,8 @@
         count = (count/1000000).toFixed(1);
       }
       count += "M";
-      console.log(count);
     }
     rrssbNumber.text(count);
   }
 
-} (jQuery))
+} (jQuery));
