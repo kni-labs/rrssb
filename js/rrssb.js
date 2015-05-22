@@ -172,7 +172,7 @@
           updateCount(shareCounts, rrssbNumber);
         },
         error: function() {
-          console.error("[RRSSB]: There was an error getting share count data from Facebook. It may not be included in the count.");
+          console.error("[RRSSB]: There was an error getting share count data from LinkedIn. It may not be included in the count.");
         }
       });
     }
