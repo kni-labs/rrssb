@@ -150,7 +150,16 @@
     link.append("<span class='rrssb-text'>linkedin</span>");
 
     if (options.showCount === true) {
-
+      $.ajax({
+        url: "http://www.linkedin.com/countserv/count/share?url=" + options.url,
+        dataType: "jsonp",
+        success: function(data) {
+          shareCounts.linkedin = data.shares;
+        },
+        error: function() {
+          console.error("[RRSSB]: There was an error getting share count data from Facebook. It may not be included in the count.");
+        }
+      });
     }
 
     return button[0].outerHTML;
