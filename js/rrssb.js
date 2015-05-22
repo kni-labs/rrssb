@@ -265,7 +265,7 @@
 
     if (options.showCount === true) {
       $.ajax({
-        url: "http://api.pinterest.com/v1/urls/count.json?callback=&url=" + options.url,
+        url: "http://api.pinterest.com/v1/urls/count.json?url=" + options.url,
         dataType: "jsonp",
         success: function(data) {
           shareCounts.pinterest = data.count;
