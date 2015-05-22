@@ -54,7 +54,7 @@
     var rrssbButtons = rrssbContainer.find(".rrssb-buttons");
 
     if (options.showCount) {
-      rrssbButtons.css("width", "calc(100% - 60px)");
+      rrssbButtons.addClass("rrssb-withcount");
     }
 
     var buttons = createButtons(options.socialNetworks, shareCounts, rrssbNumber);
