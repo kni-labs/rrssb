@@ -1,3 +1,22 @@
+/*!
+ Ridiculously Responsive Social Sharing Buttons
+ Team: @dbox, @joshuatuscan, @connorwyatt
+ Site: http://www.kurtnoble.com/labs/rrssb
+ Twitter: @therealkni
+
+        ___           ___
+       /__/|         /__/\        ___
+      |  |:|         \  \:\      /  /\
+      |  |:|          \  \:\    /  /:/
+    __|  |:|      _____\__\:\  /__/::\
+   /__/\_|:|____ /__/::::::::\ \__\/\:\__
+   \  \:\/:::::/ \  \:\~~\~~\/    \  \:\/\
+    \  \::/~~~~   \  \:\  ~~~      \__\::/
+     \  \:\        \  \:\          /__/:/
+      \  \:\        \  \:\         \__\/
+       \__\/         \__\/
+*/
+
 +(function($) {
   'use strict';
   $.fn.rrssb = function(options) {
