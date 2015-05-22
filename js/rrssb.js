@@ -349,7 +349,7 @@
       var iconContainer = $(buttons[i]).find(".rrssb-icon");
       getIcon(socialNetwork, iconContainer);
     }
-  };
+  }
 
   function getIcon(socialNetwork, iconContainer) {
     $.ajax({
@@ -372,6 +372,6 @@
       }
     }
     rrssbNumber.text(count);
-  };
+  }
 
-} (jQuery));
+} (jQuery))
