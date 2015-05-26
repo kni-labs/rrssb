@@ -57,11 +57,13 @@
     options.pinterestMedia === undefined ? options.pinterestMedia = "" : null;
     options.pinterestDescription === undefined ? options.pinterestDescription = options.pageDescription : null;
 
+    // Initialise share counts object
     var shareCounts = {};
 
     var rrssbContainer = this;
     rrssbContainer.addClass("clearfix");
 
+    // Create share counter element
     if (options.showCount) {
       rrssbContainer.append("<div class='rrssb-count'><div class='rrssb-number'></div><div class='rrssb-shares'>shares</div></div>");
     }
@@ -74,10 +76,13 @@
       rrssbButtons.addClass("rrssb-withcount");
     }
 
+    // Create buttons
     var buttons = createButtons(options.socialNetworks, shareCounts, rrssbNumber);
 
+    // Add buttons to DOM
     rrssbButtons.append(buttons);
 
+    // AJAX load SVG icons
     addIcons(rrssbButtons);
 
   };
