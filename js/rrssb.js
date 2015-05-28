@@ -1,6 +1,6 @@
 /*!
  Ridiculously Responsive Social Sharing Buttons
- Team: @dbox, @joshuatuscan
+ Team: @dbox, @joshuatuscan, @connorwyatt
  Site: http://www.kurtnoble.com/labs/rrssb
  Twitter: @therealkni
 
@@ -17,342 +17,392 @@
        \__\/         \__\/
 */
 
-+(function(window, $, undefined) {
-	'use strict';
-
-	var support = {
-		calc : false
-	};
-
-	/*
-	 * Public Function
-	 */
-
-	 $.fn.rrssb = function( options ) {
-
-		// Settings that $.rrssb() will accept.
-		var settings = $.extend({
-			description: undefined,
-			emailAddress: undefined,
-			emailBody: undefined,
-			emailSubject: undefined,
-			image: undefined,
-			title: undefined,
-			url: undefined
-		}, options );
-
-		// Return the encoded strings if the settings have been changed.
-		for (var key in settings) {
-			if (settings.hasOwnProperty(key) && settings[key] !== undefined) {
-				settings[key] = encodeString(settings[key]);
-			}
-		};
-
-		if (settings.url !== undefined) {
-			$(this).find('.rrssb-facebook a').attr('href', 'https://www.facebook.com/sharer/sharer.php?u=' + settings.url);
-			$(this).find('.rrssb-tumblr a').attr('href', 'http://tumblr.com/share/link?url=' + settings.url + (settings.title !== undefined ? '&name=' + settings.title : '')  + (settings.description !== undefined ? '&description=' + settings.description : ''));
-			$(this).find('.rrssb-linkedin a').attr('href', 'http://www.linkedin.com/shareArticle?mini=true&url=' + settings.url + (settings.title !== undefined ? '&title=' + settings.title : '') + (settings.description !== undefined ? '&summary=' + settings.description : ''));
-			$(this).find('.rrssb-twitter a').attr('href', 'http://twitter.com/home?status=' + (settings.description !== undefined ? settings.description : '') + '%20' + settings.url);
-			$(this).find('.rrssb-hackernews a').attr('href', 'https://news.ycombinator.com/submitlink?u=' + settings.url + (settings.title !== undefined ? '&text=' + settings.title : ''));
-			$(this).find('.rrssb-reddit a').attr('href', 'http://www.reddit.com/submit?url=' + settings.url + (settings.description !== undefined ? '&text=' + settings.description : '') + (settings.title !== undefined ? '&title=' + settings.title : ''));
-			$(this).find('.rrssb-googleplus a').attr('href', 'https://plus.google.com/share?url=' + (settings.description !== undefined ? settings.description : '') + '%20' + settings.url);
-			$(this).find('.rrssb-pinterest a').attr('href', 'http://pinterest.com/pin/create/button/?url=' + settings.url + ((settings.image !== undefined) ? '&amp;media=' + settings.image : '') + (settings.description !== undefined ? '&amp;description=' + settings.description : ''));
-			$(this).find('.rrssb-pocket a').attr('href', 'https://getpocket.com/save?url=' + settings.url);
-			$(this).find('.rrssb-github a').attr('href', settings.url);
-		}
-
-		if (settings.emailAddress !== undefined) {
-			$(this).find('.rrssb-email a').attr('href', 'mailto:' + settings.emailAddress + '?' + (settings.emailSubject !== undefined ? 'subject=' + settings.emailSubject : '') + (settings.emailBody !== undefined ? '&amp;body=' + settings.emailBody : ''));
-		}
-
-	};
-
-	/*
-	 * Utility functions
-	 */
-	var detectCalcSupport = function(){
-		//detect if calc is natively supported.
-		var el = $('<div>');
-		var calcProps = [
-			'calc',
-			'-webkit-calc',
-			'-moz-calc'
-		];
-
-		$('body').append(el);
-
-		for (var i=0; i < calcProps.length; i++) {
-			el.css('width', calcProps[i] + '(1px)');
-			if(el.width() === 1){
-				support.calc = calcProps[i];
-				break;
-			}
-		}
-
-		el.remove();
-	};
-
-	var encodeString = function(string) {
-		// Recursively decode string first to ensure we aren't double encoding.
-		if (string !== undefined && string !== null) {
-			if (string.match(/%[0-9a-f]{2}/i) !== null) {
-				string = decodeURIComponent(string);
-				encodeString(string);
-			} else {
-				return encodeURIComponent(string);
-			}
-		}
-	};
-
-	var setPercentBtns = function() {
-		// loop through each instance of buttons
-		$('.rrssb-buttons').each(function(index) {
-			var self = $(this);
-			var buttons = $('li:visible', self);
-			var numOfButtons = buttons.length;
-			var initBtnWidth = 100 / numOfButtons;
-
-			// set initial width of buttons
-			buttons.css('width', initBtnWidth + '%').attr('data-initwidth',initBtnWidth);
-		});
-	};
-
-	var makeExtremityBtns = function() {
-		// loop through each instance of buttons
-		$('.rrssb-buttons').each(function(index) {
-			var self = $(this);
-			//get button width
-			var containerWidth = self.width();
-			var buttonWidth = $('li', self).not('.small').first().width();
-
-			// enlarge buttons if they get wide enough
-			if (buttonWidth > 170 && $('li.small', self).length < 1) {
-				self.addClass('large-format');
-			} else {
-				self.removeClass('large-format');
-			}
-
-			if (containerWidth < 200) {
-				self.removeClass('small-format').addClass('tiny-format');
-			} else {
-				self.removeClass('tiny-format');
-			}
-		});
-	};
-
-	var backUpFromSmall = function() {
-		// loop through each instance of buttons
-		$('.rrssb-buttons').each(function(index) {
-			var self = $(this);
-
-			var buttons = $('li', self);
-			var smallButtons = buttons.filter('.small');
-			var totalBtnSze = 0;
-			var totalTxtSze = 0;
-			var upCandidate = smallButtons.first();
-			var nextBackUp = parseFloat(upCandidate.attr('data-size')) + 55;
-			var smallBtnCount = smallButtons.length;
-
-			if (smallBtnCount === buttons.length) {
-				var btnCalc = smallBtnCount * 42;
-				var containerWidth = self.width();
-
-				if ((btnCalc + nextBackUp) < containerWidth) {
-					self.removeClass('small-format');
-					smallButtons.first().removeClass('small');
-
-					sizeSmallBtns();
-				}
-
-			} else {
-				buttons.not('.small').each(function(index) {
-					var button = $(this);
-					var txtWidth = parseFloat(button.attr('data-size')) + 55;
-					var btnWidth = parseFloat(button.width());
-
-					totalBtnSze = totalBtnSze + btnWidth;
-					totalTxtSze = totalTxtSze + txtWidth;
-				});
-
-				var spaceLeft = totalBtnSze - totalTxtSze;
-
-				if (nextBackUp < spaceLeft) {
-					upCandidate.removeClass('small');
-					sizeSmallBtns();
-				}
-			}
-		});
-	};
-
-	var checkSize = function(init) {
-		// loop through each instance of buttons
-		$('.rrssb-buttons').each(function(index) {
-
-			var self = $(this);
-			var buttons = $('li', self);
-
-			// get buttons in reverse order and loop through each
-			$(buttons.get().reverse()).each(function(index, count) {
-
-				var button = $(this);
-
-				if (button.hasClass('small') === false) {
-					var txtWidth = parseFloat(button.attr('data-size')) + 55;
-					var btnWidth = parseFloat(button.width());
-
-					if (txtWidth > btnWidth) {
-						var btn2small = buttons.not('.small').last();
-						$(btn2small).addClass('small');
-						sizeSmallBtns();
-					}
-				}
-
-				if (!--count) backUpFromSmall();
-			});
-		});
-
-		// if first time running, put it through the magic layout
-		if (init === true) {
-			rrssbMagicLayout(sizeSmallBtns);
-		}
-	};
-
-	var sizeSmallBtns = function() {
-		// loop through each instance of buttons
-		$('.rrssb-buttons').each(function(index) {
-			var self = $(this);
-			var regButtonCount;
-			var regPercent;
-			var pixelsOff;
-			var magicWidth;
-			var smallBtnFraction;
-			var buttons = $('li', self);
-			var smallButtons = buttons.filter('.small');
-
-			// readjust buttons for small display
-			var smallBtnCount = smallButtons.length;
-
-			// make sure there are small buttons
-			if (smallBtnCount > 0 && smallBtnCount !== buttons.length) {
-				self.removeClass('small-format');
-
-				//make sure small buttons are square when not all small
-				smallButtons.css('width','42px');
-				pixelsOff = smallBtnCount * 42;
-				regButtonCount = buttons.not('.small').length;
-				regPercent = 100 / regButtonCount;
-				smallBtnFraction = pixelsOff / regButtonCount;
-
-				// if calc is not supported. calculate the width on the fly.
-				if (support.calc === false) {
-					magicWidth = ((self.innerWidth()-1) / regButtonCount) - smallBtnFraction;
-					magicWidth = Math.floor(magicWidth*1000) / 1000;
-					magicWidth += 'px';
-				} else {
-					magicWidth = support.calc+'('+regPercent+'% - '+smallBtnFraction+'px)';
-				}
-
-				buttons.not('.small').css('width', magicWidth);
-
-			} else if (smallBtnCount === buttons.length) {
-				// if all buttons are small, change back to percentage
-				self.addClass('small-format');
-				setPercentBtns();
-			} else {
-				self.removeClass('small-format');
-				setPercentBtns();
-			}
-		}); //end loop
-
-		makeExtremityBtns();
-	};
-
-	var rrssbInit = function() {
-		$('.rrssb-buttons').each(function(index) {
-			$(this).addClass('rrssb-'+(index + 1));
-		});
-
-		detectCalcSupport();
-
-		setPercentBtns();
-
-		// grab initial text width of each button and add as data attr
-		$('.rrssb-buttons li .rrssb-text').each(function(index) {
-			var buttonTxt = $(this);
-			var txtWdth = buttonTxt.width();
-			buttonTxt.closest('li').attr('data-size', txtWdth);
-		});
-
-		checkSize(true);
-	};
-
-	var rrssbMagicLayout = function(callback) {
-		//remove small buttons before each conversion try
-		$('.rrssb-buttons li.small').removeClass('small');
-
-		checkSize();
-
-		callback();
-	};
-
-	var popupCenter = function(url, title, w, h) {
-		// Fixes dual-screen position                         Most browsers      Firefox
-		var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left;
-		var dualScreenTop = window.screenTop !== undefined ? window.screenTop : screen.top;
-
-		var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-		var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
-
-		var left = ((width / 2) - (w / 2)) + dualScreenLeft;
-		var top = ((height / 3) - (h / 3)) + dualScreenTop;
-
-		var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
-
-		// Puts focus on the newWindow
-		if (window.focus) {
-			newWindow.focus();
-		}
-	};
-
-	var waitForFinalEvent = (function () {
-		var timers = {};
-		return function (callback, ms, uniqueId) {
-			if (!uniqueId) {
-				uniqueId = "Don't call this twice without a uniqueId";
-			}
-			if (timers[uniqueId]) {
-				clearTimeout (timers[uniqueId]);
-			}
-			timers[uniqueId] = setTimeout(callback, ms);
-		};
-	})();
-
-	// init load
-	$(document).ready(function(){
-		/*
-		 * Event listners
-		 */
-
-		$('.rrssb-buttons a.popup').on('click', function(e){
-			var self = $(this);
-			popupCenter(self.attr('href'), self.find('.rrssb-text').html(), 580, 470);
-			e.preventDefault();
-		});
-
-		// resize function
-		$(window).resize(function () {
-
-			rrssbMagicLayout(sizeSmallBtns);
-
-			waitForFinalEvent(function(){
-				rrssbMagicLayout(sizeSmallBtns);
-			}, 200, "finished resizing");
-		});
-
-		rrssbInit();
-	});
-
-	// Make global
-	window.rrssbInit = rrssbInit;
-
-})(window, jQuery);
++(function($) {
+  'use strict';
+  $.fn.rrssb = function(options) {
+
+    // Empty selected element
+    this.empty();
+
+    // Get document details
+    var docDetails = {};
+    var metaTags = $("meta");
+    for (var i = 0; i < metaTags.length; i++) {
+      if (metaTags[i].name === "description") {
+        docDetails.description = metaTags[i].content;
+      }
+    }
+
+    // Set defaults if options not set
+    options.iconsLocation === undefined ? options.iconsLocation = "/images/rrssb/" : null;
+    options.showCount === undefined ? options.showCount = true : null;
+    options.url === undefined ? options.url = window.location.href : null;
+    options.pageName === undefined ? options.pageName = document.title : null;
+    options.pageDescription === undefined ? options.pageDescription = docDetails.description : null;
+    options.emailSubject === undefined ? options.emailSubject = options.pageName : null;
+    options.emailBody === undefined ? options.emailBody = "Check out this page: " + options.pageDescription + " - " + options.url : null;
+    options.twitterStatus === undefined ? options.twitterStatus = options.pageName.substring(0, 115) + " - " + options.url;
+    options.googleplusStatus === undefined ? options.googleplusStatus = options.pageName + " - " + options.url : null;
+    options.githubLink === undefined ? options.githubLink = "https://github.com/" : null;
+    options.tumblrName === undefined ? options.tumblrName = options.pageName : null;
+    options.linkedinTitle === undefined ? options.linkedinTitle = options.pageName : null;
+    options.linkedinSummary === undefined ? options.linkedinSummary = options.pageDescription : null;
+    options.redditTitle === undefined ? options.redditTitle = options.pageName : null;
+    options.redditText === undefined ? options.redditText = options.pageDescription : null;
+    options.hackernewsTitle === undefined ? options.hackernewsTitle = options.pageName : null;
+    options.hackernewsText === undefined ? options.hackernewsText = options.pageDescription : null;
+    options.youtubeUrl === undefined ? options.youtubeUrl = "https://www.youtube.com" : null;
+    options.pinterestMedia === undefined ? options.pinterestMedia = "" : null;
+    options.pinterestDescription === undefined ? options.pinterestDescription = options.pageDescription : null;
+
+    // Initialise share counts object
+    var shareCounts = {};
+
+    var rrssbContainer = this;
+    rrssbContainer.addClass("clearfix");
+
+    // Create share counter element
+    if (options.showCount) {
+      rrssbContainer.append("<div class='rrssb-count'><div class='rrssb-number'></div><div class='rrssb-shares'>shares</div></div>");
+    }
+    var rrssbNumber = rrssbContainer.find(".rrssb-number");
+
+    rrssbContainer.append("<ul class='rrssb-buttons'></ul>");
+    var rrssbButtons = rrssbContainer.find(".rrssb-buttons");
+
+    if (options.showCount) {
+      rrssbButtons.addClass("rrssb-withcount");
+    }
+
+    // Create buttons
+    var buttons = createButtons(options.socialNetworks, shareCounts, rrssbNumber);
+
+    // Add buttons to DOM
+    rrssbButtons.append(buttons);
+
+    // AJAX load SVG icons
+    addIcons(rrssbButtons);
+
+  };
+
+  function createButtons(socialNetworks, shareCounts, rrssbNumber) {
+    var buttons = "";
+    if (socialNetworks instanceof Array) {
+      if (socialNetworks.length > 0) {
+
+        for (var i = 0; i < socialNetworks.length; i++) {
+          try {
+            buttons += buttonCreators[socialNetworks[i]](shareCounts, rrssbNumber);
+          }
+          catch(TypeError) {
+            console.error("[RRSSB]: " + socialNetworks[i] + " is not a valid social network.");
+          }
+        }
+
+      } else {
+        console.error("[RRSSB]: The socialNetworks property cannot be empty.");
+      }
+    } else {
+      console.error("[RRSSB]: The socialNetworks property in the options should be an array.");
+    }
+    return buttons;
+  }
+
+  var buttonCreators = {};
+
+  buttonCreators.email = function () {
+    var button = $("<li class='rrssb-email'></li>");
+
+    var emailUrl = "mailto:?subject=" + encodeURI(options.emailSubject) + '&amp;body="' + encodeURI(options.emailBody);
+
+    button.append("<a href='" + emailUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>email</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.facebook = function (shareCounts, rrssbNumber) {
+    var button = $("<li class='rrssb-facebook'></li>");
+
+    var facebookUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(options.url);
+
+    button.append("<a href='" + facebookUrl + "' class='popup'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>facebook</span>");
+
+    if (options.showCount) {
+      $.ajax({
+        url: "http://graph.facebook.com/?id=" + options.url,
+        dataType: "jsonp",
+        success: function(data) {
+          shareCounts.facebook = data.shares;
+          updateCount(shareCounts, rrssbNumber);
+        },
+        error: function() {
+          console.error("[RRSSB]: There was an error getting share count data from Facebook. It may not be included in the count.");
+        }
+      });
+    }
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.tumblr = function () {
+    var button = $("<li class='rrssb-tumblr'></li>");
+
+    var tumblrUrl = "http://tumblr.com/share/link?url=" + encodeURI(options.url) + "&name=" + encodeURI(options.tumblrName);
+
+    button.append("<a href='" + tumblrUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>tumblr</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.linkedin = function (shareCounts, rrssbNumber) {
+    var button = $("<li class='rrssb-linkedin'></li>");
+
+    var linkedinUrl = "http://www.linkedin.com/shareArticle?mini=true&amp;url=" + encodeURI(options.url) + "&amp;title=" + encodeURI(options.linkedinTitle) + "&amp;summary=" + encodeURI(options.linkedinSummary);
+
+    button.append("<a href='" + linkedinUrl + "' class='popup'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>linkedin</span>");
+
+    if (options.showCount) {
+      $.ajax({
+        url: "http://www.linkedin.com/countserv/count/share?url=" + options.url,
+        dataType: "jsonp",
+        success: function(data) {
+          shareCounts.linkedin = data.shares;
+          updateCount(shareCounts, rrssbNumber);
+        },
+        error: function() {
+          console.error("[RRSSB]: There was an error getting share count data from LinkedIn. It may not be included in the count.");
+        }
+      });
+    }
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.twitter = function (shareCounts, rrssbNumber) {
+    var button = $("<li class='rrssb-twitter'></li>");
+
+    var twitterUrl = "http://twitter.com/home?status=" + encodeURI(options.twitterStatus);
+
+    button.append("<a href='" + twitterUrl + "' class='popup'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>twitter</span>");
+
+    if (options.showCount) {
+      $.ajax({
+        url: "http://cdn.api.twitter.com/1/urls/count.json?url=" + options.url,
+        dataType: "jsonp",
+        success: function(data) {
+          shareCounts.twitter = data.count;
+          updateCount(shareCounts, rrssbNumber);
+        },
+        error: function() {
+          console.error("[RRSSB]: There was an error getting share count data from Twitter. It may not be included in the count.");
+        }
+      });
+    }
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.reddit = function () {
+    var button = $("<li class='rrssb-reddit'></li>");
+
+    var redditUrl = "http://www.reddit.com/submit?url=" + encodeURI(options.url) + "&title=" + encodeURI(options.redditTitle) + "&text=" + encodeURI(options.redditText);
+
+    button.append("<a href='" + redditUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>reddit</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.hackernews = function () {
+    var button = $("<li class='rrssb-hackernews'></li>");
+
+    var hackernewsUrl = "https://news.ycombinator.com/submitlink?u=" + encodeURI(options.url) + "&t=" + encodeURI(options.hackernewsTitle) + "&text=" + encodeURI(options.hackernewsText);
+
+    button.append("<a href='" + hackernewsUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>hackernews</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.googleplus = function () {
+    var button = $("<li class='rrssb-googleplus'></li>");
+
+    var googleplusUrl = "https://plus.google.com/share?url=" + encodeURI(options.googleplusStatus);
+
+    button.append("<a href='" + googleplusUrl + "' class='popup'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>google+</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.youtube = function () {
+    var button = $("<li class='rrssb-youtube'></li>");
+
+    button.append("<a href='" + options.youtubeUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>youtube</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.pinterest = function (shareCounts, rrssbNumber) {
+    var button = $("<li class='rrssb-pinterest'></li>");
+
+    var pinterestUrl = "http://pinterest.com/pin/create/button/?url=" + encodeURI(options.url) + "&amp;media=" + encodeURI(options.pinterestMedia) + "&amp;description=" + encodeURI(options.pinterestDescription);
+
+    button.append("<a href='" + pinterestUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>pinterest</span>");
+
+    if (options.showCount) {
+      $.ajax({
+        url: "http://api.pinterest.com/v1/urls/count.json?url=" + options.url,
+        dataType: "jsonp",
+        success: function(data) {
+          shareCounts.pinterest = data.count;
+          updateCount(shareCounts, rrssbNumber);
+        },
+        error: function() {
+          console.error("[RRSSB]: There was an error getting share count data from Pinterest. It may not be included in the count.");
+        }
+      });
+    }
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.pocket = function () {
+    var button = $("<li class='rrssb-pocket'></li>");
+
+    var pocketUrl = "https://getpocket.com/save?url=" + encodeURI(options.url);
+
+    button.append("<a href='" + pocketUrl + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>pocket</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.github = function () {
+    var button = $("<li class='rrssb-github'></li>");
+
+    button.append("<a href='" + encodeURI(options.githubLink) + "'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>github</span>");
+
+    return button[0].outerHTML;
+  };
+
+  buttonCreators.vk = function () {
+    var button = $("<li class='rrssb-vk'></li>");
+
+    var vkUrl = "http://vk.com/share.php?url=" + encodeURI(options.url);
+
+    button.append("<a href='" + vkUrl + "' class='popup'></a>");
+
+    var link = button.find("a");
+
+    link.append("<span class='rrssb-icon'></span>");
+    link.append("<span class='rrssb-text'>vk</span>");
+
+    return button[0].outerHTML;
+  };
+
+  function addIcons(rrssbButtons) {
+    var buttons = rrssbButtons.find("li");
+
+    for (var i = 0; i < buttons.length; i++) {
+      var socialNetwork = $(buttons[i]).prop("class").replace("rrssb-", "");
+      var iconContainer = $(buttons[i]).find(".rrssb-icon");
+      getIcon(socialNetwork, iconContainer);
+    }
+  }
+
+  function getIcon(socialNetwork, iconContainer) {
+    $.ajax({
+      url: options.iconsLocation + socialNetwork + ".min.svg",
+      contentType: "text/plain",
+      success: function (data) {
+        iconContainer.html($(data).children()[0].outerHTML);
+      }
+    });
+  }
+
+  function updateCount(counts, rrssbNumber) {
+    var count = 0;
+    for (var key in counts) {
+      if (counts.hasOwnProperty(key)) {
+        if (!isNaN(parseInt(counts[key]))) {
+          count += counts[key];
+        }
+      }
+    }
+    if (count < 1000000 && count >= 1000) {
+      if (count < 1100) {
+        count = 1;
+      } else {
+        count = (count/1000).toFixed(1);
+      }
+      count += "K";
+      count.replace(/\.0$/, "");
+    } else if (count >= 1000000) {
+      if (count < 1100000) {
+        count = 1;
+      } else {
+        count = (count/1000000).toFixed(1);
+      }
+      count += "M";
+    }
+    rrssbNumber.text(count);
+  }
+
+} (jQuery));
