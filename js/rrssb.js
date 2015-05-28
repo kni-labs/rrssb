@@ -35,6 +35,7 @@
 
     // Set defaults if options not set
     options.iconsLocation === undefined ? options.iconsLocation = "/images/rrssb/" : null;
+    options.showCount === undefined ? options.showCount = true : null;
     options.url === undefined ? options.url = window.location.href : null;
     options.pageName === undefined ? options.pageName = document.title : null;
     options.pageDescription === undefined ? options.pageDescription = docDetails.description : null;
