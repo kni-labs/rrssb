@@ -41,10 +41,7 @@
     options.pageDescription === undefined ? options.pageDescription = docDetails.description : null;
     options.emailSubject === undefined ? options.emailSubject = options.pageName : null;
     options.emailBody === undefined ? options.emailBody = "Check out this page: " + options.pageDescription + " - " + options.url : null;
-    if (options.twitterStatus === undefined) {
-      var twitterTitle = options.pageName.substring(0, 115);
-      options.twitterStatus = twitterTitle + " - " + options.url;
-    }
+    options.twitterStatus === undefined ? options.twitterStatus = options.pageName.substring(0, 115) + " - " + options.url;
     options.googleplusStatus === undefined ? options.googleplusStatus = options.pageName + " - " + options.url : null;
     options.githubLink === undefined ? options.githubLink = "https://github.com/" : null;
     options.tumblrName === undefined ? options.tumblrName = options.pageName : null;
