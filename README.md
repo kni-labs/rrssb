@@ -93,6 +93,18 @@ var options = {
 
 > NOTE: Don't just copy all the options with empty strings as the empty string will be used as the option value.
 
+### Example Setup
+
+This is an example setup for a Twitter, Facebook and Google+.
+
+```javascript
+var options = {
+  socialNetworks: ["twitter", "facebook", "googleplus"]
+}
+
+$(".rrssb-container").rrssb(options);
+```
+
 ### Other install options:
 
 | Service							| Link |
