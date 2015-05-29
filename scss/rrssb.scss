@@ -42,7 +42,7 @@ $rrssb-border-radius: 2px !default;
 
 $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
-$rrssb-count-width: 50px;
+$rrssb-count-width: 53px;
 
 $rrssb-count-gutter-width: 10px;
 
@@ -76,26 +76,28 @@ $social-list: (
     margin: 0;
     padding: 0;
     position: relative;
-    margin-right: $rrssb-count-gutter-width;
+    margin-right: $rrssb-count-gutter-width / 2;
     text-align: center;
     width: $rrssb-count-width;
+    border-right: 1px solid #ddd;
 
     .rrssb-number {
-      font-size: inherit;
+      color: #444;
+      font-size: 22px;
       margin: 0;
       padding: 0;
       position: absolute;
-      top: 2px;
+      top: 1px;
       width: $rrssb-count-width;
+      // font-weight: bold;
     }
 
     .rrssb-shares {
-      border-top: 1px solid #ccc;
-      font-size: 10px;
-      font-weight: 700;
+      color: #999;
+      font-size: 8px;
       position: absolute;
       text-transform: uppercase;
-      bottom: 2px;
+      bottom: 1px;
       width: $rrssb-count-width;
     }
   }

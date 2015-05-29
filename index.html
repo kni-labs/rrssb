@@ -23,42 +23,31 @@
   <meta name="twitter:description" content="Ridiculously Responsive Social Sharing Buttons by @dbox and @joshuatuscan: http://kurtnoble.com/labs/rrssb | http://kurtnoble.com/labs/rrssb/media/rrssb-preview.png">
   <meta name="twitter:image" content="http://kurtnoble.com/labs/rrssb/media/rrssb-preview.png">
 
-  <link rel="icon" type="image/png" href="media/favicon.png" />
-  <link rel="stylesheet" href="css/normalize.min.css" />
+  <!-- Demo styles. Ignore -->
+  <style media="screen">body{padding:3%; font-family: Helvetica, Arial, sans;} h1,h2,h3,h4,h5,h6{color:#444;font-weight:normal}section{clear:both; margin-bottom:50px;}</style>
 
   <!-- Stylesheet required to power RRSSB. Copy this css file to your header -->
   <link rel="stylesheet" href="css/rrssb.css" />
 
-  <link rel="stylesheet" href="css/demo.css" />
 
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 
 <body>
-  <!--[if lt IE 9]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-  <![endif]-->
 
-  <div class="main-container">
-    <h1>Ridiculously Responsive Social Sharing Buttons</h1>
-    <hr />
+  <section>
+    <h2>All sites with count &amp; default links:</h2>
 
+    <!-- copy this div to your document -->
     <div class="rrssb-container"></div>
 
-    <p>
-      <img class="rrssb-preview" src="media/rrssb-preview.png" /><a href="http://worldsmostshareablewebsite.greig.cc/">Love them</a> or <a href="http://solomon.io/why-im-done-with-social-media-buttons/">hate them</a>, social sharing buttons appear to be with us for a while. It seemed like <a href="http://www.kurtnoble.com">we</a>      were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.</p>
+  </section>
+  <section>
+    <h2>Common sites, no count:</h2>
+    <div class="rrssb-container common"></div>
 
-    <p>RRSSB is built with <a href="http://sass-lang.com/">SASS</a>, so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit &mdash; the rest will fill in automagically
-      in the container.</p>
+  </section>
 
-    <p>Resize this page for demo. Currently tested between <a href="https://dl.dropboxusercontent.com/u/18590/rrssb-130px.png">130px</a> and 15,465px on current versions of Chrome 33, Safari 7.0.2, Firefox 27, Opera 20, and IE9+. Requires SVG support.</p>
-
-    <p><a href="https://github.com/kni-labs/rrssb">Grab the code on Github here →</a></p>
-
-    <small>RRSSB is a <a href="http://kurtnoble.com">KNI Labs</a> freebie crafted by <a href="http://www.twitter.com/dbox">@dbox</a> and <a href="http://www.twitter.com/joshuatuscan">@joshuatuscan</a>.</small>
-
-  </div>
-  <!-- #main-container -->
 
   <!-- Required Javascript files. Copy these to your document. -->
 
@@ -69,27 +58,26 @@
 
   <script src="js/rrssb.min.js"></script>
 
+  <!-- rrssb Set #1 -->
   <script>
     var options = {
       iconsLocation: "icons/",
       showCount: true,
-      socialNetworks: ["email", "facebook", "tumblr", "linkedin", "twitter", "reddit", "hackernews", "googleplus", "youtube", "pinterest", "pocket", "github", "vk"]
+      socialNetworks: ["email", "facebook", "tumblr", "linkedin", "twitter", "reddit", "hackernews", "googleplus", "pocket", "youtube", "pinterest", "github", "vk"]
     };
     $(".rrssb-container").rrssb(options);
   </script>
 
+  <!-- rrssb Set #2 -->
   <script>
-    var _gaq = [
-      ['_setAccount', 'UA-404294-1'],
-      ['_trackPageview']
-    ];
-    (function(d, t) {
-      var g = d.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-      g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g, s)
-    }(document, 'script'));
+    var options = {
+      iconsLocation: "icons/",
+      showCount: false,
+      socialNetworks: ["email", "facebook", "linkedin", "twitter","googleplus","pinterest"]
+    };
+    $(".rrssb-container.common").rrssb(options);
   </script>
+
 </body>
 
 </html>
