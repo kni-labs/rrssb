@@ -2,8 +2,9 @@
   "name": "rrssb",
   "version": "1.8.2",
   "authors": [
+    "(Daniel Box <daniel@kurtnoble.com>)",
     "(Joshua Tuscan <hello@joshuatuscan.com>)",
-    "(Daniel Box <daniel@kurtnoble.com>)"
+    "(Connor Wyatt <cw@connorwyatt.io>)"
   ],
   "description": "Ridiculously Responsive Social Sharing Buttons",
   "main": [
