@@ -1,9 +1,11 @@
 {
   "name": "RRSSB",
-  "version": "2.0.0-rc.1",
+  "version": "2.0.0",
   "authors": [
     "(Daniel Box <daniel@kurtnoble.com>)",
-    "(Joshua Tuscan <hello@joshuatuscan.com>)",
+    "(Joshua Tuscan <hello@joshuatuscan.com>)"
+  ],
+  "contributors": [
     "(Connor Wyatt <cw@connorwyatt.io>)"
   ],
   "description": "Ridiculously Responsive Social Sharing Buttons",
@@ -26,7 +28,7 @@
   },
   "license": "MIT",
   "homepage": "http://kurtnoble.com/labs/rrssb/",
-  "readme": "ERROR! No readme found!",
+  "readme": "README.md",
   "devDependencies": {
     "gulp": "*",
     "gulp-sass": "*",
