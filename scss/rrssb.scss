@@ -71,6 +71,17 @@ $social-list: (
   padding: 0;
   width: 100%;
 
+  // clearfix buttons for large-format
+  &:after {
+    clear: both;
+  }
+
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
   li {
     box-sizing: border-box;
     float: left;
