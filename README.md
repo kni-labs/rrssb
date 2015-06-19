@@ -1,23 +1,19 @@
 # Ridiculously Responsive Social Sharing Buttons
-
 [<img align="right" src="media/rrssb-preview.png" width="359" height="auto"/>](http://kurtnoble.com/labs/rrssb/) Love them or hate them, social sharing buttons appear to be with us for a while. It seemed like [**we**](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
 
-RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit &mdash; the rest will fill in automagically in the container.
+RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit — the rest will fill in automagically in the container.
 
 <img src="media/rrssb-preview.gif" width="100%" height="auto"/>
 
-### Demo
-
+## Demo
 > [**View the demo here**](http://kurtnoble.com/labs/rrssb/)
 
-### Usage
-
+## Usage
 1) Link to the css file in header:
 
 ```html
 <link rel="stylesheet" href="css/rrssb.css" />
 ```
-
 
 2) Copy `.rrssb-buttons` unordered list to desired location(s):
 
@@ -40,7 +36,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
     </a>
   </li>  
   <li class="rrssb-twitter">
-    <a href="http://twitter.com/home?status=Ridiculously%20Responsive%20Social%20Sharing%20Buttons%20by%20%40dbox%20and%20%40joshuatuscan%3A%20http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb%20%7C%20http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb%2Fmedia%2Frrssb-preview.png"
+    <a href="https://twitter.com/intent/tweet?text=Ridiculously%20Responsive%20Social%20Sharing%20Buttons%20by%20%40dbox%20and%20%40joshuatuscan%3A%20http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb%20%7C%20http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb%2Fmedia%2Frrssb-preview.png"
     class="popup">
       <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"/></svg></span>
       <span class="rrssb-text">twitter</span>
@@ -51,15 +47,10 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 ```
 
 - Only copy the `<li>`s of the buttons you want (index.html has examples of all available types).
-
 - Adding a class of `popup` to the anchor tag for each share button will make the share dialog open in a popup, rather than a new window. (Good for Facebook, Twitter, Google Plus, etc.)
-
 - Buttons will automatically flow to the size of the ul `rrssb-buttons`. If fixed sized buttons are needed, nest `rrssb-buttons` in a fixed-width container.
-
 - Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
-
 - Optionally, all share meta and links can be configured in `rrssb.js`
-
 
 3) Link to javascript files at the bottom of your document before the closing body tag for best results. (jQuery CDN, [**jQuery fallback**](http://css-tricks.com/snippets/jquery/fallback-for-cdn-hosted-jquery/), and `rrssb.min.js`):
 
@@ -69,49 +60,41 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 <script src="js/rrssb.min.js"></script>
 ```
 
+## Other install options:
 
-### Other install options:
-
-| Service							| Link |
-| :---------------------------------	| :------- |
-| [**Bower**](http://bower.io)	| `bower install rrssb` |
-| Rails * 							| [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/) |
-| Wordpress * 						| [**Wordpress plugin by @aarreedd**](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/) |
-| Drupal *							| [**Drupal Install Instructions**](https://drupal.org/project/rrssb) |
-| CDN * 								| [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb) |
+Service                      | Link
+:--------------------------- | :----------------------------------------------------------------------------------------------------------------
+[**Bower**](http://bower.io) | `bower install rrssb`
+Rails *                      | [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
+Wordpress *                  | [**Wordpress plugin by @aarreedd**](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/)
+Drupal *                     | [**Drupal Install Instructions**](https://drupal.org/project/rrssb)
+CDN *                        | [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb)
 
 <small>* Managed by 3rd parties. Please contact project hosts for support.</small>
 
-### Support
-
+## Support
 Currently tested between [**140px**](https://www.dropbox.com/s/2k6lcebg2887ge3/Screenshot%202014-02-18%2009.45.45.png) and [**15,465px**](https://www.dropbox.com/s/1juq03011lixk3r/Screenshot%202014-02-18%2009.43.57.png) on current versions of Chrome 33, Safari 7.0.2, Firefox 27, Opera 20, and IE9+.
 
 Requires [**SVG**](http://caniuse.com/svg)
 
+## Version Notes
 
-### Version Notes
-| Version | Note | Issue(s) | Backwards compatible?
-| :---	| :------- | :------- | :-------: |
-| 1.8.0 | Shiny new gulp/browser-sync dev environment /via @connorwyatt, updated Facebook icon, fixed TypeError: $ in js /via @QWp6t . | [(#93)](https://github.com/kni-labs/rrssb/issues/93), [(#97)](https://github.com/kni-labs/rrssb/issues/97) | &#x2713;
-| 1.7.6 | Fixed an issue where icon hit areas were breaking out of containers | [(#94)](https://github.com/kni-labs/rrssb/issues/94) | &#x2713;
-| 1.7.5 | Flexible Large Format icons text-size based on sibling count. Switched to MIT license. | [(#18)](https://github.com/kni-labs/rrssb/issues/18) | &#x2713;
-| 1.7.2 | Better calc detection & fallback /via @IanCaunce | [(#89)](https://github.com/kni-labs/rrssb/pull/89) | &#x2713;
-| 1.7 | Javascript Meta attributes as variables /via @aicarlson | [(#47)](https://github.com/kni-labs/rrssb/issues/47) | &#x2713;
-| 1.6.5 | Namespace CSS classes - Legacy HTML will be incompatible until class names updated.| [(#42)](https://github.com/kni-labs/rrssb/issues/42) | &#x2715;
+Version | Note                                                                                                                         | Issue(s)                                                                                                   | Backwards compatible?
+:------ | :--------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------- | :-------------------:
+1.8.0   | Shiny new gulp/browser-sync dev environment /via @connorwyatt, updated Facebook icon, fixed TypeError: $ in js /via @QWp6t . | [(#93)](https://github.com/kni-labs/rrssb/issues/93), [(#97)](https://github.com/kni-labs/rrssb/issues/97) | &#x2713;
+1.7.6   | Fixed an issue where icon hit areas were breaking out of containers                                                          | [(#94)](https://github.com/kni-labs/rrssb/issues/94)                                                       | &#x2713;
+1.7.5   | Flexible Large Format icons text-size based on sibling count. Switched to MIT license.                                       | [(#18)](https://github.com/kni-labs/rrssb/issues/18)                                                       | &#x2713;
+1.7.2   | Better calc detection & fallback /via @IanCaunce                                                                             | [(#89)](https://github.com/kni-labs/rrssb/pull/89)                                                         | &#x2713;
+1.7     | Javascript Meta attributes as variables /via @aicarlson                                                                      | [(#47)](https://github.com/kni-labs/rrssb/issues/47)                                                       | &#x2713;
+1.6.5   | Namespace CSS classes - Legacy HTML will be incompatible until class names updated.                                          | [(#42)](https://github.com/kni-labs/rrssb/issues/42)                                                       | &#x2715;
 
-
-### Contributing
-
+## Contributing
 Thanks for helping! Please use [**dev branch**](https://github.com/kni-labs/rrssb/tree/dev) for all pull requests.
 
-
-##### Setup:
-
+### Setup:
 - Make sure [gulp](http://gulpjs.com/) is installed globally: `npm install -g gulp` (May require `sudo`.)
 - run `npm install` to install the dependencies for this project.
 - run `gulp` to create a local server at `localhost:3000` and watch for file changes.
 
-
-### About
-
+## About
 RRSSB is a [**KNI Labs freebie**](http://kurtnoble.com/) crafted by [**@dbox**](http://www.twitter.com/dbox) and [**@joshuatuscan**](http://www.twitter.com/joshuatuscan).
