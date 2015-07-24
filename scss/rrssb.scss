@@ -136,7 +136,7 @@ $social-list: (
           height: 17px;
           width: 17px;
 
-          path, polygon {
+          path {
             fill: $rrssb-txt;
           }
         }
@@ -345,7 +345,7 @@ $social-list: (
           a {
             .rrssb-icon {
               svg {
-                path, polygon {
+                path {
                   fill: nth($s-name, 2);
                 }
               }
@@ -353,7 +353,7 @@ $social-list: (
               &:hover {
                 .rrssb-icon {
                   svg {
-                    path, polygon {
+                    path {
                       fill: darken(nth($s-name, 2), 20%);
                     }
                   }
