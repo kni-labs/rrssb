@@ -1,15 +1,13 @@
 {
   "name": "RRSSB",
   "version": "1.8.5",
-  "authors": [
+  "author": "Daniel Box <daniel@kurtnoble.com> (http://github.com/kni-labs)",
+  "contributors": [
     "(Joshua Tuscan <hello@joshuatuscan.com>)",
     "(Daniel Box <daniel@kurtnoble.com>)"
   ],
   "description": "Ridiculously Responsive Social Sharing Buttons",
-  "main": [
-    "js/rrssb.js",
-    "css/rrssb.css"
-  ],
+  "main": "js/rrssb.js",
   "keywords": [
     "ridiculously",
     "RRSSB",
@@ -25,7 +23,7 @@
   },
   "license": "MIT",
   "homepage": "http://kurtnoble.com/labs/rrssb/",
-  "readme": "ERROR! No readme found!",
+  "readme": "http://kurtnoble.com/labs/rrssb/README.md",
   "devDependencies": {
     "gulp": "*",
     "gulp-sass": "*",
