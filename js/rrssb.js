@@ -128,8 +128,11 @@
 			// enlarge buttons if they get wide enough
 			if (buttonWidth > 170 && $('li.small', self).length < 1) {
 				self.addClass('large-format');
+				var fontSize = buttonWidth / 12 + 'px';
+				self.css('font-size', fontSize);
 			} else {
 				self.removeClass('large-format');
+				self.css('font-size', '');
 			}
 
 			if (containerWidth < 200) {
