@@ -63,7 +63,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 
 
 <a name="javascript"></a>
-## Configure URL and Share Text with Javascript 
+### Configure URL and Share Text with Javascript 
 
 Instead of editing each `href` by hand, you can call some Javascript to set the URLs on each social button automatically.
 
@@ -86,7 +86,7 @@ jQuery(document).ready(function ($) {
             emailBody: 'Usually email body is just the description + url, but you can customize it if you want'
     });
 });
-  </script>
+</script>
 ```
 
 
