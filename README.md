@@ -50,7 +50,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 - Adding a class of `popup` to the anchor tag for each share button will make the share dialog open in a popup, rather than a new window. (Good for Facebook, Twitter, Google Plus, etc.)
 - Buttons will automatically flow to the size of the ul `rrssb-buttons`. If fixed sized buttons are needed, nest `rrssb-buttons` in a fixed-width container.
 - Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
-- Optionally, all share meta and links can be configured in `rrssb.js`
+- Alternatively, all share metadata and links can be configured [using Javascript](#javascript)
 
 3) Link to javascript files at the bottom of your document before the closing body tag for best results. (jQuery CDN, [**jQuery fallback**](http://css-tricks.com/snippets/jquery/fallback-for-cdn-hosted-jquery/), and `rrssb.min.js`):
 
@@ -59,6 +59,38 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 <script>window.jQuery || document.write('<script src="js/vendor/jquery.1.10.2.min.js"><\/script>')</script>
 <script src="js/rrssb.min.js"></script>
 ```
+
+
+
+<a name="javascript"></a>
+## Configure URL and Share Text with Javascript 
+
+Instead of editing each `href` by hand, you can call this Javascript to set the URLs on each social button automatically.
+
+This is optional. Note, to support users who have disabled Javascript, you still need to edit the `href`s by hand.
+
+Paste the following before the closing body tag, after the scripts you added in the last section:
+
+````
+<script type="text/javascript">
+
+jQuery(document).ready(function ($) {
+
+  $('.rrssb-buttons').rrssb({
+            // required:
+            title: 'This is the email subject and/or tweet text',
+            url: 'http://kurtnoble.com/labs/rrssb/',
+
+            // optional:
+            description: 'Longer description used with some providers',
+            emailBody: 'Usually email body is just the description + url, but you can customize it if you want'
+    });
+});
+  </script>
+````
+
+
+
 
 ## Other install options:
 
