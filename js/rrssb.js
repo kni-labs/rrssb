@@ -131,7 +131,7 @@
 			var self = $(this);
 			//get button width
 			var containerWidth = self.width();
-			var buttonWidth = $('li', self).not('.small').first().width();
+			var buttonWidth = $('li', self).not('.small').eq(0).width();
 
 			// enlarge buttons if they get wide enough
 			if (buttonWidth > 170 && $('li.small', self).length < 1) {
@@ -157,7 +157,7 @@
 			var smallButtons = buttons.filter('.small');
 			var totalBtnSze = 0;
 			var totalTxtSze = 0;
-			var upCandidate = smallButtons.first();
+			var upCandidate = smallButtons.eq(0);
 			var nextBackUp = parseFloat(upCandidate.attr('data-size')) + 55;
 			var smallBtnCount = smallButtons.length;
 
@@ -167,7 +167,7 @@
 
 				if ((btnCalc + nextBackUp) < containerWidth) {
 					self.removeClass('small-format');
-					smallButtons.first().removeClass('small');
+					smallButtons.eq(0).removeClass('small');
 
 					sizeSmallBtns();
 				}
@@ -341,11 +341,15 @@
 		 * Event listners
 		 */
 
-                $(document).on('click', '.rrssb-buttons a.popup', {}, function popUp(e) {
-			var self = $(this);
-			popupCenter(self.attr('href'), self.find('.rrssb-text').html(), 580, 470);
-			e.preventDefault();
-		});
+		try {
+			$(document).on('click', '.rrssb-buttons a.popup', {}, function popUp(e) {
+				var self = $(this);
+				popupCenter(self.attr('href'), self.find('.rrssb-text').html(), 580, 470);
+				e.preventDefault();
+			});
+		}
+		catch (e) { // catching this adds partial support for jQuery 1.3
+		}
 
 		// resize function
 		$(window).resize(function () {
