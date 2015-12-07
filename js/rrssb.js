@@ -41,6 +41,14 @@
 			url: undefined
 		}, options );
 
+		// use some sensible defaults if they didn't specify email settings
+		settings.emailSubject = settings.emailSubject || settings.title;
+		settings.emailBody = settings.emailBody ||
+			(
+				(settings.description ? settings.description : '') +
+				(settings.url ? '\n\n' + settings.url : '')
+			);
+
 		// Return the encoded strings if the settings have been changed.
 		for (var key in settings) {
 			if (settings.hasOwnProperty(key) && settings[key] !== undefined) {
@@ -56,13 +64,13 @@
 			$(this).find('.rrssb-hackernews a').attr('href', 'https://news.ycombinator.com/submitlink?u=' + settings.url + (settings.title !== undefined ? '&text=' + settings.title : ''));
 			$(this).find('.rrssb-reddit a').attr('href', 'http://www.reddit.com/submit?url=' + settings.url + (settings.description !== undefined ? '&text=' + settings.description : '') + (settings.title !== undefined ? '&title=' + settings.title : ''));
 			$(this).find('.rrssb-googleplus a').attr('href', 'https://plus.google.com/share?url=' + (settings.description !== undefined ? settings.description : '') + '%20' + settings.url);
-			$(this).find('.rrssb-pinterest a').attr('href', 'http://pinterest.com/pin/create/button/?url=' + settings.url + ((settings.image !== undefined) ? '&amp;media=' + settings.image : '') + (settings.description !== undefined ? '&amp;description=' + settings.description : ''));
+			$(this).find('.rrssb-pinterest a').attr('href', 'http://pinterest.com/pin/create/button/?url=' + settings.url + ((settings.image !== undefined) ? '&amp;media=' + settings.image : '') + (settings.description !== undefined ? '&description=' + settings.description : ''));
 			$(this).find('.rrssb-pocket a').attr('href', 'https://getpocket.com/save?url=' + settings.url);
 			$(this).find('.rrssb-github a').attr('href', settings.url);
 		}
 
-		if (settings.emailAddress !== undefined) {
-			$(this).find('.rrssb-email a').attr('href', 'mailto:' + settings.emailAddress + '?' + (settings.emailSubject !== undefined ? 'subject=' + settings.emailSubject : '') + (settings.emailBody !== undefined ? '&amp;body=' + settings.emailBody : ''));
+		if (settings.emailAddress !== undefined || settings.emailSubject) {
+			$(this).find('.rrssb-email a').attr('href', 'mailto:' + (settings.emailAddress ? settings.emailAddress : '') + '?' + (settings.emailSubject !== undefined ? 'subject=' + settings.emailSubject : '') + (settings.emailBody !== undefined ? '&body=' + settings.emailBody : ''));
 		}
 
 	};
