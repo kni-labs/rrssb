@@ -2,7 +2,7 @@
 // Team: @dbox, @joshuatuscan
 // Site: http://www.kurtnoble.com/labs/rrssb
 // Twitter: @therealkni
-
+//
 //        ___           ___
 //       /__/|         /__/\        ___
 //      |  |:|         \  \:\      /  /\
@@ -14,53 +14,34 @@
 //     \  \:\        \  \:\          /__/:/
 //      \  \:\        \  \:\         \__\/
 //       \__\/         \__\/
-
-
+//
 // Note: You can and should add or remove buttons from config settings and
 //       $social-list based on your specific needs.
 
 // config settings
-$rrssb-txt:         #fff    !default;
-$rrssb-email:       #0a88ff !default;
-$rrssb-facebook:    #306199 !default;
-$rrssb-tumblr:      #32506d !default;
-$rrssb-linkedin:    #007bb6 !default;
-$rrssb-twitter:     #26c4f1 !default;
-$rrssb-googleplus:  #e93f2e !default;
-$rrssb-reddit:      #8bbbe3 !default;
-$rrssb-youtube:     #df1c31 !default;
-$rrssb-pinterest:   #b81621 !default;
-$rrssb-pocket:      #ed4054 !default;
-$rrssb-github:      #444    !default;
-$rrssb-instagram:   #517fa4 !default;
-$rrssb-hackernews:  #ff6600 !default;
-$rrssb-delicious:   #0B79E5 !default;
-$rrssb-vk:          #4d71a9 !default;
+$rrssb-txt: #fff !default;
+$rrssb-email: #0a88ff !default;
+$rrssb-facebook: #306199 !default;
+$rrssb-tumblr: #32506d !default;
+$rrssb-linkedin: #007bb6 !default;
+$rrssb-twitter: #26c4f1 !default;
+$rrssb-googleplus: #e93f2e !default;
+$rrssb-reddit: #8bbbe3 !default;
+$rrssb-youtube: #df1c31 !default;
+$rrssb-pinterest: #b81621 !default;
+$rrssb-pocket: #ed4054 !default;
+$rrssb-github: #444 !default;
+$rrssb-instagram: #517fa4 !default;
+$rrssb-hackernews: #ff6600 !default;
+$rrssb-delicious: #0B79E5 !default;
+$rrssb-vk: #4d71a9 !default;
 
 // Set the border radius for the buttons
 $rrssb-border-radius: 2px !default;
-
 $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 // Variable list for all social button colors to be iterated over.
-$social-list: (
-  rrssb-email       $rrssb-email,
-  rrssb-facebook    $rrssb-facebook,
-  rrssb-tumblr      $rrssb-tumblr,
-  rrssb-linkedin    $rrssb-linkedin,
-  rrssb-twitter     $rrssb-twitter,
-  rrssb-googleplus  $rrssb-googleplus,
-  rrssb-youtube     $rrssb-youtube,
-  rrssb-reddit      $rrssb-reddit,
-  rrssb-pinterest   $rrssb-pinterest,
-  rrssb-pocket      $rrssb-pocket,
-  rrssb-github      $rrssb-github,
-  rrssb-instagram   $rrssb-instagram,
-  rrssb-delicious   $rrssb-delicious,
-  rrssb-vk			    $rrssb-vk,
-  rrssb-hackernews  $rrssb-hackernews
-);
-
+$social-list: ( rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-tumblr $rrssb-tumblr, rrssb-linkedin $rrssb-linkedin, rrssb-twitter $rrssb-twitter, rrssb-googleplus $rrssb-googleplus, rrssb-youtube $rrssb-youtube, rrssb-reddit $rrssb-reddit, rrssb-pinterest $rrssb-pinterest, rrssb-pocket $rrssb-pocket, rrssb-github $rrssb-github, rrssb-instagram $rrssb-instagram, rrssb-delicious $rrssb-delicious, rrssb-vk $rrssb-vk, rrssb-hackernews $rrssb-hackernews );
 
 // The meat and potatoes
 .rrssb-buttons {
@@ -94,19 +75,17 @@ $social-list: (
 
     // This generates individual button classes for each item in social list on line 39.
     @each $s-name in $social-list {
-
       &.#{nth($s-name, 1)} {
         a {
           background-color: nth($s-name, 2);
-
+          
           &:hover {
             background-color: darken(nth($s-name, 2), 10%);
           }
         }
       }
-
-    } // end @each directive
-
+    }
+    // end @each directive
     a {
       background-color: #ccc;
       border-radius: $rrssb-border-radius;
@@ -121,7 +100,7 @@ $social-list: (
       text-align: center;
       text-decoration: none;
       text-transform: uppercase;
-      transition: background-color .2s ease-in-out;
+      transition: background-color 0.2s ease-in-out;
       width: 100%;
 
       .rrssb-icon {
@@ -131,17 +110,14 @@ $social-list: (
         position: absolute;
         top: 0;
         width: 10%;
-
         svg {
           height: 17px;
           width: 17px;
-
           path {
             fill: $rrssb-txt;
           }
         }
       }
-
       .rrssb-text {
         color: $rrssb-txt;
       }
@@ -154,7 +130,6 @@ $social-list: (
     &.small {
       a {
         padding: 0;
-
         .rrssb-icon {
           left: auto;
           margin: 0 auto;
@@ -170,18 +145,15 @@ $social-list: (
       }
     }
   }
-
   &.large-format {
     height: auto;
 
     li {
       height: auto;
 
-
-
       a {
         backface-visibility: hidden;
-        border-radius: .2em;
+        border-radius: 0.2em;
         padding: 8.5% 0 8.5% 12%;
 
         .rrssb-icon {
@@ -197,14 +169,12 @@ $social-list: (
             width: 100%;
           }
         }
-
         .rrssb-text {
           backface-visibility: hidden;
         }
       }
     }
   }
-
   &.small-format {
     padding-top: 5px;
 
@@ -227,7 +197,6 @@ $social-list: (
       }
     }
   }
-
   &.tiny-format {
     height: 22px;
     position: relative;
@@ -254,7 +223,6 @@ $social-list: (
 
       // This generates individual button classes for each item in social list on line 39.
       @each $s-name in $social-list {
-
         &.#{nth($s-name, 1)} {
           a {
             .rrssb-icon {
@@ -276,7 +244,7 @@ $social-list: (
             }
           }
         }
-      }  // end @each directive
+      } // end @each directive
     }
   }
 }
