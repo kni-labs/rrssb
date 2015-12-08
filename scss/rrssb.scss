@@ -70,6 +70,7 @@ $social-list: (
   margin: 0;
   padding: 0;
   width: 100%;
+  font-size: 12px;
 
   // clearfix buttons for large-format
   &:after {
@@ -176,7 +177,7 @@ $social-list: (
     li {
       height: auto;
 
-       
+
 
       a {
         backface-visibility: hidden;
