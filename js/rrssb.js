@@ -41,6 +41,14 @@
 			url: undefined
 		}, options );
 
+		// use some sensible defaults if they didn't specify email settings
+		settings.emailSubject = settings.emailSubject || settings.title;
+		settings.emailBody = settings.emailBody ||
+			(
+				(settings.description ? settings.description : '') +
+				(settings.url ? '\n\n' + settings.url : '')
+			);
+
 		// Return the encoded strings if the settings have been changed.
 		for (var key in settings) {
 			if (settings.hasOwnProperty(key) && settings[key] !== undefined) {
@@ -56,13 +64,13 @@
 			$(this).find('.rrssb-hackernews a').attr('href', 'https://news.ycombinator.com/submitlink?u=' + settings.url + (settings.title !== undefined ? '&text=' + settings.title : ''));
 			$(this).find('.rrssb-reddit a').attr('href', 'http://www.reddit.com/submit?url=' + settings.url + (settings.description !== undefined ? '&text=' + settings.description : '') + (settings.title !== undefined ? '&title=' + settings.title : ''));
 			$(this).find('.rrssb-googleplus a').attr('href', 'https://plus.google.com/share?url=' + (settings.description !== undefined ? settings.description : '') + '%20' + settings.url);
-			$(this).find('.rrssb-pinterest a').attr('href', 'http://pinterest.com/pin/create/button/?url=' + settings.url + ((settings.image !== undefined) ? '&amp;media=' + settings.image : '') + (settings.description !== undefined ? '&amp;description=' + settings.description : ''));
+			$(this).find('.rrssb-pinterest a').attr('href', 'http://pinterest.com/pin/create/button/?url=' + settings.url + ((settings.image !== undefined) ? '&amp;media=' + settings.image : '') + (settings.description !== undefined ? '&description=' + settings.description : ''));
 			$(this).find('.rrssb-pocket a').attr('href', 'https://getpocket.com/save?url=' + settings.url);
 			$(this).find('.rrssb-github a').attr('href', settings.url);
 		}
 
-		if (settings.emailAddress !== undefined) {
-			$(this).find('.rrssb-email a').attr('href', 'mailto:' + settings.emailAddress + '?' + (settings.emailSubject !== undefined ? 'subject=' + settings.emailSubject : '') + (settings.emailBody !== undefined ? '&amp;body=' + settings.emailBody : ''));
+		if (settings.emailAddress !== undefined || settings.emailSubject) {
+			$(this).find('.rrssb-email a').attr('href', 'mailto:' + (settings.emailAddress ? settings.emailAddress : '') + '?' + (settings.emailSubject !== undefined ? 'subject=' + settings.emailSubject : '') + (settings.emailBody !== undefined ? '&body=' + settings.emailBody : ''));
 		}
 
 	};
@@ -123,7 +131,7 @@
 			var self = $(this);
 			//get button width
 			var containerWidth = self.width();
-			var buttonWidth = $('li', self).not('.small').first().width();
+			var buttonWidth = $('li', self).not('.small').eq(0).width();
 
 			// enlarge buttons if they get wide enough
 			if (buttonWidth > 170 && $('li.small', self).length < 1) {
@@ -149,7 +157,7 @@
 			var smallButtons = buttons.filter('.small');
 			var totalBtnSze = 0;
 			var totalTxtSze = 0;
-			var upCandidate = smallButtons.first();
+			var upCandidate = smallButtons.eq(0);
 			var nextBackUp = parseFloat(upCandidate.attr('data-size')) + 55;
 			var smallBtnCount = smallButtons.length;
 
@@ -159,7 +167,7 @@
 
 				if ((btnCalc + nextBackUp) < containerWidth) {
 					self.removeClass('small-format');
-					smallButtons.first().removeClass('small');
+					smallButtons.eq(0).removeClass('small');
 
 					sizeSmallBtns();
 				}
@@ -333,11 +341,15 @@
 		 * Event listners
 		 */
 
-                $(document).on('click', '.rrssb-buttons a.popup', {}, function popUp(e) {
-			var self = $(this);
-			popupCenter(self.attr('href'), self.find('.rrssb-text').html(), 580, 470);
-			e.preventDefault();
-		});
+		try {
+			$(document).on('click', '.rrssb-buttons a.popup', {}, function popUp(e) {
+				var self = $(this);
+				popupCenter(self.attr('href'), self.find('.rrssb-text').html(), 580, 470);
+				e.preventDefault();
+			});
+		}
+		catch (e) { // catching this adds partial support for jQuery 1.3
+		}
 
 		// resize function
 		$(window).resize(function () {
