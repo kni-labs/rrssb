@@ -132,9 +132,10 @@
 			//get button width
 			var containerWidth = self.width();
 			var buttonWidth = $('li', self).not('.small').eq(0).width();
+			var buttonCountSmall = $('li.small', self).length;
 
 			// enlarge buttons if they get wide enough
-			if (buttonWidth > 170 && $('li.small', self).length < 1) {
+			if (buttonWidth > 170 && buttonCountSmall < 1) {
 				self.addClass('large-format');
 				var fontSize = buttonWidth / 12 + 'px';
 				self.css('font-size', fontSize);
@@ -143,7 +144,7 @@
 				self.css('font-size', '');
 			}
 
-			if (containerWidth < 200) {
+			if (containerWidth < buttonCountSmall * 20) {
 				self.removeClass('small-format').addClass('tiny-format');
 			} else {
 				self.removeClass('tiny-format');
