@@ -9,7 +9,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 > [**View the demo here**](http://kurtnoble.com/labs/rrssb/)
 
 ## Usage
-1) Link to the css file in header:
+1) Copy css to your document or link to the css file in header:
 
 ```html
 <link rel="stylesheet" href="css/rrssb.css" />
@@ -52,7 +52,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 - Each sharing URL requires various parameters that allow you to pass through messaging in the sharing dialog. A useful tool for URI escaping any messaging that needs to pass through the share URL can be found [**here**](http://meyerweb.com/eric/tools/dencoder/).
 - Alternatively, all share metadata and links can be configured [using Javascript](#javascript)
 
-3) Link to javascript files at the bottom of your document before the closing body tag for best results. (jQuery CDN, [**jQuery fallback**](http://css-tricks.com/snippets/jquery/fallback-for-cdn-hosted-jquery/), and `rrssb.min.js`):
+3) Copy `rrssb.min.js` to your document or link to javascript files at the bottom of your page (before the closing body tag for best results - jQuery CDN, [**jQuery fallback**](http://css-tricks.com/snippets/jquery/fallback-for-cdn-hosted-jquery/), and `rrssb.min.js`):
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -62,10 +62,9 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 
 <a name="javascript"></a>
 
-### Optional: Configure URL and Share Text with Javascript
-Instead of editing each `href` by hand, you can call some Javascript to set the URLs on each social button automatically.
+**Optional: Configure URL and share text with javascript:**<br/> Instead of editing each `href` by hand, you can call some Javascript to set the URLs on each social button automatically.
 
-This is optional. Note, to support users who have disabled Javascript, you still need to edit the `href`s by hand.
+Note: to support users who have disabled Javascript, you still need to edit the `href`s by hand.
 
 Paste the following before the closing body tag, after the scripts you added in the last section:
 
