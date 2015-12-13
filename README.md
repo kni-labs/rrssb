@@ -62,7 +62,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 
 <a name="javascript"></a>
 
-### Configure URL and Share Text with Javascript
+### Optional: Configure URL and Share Text with Javascript
 Instead of editing each `href` by hand, you can call some Javascript to set the URLs on each social button automatically.
 
 This is optional. Note, to support users who have disabled Javascript, you still need to edit the `href`s by hand.
