@@ -1,16 +1,14 @@
 # Ridiculously Responsive Social Sharing Buttons
+[![Join the chat at https://gitter.im/kni-labs/rrssb](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kni-labs/rrssb?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)<br/><br/> <a href="http://kurtnoble.com/labs/rrssb/"><img align="right" src="http://kurtnoble.com/labs/rrssb/media/rrssb-preview.png" width="359" height="auto"/></a> Love them or hate them, social sharing buttons appear to be with us for a while. It seemed like [**we**](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
 
-[![Join the chat at https://gitter.im/kni-labs/rrssb](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kni-labs/rrssb?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)<br/><br/>
-[<img align="right" src="media/rrssb-preview.png" width="359" height="auto"/>](http://kurtnoble.com/labs/rrssb/) Love them or hate them, social sharing buttons appear to be with us for a while. It seemed like [**we**](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
+RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit -- the rest will fill in automagically in the container.
 
-RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit — the rest will fill in automagically in the container.
+<img src="http://kurtnoble.com/labs/rrssb/media/rrssb-preview.gif" width="100%" height="auto"/>
 
-<img src="media/rrssb-preview.gif" width="100%" height="auto"/>
-
-### Demo
+## Demo
 > [**View the demo here**](http://kurtnoble.com/labs/rrssb/)
 
-### Usage
+## Usage
 1) Link to the css file in header:
 
 ```html
@@ -61,9 +59,10 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
 <script>window.jQuery || document.write('<script src="js/vendor/jquery.1.10.2.min.js"><\/script>')</script>
 <script src="js/rrssb.min.js"></script>
 ```
-<a name="javascript"></a>
-#### Configure URL and Share Text with Javascript
 
+<a name="javascript"></a>
+
+### Configure URL and Share Text with Javascript
 Instead of editing each `href` by hand, you can call some Javascript to set the URLs on each social button automatically.
 
 This is optional. Note, to support users who have disabled Javascript, you still need to edit the `href`s by hand.
@@ -88,7 +87,7 @@ jQuery(document).ready(function ($) {
 </script>
 ```
 
-### Other install options:
+## Other install options:
 
 Service                      | Link
 :--------------------------- | :----------------------------------------------------------------------------------------------------------------
@@ -100,18 +99,18 @@ CDN *                        | [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb)
 
 <small>* Managed by 3rd parties. Please contact project hosts for support.</small>
 
-### Support
+## Support
 Currently tested between [**140px**](https://www.dropbox.com/s/2k6lcebg2887ge3/Screenshot%202014-02-18%2009.45.45.png) and [**15,465px**](https://www.dropbox.com/s/1juq03011lixk3r/Screenshot%202014-02-18%2009.43.57.png) on current versions of Chrome 33, Safari 7.0.2, Firefox 27, Opera 20, and IE9+.
 
 Requires [**SVG**](http://caniuse.com/svg)
 
-### Contributing
+## Contributing
 Thanks for helping! Pull requests are welcomed.
 
-#### Build setup:
+### Build setup:
 - Make sure [gulp](http://gulpjs.com/) is installed globally: `npm install -g gulp` (May require `sudo`.)
 - run `npm install` to install the dependencies for this project.
 - run `gulp` to create a local server at `localhost:3000` and watch for file changes.
 
-### About
+## About
 RRSSB is a [**KNI Labs freebie**](http://kurtnoble.com/) crafted by [**@dbox**](http://www.twitter.com/dbox) and [**@joshuatuscan**](http://www.twitter.com/joshuatuscan).
