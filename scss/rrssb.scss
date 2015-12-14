@@ -31,9 +31,9 @@ $rrssb-youtube: #df1c31 !default;
 $rrssb-pinterest: #b81621 !default;
 $rrssb-pocket: #ed4054 !default;
 $rrssb-github: #444 !default;
-$rrssb-instagram: #517fa4 !default;
+$rrssb-instagram: #125688 !default;
 $rrssb-hackernews: #ff6600 !default;
-$rrssb-delicious: #0B79E5 !default;
+$rrssb-delicious: #0b79e5 !default;
 $rrssb-vk: #4d71a9 !default;
 
 // Set the border radius for the buttons
@@ -41,17 +41,17 @@ $rrssb-border-radius: 2px !default;
 $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 // Variable list for all social button colors to be iterated over.
-$social-list: ( rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-tumblr $rrssb-tumblr, rrssb-linkedin $rrssb-linkedin, rrssb-twitter $rrssb-twitter, rrssb-googleplus $rrssb-googleplus, rrssb-youtube $rrssb-youtube, rrssb-reddit $rrssb-reddit, rrssb-pinterest $rrssb-pinterest, rrssb-pocket $rrssb-pocket, rrssb-github $rrssb-github, rrssb-instagram $rrssb-instagram, rrssb-delicious $rrssb-delicious, rrssb-vk $rrssb-vk, rrssb-hackernews $rrssb-hackernews );
+$social-list: (rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-tumblr $rrssb-tumblr, rrssb-linkedin $rrssb-linkedin, rrssb-twitter $rrssb-twitter, rrssb-googleplus $rrssb-googleplus, rrssb-youtube $rrssb-youtube, rrssb-reddit $rrssb-reddit, rrssb-pinterest $rrssb-pinterest, rrssb-pocket $rrssb-pocket, rrssb-github $rrssb-github, rrssb-instagram $rrssb-instagram, rrssb-delicious $rrssb-delicious, rrssb-vk $rrssb-vk, rrssb-hackernews $rrssb-hackernews);
 
 // The meat and potatoes
 .rrssb-buttons {
   box-sizing: border-box;
   font-family: $rrssb-main-font;
+  font-size: 12px;
   height: 36px;
   margin: 0;
   padding: 0;
   width: 100%;
-  font-size: 12px;
 
   // clearfix buttons for large-format
   &:after {
@@ -78,7 +78,7 @@ $social-list: ( rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-
       &.#{nth($s-name, 1)} {
         a {
           background-color: nth($s-name, 2);
-          
+
           &:hover {
             background-color: darken(nth($s-name, 2), 10%);
           }
@@ -86,6 +86,7 @@ $social-list: ( rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-
       }
     }
     // end @each directive
+
     a {
       background-color: #ccc;
       border-radius: $rrssb-border-radius;
@@ -110,14 +111,17 @@ $social-list: ( rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-
         position: absolute;
         top: 0;
         width: 10%;
+
         svg {
           height: 17px;
           width: 17px;
+
           path {
             fill: $rrssb-txt;
           }
         }
       }
+
       .rrssb-text {
         color: $rrssb-txt;
       }
@@ -130,6 +134,7 @@ $social-list: ( rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-
     &.small {
       a {
         padding: 0;
+
         .rrssb-icon {
           left: auto;
           margin: 0 auto;
@@ -145,6 +150,7 @@ $social-list: ( rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-
       }
     }
   }
+
   &.large-format {
     height: auto;
 
@@ -169,12 +175,14 @@ $social-list: ( rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-
             width: 100%;
           }
         }
+
         .rrssb-text {
           backface-visibility: hidden;
         }
       }
     }
   }
+
   &.small-format {
     padding-top: 5px;
 
@@ -197,6 +205,7 @@ $social-list: ( rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-
       }
     }
   }
+
   &.tiny-format {
     height: 22px;
     position: relative;

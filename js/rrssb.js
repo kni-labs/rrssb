@@ -144,7 +144,7 @@
 				self.css('font-size', '');
 			}
 
-			if (containerWidth < buttonCountSmall * 20) {
+			if (containerWidth < buttonCountSmall * 25) {
 				self.removeClass('small-format').addClass('tiny-format');
 			} else {
 				self.removeClass('tiny-format');
