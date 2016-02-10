@@ -257,3 +257,26 @@ $social-list: (rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-t
     }
   }
 }
+
+.rrssb-buttons-flat {
+  li {
+    padding: 0;
+    a {
+      border-radius: 0;
+    }
+  }
+  
+  &.large-format {
+    li {
+      a {
+        border-radius: 0;
+      }
+    }
+  }
+  
+  &.small-format {
+    li {
+      padding: 0;
+    }
+  }
+}
