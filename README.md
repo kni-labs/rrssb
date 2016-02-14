@@ -92,7 +92,7 @@ Service                      | Link
 :--------------------------- | :----------------------------------------------------------------------------------------------------------------
 [**Bower**](http://bower.io) | `bower install rrssb`
 Rails *                      | [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
-Wordpress *                  | [**Wordpress plugin by @aarreedd**](http://wordpress.org/plugins/ridiculously-responsive-social-sharing-buttons/)
+Wordpress *                  | [**https://wordpress.org/plugins/rrssb/**](https://wordpress.org/plugins/rrssb/)<br>[**https://wordpress.org/plugins/wpsso-rrssb/**](https://wordpress.org/plugins/wpsso-rrssb/)
 Drupal *                     | [**Drupal Install Instructions**](https://drupal.org/project/rrssb)
 CDN *                        | [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb)
 
