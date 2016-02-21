@@ -88,14 +88,14 @@ jQuery(document).ready(function ($) {
 
 ## Other install options:
 
-Service                      | Link
-:--------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-npm                          | `npm install rrssb`
-[**Bower**](http://bower.io) | `bower install rrssb`
-Rails *                      | [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
-Wordpress *                  | [**https://wordpress.org/plugins/rrssb/**](https://wordpress.org/plugins/rrssb/)<br>[**https://wordpress.org/plugins/wpsso-rrssb/**](https://wordpress.org/plugins/wpsso-rrssb/)
-Drupal *                     | [**Drupal Install Instructions**](https://drupal.org/project/rrssb)
-CDN *                        | [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb)
+Service     | Link
+:---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+npm         | `npm install rrssb`
+bower       | `bower install rrssb`
+Rails *     | [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
+Wordpress * | [**https://wordpress.org/plugins/rrssb/**](https://wordpress.org/plugins/rrssb/)<br>[**https://wordpress.org/plugins/wpsso-rrssb/**](https://wordpress.org/plugins/wpsso-rrssb/)
+Drupal *    | [**Drupal Install Instructions**](https://drupal.org/project/rrssb)
+CDN *       | [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb)
 
 <small>* Managed by 3rd parties. Please contact project hosts for support.</small>
 
