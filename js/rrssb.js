@@ -68,6 +68,7 @@
 			$(this).find('.rrssb-pocket a').attr('href', 'https://getpocket.com/save?url=' + settings.url);
 			$(this).find('.rrssb-github a').attr('href', settings.url);
 			$(this).find('.rrssb-print a').attr('href', 'javascript:window.print()');
+			$(this).find('.rrssb-whatsapp a').attr('href', 'whatsapp://send?text=' + (settings.description !== undefined ? settings.description + '%20' : (settings.title !== undefined ? settings.title + '%20' : '')) + settings.url);
 		}
 
 		if (settings.emailAddress !== undefined || settings.emailSubject) {

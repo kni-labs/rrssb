@@ -1,5 +1,5 @@
 # Ridiculously Responsive Social Sharing Buttons
-[![Join the chat at https://gitter.im/kni-labs/rrssb](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kni-labs/rrssb?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) <img src="https://img.shields.io/bower/v/rrssb.svg?style=flat"> [<img src="https://img.shields.io/npm/v/rrssb.svg?style=flat">](https://www.npmjs.com/package/rrssb)<br/><br/> <a href="http://kurtnoble.com/labs/rrssb/"><img align="right" src="http://kurtnoble.com/labs/rrssb/media/rrssb-preview.png" width="359" height="auto"/></a> Love them or hate them, social sharing buttons appear to be with us for a while. It seemed like [**we**](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
+[![Join the chat at https://gitter.im/kni-labs/rrssb](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kni-labs/rrssb?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) ![](https://img.shields.io/bower/v/rrssb.svg?style=flat) [![](https://img.shields.io/npm/v/rrssb.svg?style=flat)](https://www.npmjs.com/package/rrssb)<br/><br/> <a href="http://kurtnoble.com/labs/rrssb/"><img align="right" src="http://kurtnoble.com/labs/rrssb/media/rrssb-preview.png" width="359" height="auto"/></a> Love them or hate them, social sharing buttons appear to be with us for a while. It seemed like [**we**](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
 
 RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit -- the rest will fill in automagically in the container.
 
@@ -88,13 +88,14 @@ jQuery(document).ready(function ($) {
 
 ## Other install options:
 
-Service                      | Link
-:--------------------------- | :----------------------------------------------------------------------------------------------------------------
-[**Bower**](http://bower.io) | `bower install rrssb`
-Rails *                      | [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
-Wordpress *                  | [**https://wordpress.org/plugins/rrssb/**](https://wordpress.org/plugins/rrssb/)<br>[**https://wordpress.org/plugins/wpsso-rrssb/**](https://wordpress.org/plugins/wpsso-rrssb/)
-Drupal *                     | [**Drupal Install Instructions**](https://drupal.org/project/rrssb)
-CDN *                        | [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb)
+Service     | Link
+:---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+npm         | `npm install rrssb`
+bower       | `bower install rrssb`
+Rails *     | [**Rails Setup by @rimkashox**](http://www.simplehacks.com/web-dev/how-to-use-rrssb-with-rails/)
+Wordpress * | [**https://wordpress.org/plugins/rrssb/**](https://wordpress.org/plugins/rrssb/)<br>[**https://wordpress.org/plugins/wpsso-rrssb/**](https://wordpress.org/plugins/wpsso-rrssb/)<br>[**https://wordpress.org/plugins/rrssb-for-wp/**](https://wordpress.org/plugins/rrssb-for-wp/)
+Drupal *    | [**Drupal Install Instructions**](https://drupal.org/project/rrssb)
+CDN *       | [**OSSCDN by MaxCDN**](http://osscdn.com/#/rrssb)
 
 <small>* Managed by 3rd parties. Please contact project hosts for support.</small>
 
