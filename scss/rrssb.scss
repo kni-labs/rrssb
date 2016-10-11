@@ -119,7 +119,7 @@ $social-list: (rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-t
           height: 17px;
           width: 17px;
 
-          path {
+          path, circle {
             fill: $rrssb-txt;
           }
         }
