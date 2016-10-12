@@ -1,6 +1,6 @@
 // Ridiculously Responsive Social Sharing Buttons
 // Team: @dbox, @joshuatuscan
-// Site: http://www.kurtnoble.com/labs/rrssb
+// Site: http://rrssb.ml
 // Twitter: @therealkni
 //
 //        ___           ___
@@ -66,6 +66,9 @@ $social-list: (rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-t
     content: ' ';
     display: table;
   }
+  & > {
+    border: 1px solid green;
+  }
 
   li {
     box-sizing: border-box;
@@ -119,7 +122,7 @@ $social-list: (rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-t
           height: 17px;
           width: 17px;
 
-          path {
+          path, circle {
             fill: $rrssb-txt;
           }
         }
