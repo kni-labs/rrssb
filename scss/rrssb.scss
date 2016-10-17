@@ -224,6 +224,8 @@ $social-list: (rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-t
         padding: 0;
 
         .rrssb-icon {
+          // Avoids a shifting effect in IE11, ref #144
+          height: 100%;
           svg {
             height: 70%;
             width: 100%;
