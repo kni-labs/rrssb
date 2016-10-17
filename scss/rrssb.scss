@@ -66,9 +66,6 @@ $social-list: (rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-t
     content: ' ';
     display: table;
   }
-  & > {
-    border: 1px solid green;
-  }
 
   li {
     box-sizing: border-box;
