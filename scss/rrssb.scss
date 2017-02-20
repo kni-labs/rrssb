@@ -46,6 +46,12 @@ $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $social-list: (rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-tumblr $rrssb-tumblr, rrssb-linkedin $rrssb-linkedin, rrssb-twitter $rrssb-twitter, rrssb-googleplus $rrssb-googleplus, rrssb-youtube $rrssb-youtube, rrssb-reddit $rrssb-reddit, rrssb-pinterest $rrssb-pinterest, rrssb-pocket $rrssb-pocket, rrssb-github $rrssb-github, rrssb-instagram $rrssb-instagram, rrssb-delicious $rrssb-delicious, rrssb-vk $rrssb-vk, rrssb-hackernews $rrssb-hackernews,rrssb-whatsapp $rrssb-whatsapp, rrssb-print $rrssb-print);
 
 
+// fade-in animation so it doesnt blink
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+
 // The meat and potatoes
 .rrssb-buttons {
   box-sizing: border-box;
@@ -55,6 +61,12 @@ $social-list: (rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-t
   margin: 0;
   padding: 0;
   width: 100%;
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-name: fade-in;
+  animation-delay: .2s;
 
   // clearfix buttons for large-format
   &:after {
