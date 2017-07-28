@@ -207,7 +207,7 @@
 			var buttons = $('li', self);
 
 			// get buttons in reverse order and loop through each
-			$(buttons.get().reverse()).each(function(index, count) {
+			$(buttons.get().reverse()).each(function(index, value) {
 
 				var button = $(this);
 
@@ -221,9 +221,8 @@
 						sizeSmallBtns();
 					}
 				}
-
-				if (!--count) backUpFromSmall();
 			});
+			backUpFromSmall();
 		});
 
 		// if first time running, put it through the magic layout
