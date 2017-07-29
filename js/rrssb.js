@@ -201,15 +201,13 @@
 
 	var checkSize = function(init) {
 		// loop through each instance of buttons
-		$('.rrssb-buttons').each(function(index) {
-
+		$('.rrssb-buttons').each(function(buttonsIndex) {
 			var self = $(this);
 			var buttons = $('li', self);
 
 			// get buttons in reverse order and loop through each
 			$(buttons.get().reverse()).each(function(index, value) {
-
-				var button = $(this);
+				var button = $(value);
 
 				if (button.hasClass('small') === false) {
 					var txtWidth = parseFloat(button.attr('data-size')) + 55;
@@ -218,13 +216,12 @@
 					if (txtWidth > btnWidth) {
 						var btn2small = buttons.not('.small').last();
 						$(btn2small).addClass('small');
-						sizeSmallBtns();
 					}
 				}
 			});
-			backUpFromSmall();
 		});
-
+		sizeSmallBtns();
+		backUpFromSmall();
 		// if first time running, put it through the magic layout
 		if (init === true) {
 			rrssbMagicLayout(sizeSmallBtns);
