@@ -94,6 +94,7 @@ npm         | `npm install rrssb`
 bower       | `bower install rrssb`
 Wordpress * | [**https://wordpress.org/plugins/rrssb/**](https://wordpress.org/plugins/rrssb/)<br>[**https://wordpress.org/plugins/wpsso-rrssb/**](https://wordpress.org/plugins/wpsso-rrssb/)<br>[**https://wordpress.org/plugins/rrssb-for-wp/**](https://wordpress.org/plugins/rrssb-for-wp/)
 Drupal *    | [**Drupal Install Instructions**](https://drupal.org/project/rrssb)
+Bludit *    | [**Bludit Plugins**](https://plugins.bludit.com/)
 CDN *       | [**CDN by jsDelivr**](https://www.jsdelivr.com/?query=rrssb)
 
 <small>* Managed by 3rd parties. Please contact project hosts for support.</small>
