@@ -1,12 +1,12 @@
 # Ridiculously Responsive Social Sharing Buttons
-[![Join the chat at https://gitter.im/kni-labs/rrssb](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kni-labs/rrssb?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) ![](https://img.shields.io/bower/v/rrssb.svg?style=flat) [![](https://img.shields.io/npm/v/rrssb.svg?style=flat)](https://www.npmjs.com/package/rrssb)<br/><br/> <a href="http://rrssb.ml/"><img align="right" src="http://rrssb.ml/media/rrssb-preview.png" width="359" height="auto"/></a> Love them or hate them, social sharing buttons appear to be with us for a while. It seemed like [**we**](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
+[![Join the chat at https://gitter.im/kni-labs/rrssb](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kni-labs/rrssb?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) ![](https://img.shields.io/bower/v/rrssb.svg?style=flat) [![](https://img.shields.io/npm/v/rrssb.svg?style=flat)](https://www.npmjs.com/package/rrssb)<br/><br/> <a href="https://rrssb.netlify.com/"><img align="right" src="https://rrssb.netlify.com/media/rrssb-preview.png" width="359" height="auto"/></a> Love them or hate them, social sharing buttons appear to be with us for a while. It seemed like [**we**](http://www.kurtnoble.com) were constantly making custom buttons for every single project, so we decided to create a super flexible system that would work in any container.
 
 RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customize it by tweaking a few variables. SVGs allow for tiny file size and retina support. Add or remove icons as you see fit -- the rest will fill in automagically in the container.
 
-<img src="http://rrssb.ml/media/rrssb-preview.gif" width="100%" height="auto"/>
+<img src="https://rrssb.netlify.com/media/rrssb-preview.gif" width="100%" height="auto"/>
 
 ## Demo
-> [**View the demo here**](http://rrssb.ml/)
+> [**View the demo here**](https://rrssb.netlify.com/)
 
 ## Usage
 1) Copy css to your document or link to the css file in header:
@@ -36,7 +36,7 @@ RRSSB is built with [**SASS**](http://sass-lang.com/), so you can easily customi
   </li>
   <li class="rrssb-twitter">
     <!-- Replace href with your Meta and URL information  -->
-    <a href="https://twitter.com/intent/tweet?text=http://rrssb.ml"
+    <a href="https://twitter.com/intent/tweet?text=https://rrssb.netlify.com/"
     class="popup">
       <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62a15.093 15.093 0 0 1-8.86-2.32c2.702.18 5.375-.648 7.507-2.32a5.417 5.417 0 0 1-4.49-3.64c.802.13 1.62.077 2.4-.154a5.416 5.416 0 0 1-4.412-5.11 5.43 5.43 0 0 0 2.168.387A5.416 5.416 0 0 1 2.89 4.498a15.09 15.09 0 0 0 10.913 5.573 5.185 5.185 0 0 1 3.434-6.48 5.18 5.18 0 0 1 5.546 1.682 9.076 9.076 0 0 0 3.33-1.317 5.038 5.038 0 0 1-2.4 2.942 9.068 9.068 0 0 0 3.02-.85 5.05 5.05 0 0 1-2.48 2.71z"/></svg></span>
       <span class="rrssb-text">twitter</span>
@@ -76,7 +76,7 @@ jQuery(document).ready(function ($) {
   $('.rrssb-buttons').rrssb({
     // required:
     title: 'This is the email subject and/or tweet text',
-    url: 'http://rrssb.ml/',
+    url: 'https://rrssb.netlify.com/',
 
     // optional:
     description: 'Longer description used with some providers',
