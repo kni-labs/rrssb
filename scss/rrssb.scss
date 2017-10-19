@@ -38,13 +38,14 @@ $rrssb-vk: #4d71a9 !default;
 $rrssb-print: #8d98a2 !default;
 $rrssb-whatsapp: #43d854 !default;
 $rrssb-xing: #005A5F !default;
+$rrssb-telegram: #179cde !default;
 
 // Set the border radius for the buttons
 $rrssb-border-radius: 2px !default;
 $rrssb-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 // Variable list for all social button colors to be iterated over.
-$social-list: (rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-tumblr $rrssb-tumblr, rrssb-linkedin $rrssb-linkedin, rrssb-twitter $rrssb-twitter, rrssb-googleplus $rrssb-googleplus, rrssb-youtube $rrssb-youtube, rrssb-reddit $rrssb-reddit, rrssb-pinterest $rrssb-pinterest, rrssb-pocket $rrssb-pocket, rrssb-github $rrssb-github, rrssb-instagram $rrssb-instagram, rrssb-delicious $rrssb-delicious, rrssb-vk $rrssb-vk, rrssb-hackernews $rrssb-hackernews,rrssb-whatsapp $rrssb-whatsapp, rrssb-print $rrssb-print, rrssb-xing $rrssb-xing);
+$social-list: (rrssb-email $rrssb-email, rrssb-facebook $rrssb-facebook, rrssb-tumblr $rrssb-tumblr, rrssb-linkedin $rrssb-linkedin, rrssb-twitter $rrssb-twitter, rrssb-googleplus $rrssb-googleplus, rrssb-youtube $rrssb-youtube, rrssb-reddit $rrssb-reddit, rrssb-pinterest $rrssb-pinterest, rrssb-pocket $rrssb-pocket, rrssb-github $rrssb-github, rrssb-instagram $rrssb-instagram, rrssb-delicious $rrssb-delicious, rrssb-vk $rrssb-vk, rrssb-hackernews $rrssb-hackernews,rrssb-whatsapp $rrssb-whatsapp, rrssb-print $rrssb-print, rrssb-xing $rrssb-xing, rrssb-telegram $rrssb-telegram);
 
 
 // fade-in animation so it doesnt blink
