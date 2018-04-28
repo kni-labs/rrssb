@@ -1,7 +1,7 @@
 /*!
  Ridiculously Responsive Social Sharing Buttons
  Team: @dbox, @joshuatuscan
- Site: http://www.rrssb.ml
+ Site: https://rrssb.netlify.com
  Twitter: @therealkni
 
         ___           ___
