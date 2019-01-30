@@ -108,7 +108,7 @@
 		if (string !== undefined && string !== null) {
 			if (string.match(/%[0-9a-f]{2}/i) !== null) {
 				string = decodeURIComponent(string);
-				encodeString(string);
+				return encodeString(string);
 			} else {
 				return encodeURIComponent(string);
 			}
